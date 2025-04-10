@@ -13,5 +13,15 @@ namespace WpfApp1
         {
             MessageBox.Show("Przycisk został kliknięty!");
         }
+
+        private void MyTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
