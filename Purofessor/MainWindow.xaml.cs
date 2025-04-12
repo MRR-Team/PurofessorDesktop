@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace WpfApp1
+namespace Purofessor
 {
     public partial class MainWindow : Window
     {
