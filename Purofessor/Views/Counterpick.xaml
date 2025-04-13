@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Purofessor.Views"
-      xmlns:compoments="clr-namespace:Purofessor.components"
+      xmlns:components="clr-namespace:Purofessor.components"
       mc:Ignorable="d" 
       Background="Gray"
       d:DesignHeight="350" d:DesignWidth="500"
@@ -12,6 +12,8 @@
               
 
     <Grid>
+        <components:TopPanel HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 
             <TextBlock FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"><Run Language="pl-pl" Text="Wybierz championa przeciwnika"/></TextBlock>

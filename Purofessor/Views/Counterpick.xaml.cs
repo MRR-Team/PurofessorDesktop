@@ -26,7 +26,7 @@ namespace Purofessor.Views
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Przycisk został kliknięty!");
+            MessageBox.Show("Viego kontruje wszystko trust trust");
         }
 
         private void MyTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
