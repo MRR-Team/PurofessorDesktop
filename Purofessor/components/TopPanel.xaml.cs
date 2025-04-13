@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Purofessor.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,12 +28,14 @@ namespace Purofessor.components
 
         private void Kontra_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Kliknięto Kontra");
+            var parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow?.MainFrame.Navigate(new Counterpick());
         }
 
         private void Status_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Kliknięto Status Servera LOL");
+            var parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow?.MainFrame.Navigate(new ServerStatus());
         }
     }
 }

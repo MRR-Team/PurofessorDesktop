@@ -1,0 +1,39 @@
+﻿<Page x:Class="Purofessor.Views.Counterpick"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Purofessor.Views"
+      xmlns:compoments="clr-namespace:Purofessor.components"
+      mc:Ignorable="d" 
+      Background="Gray"
+      d:DesignHeight="350" d:DesignWidth="500"
+      Title="Counterpick">
+              
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <TextBlock FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"><Run Language="pl-pl" Text="Wybierz championa przeciwnika"/></TextBlock>
+
+            <Grid Margin="0,0,0,10">
+                <TextBox Name="MyTextBox" Width="200" Height="30" TextChanged="MyTextBox_TextChanged"/>
+                <TextBlock Text="Wpisz coś tutaj..." Foreground="Gray" 
+                   VerticalAlignment="Center" Margin="5,0,0,0"
+                   IsHitTestVisible="False" Visibility="Collapsed"/>
+            </Grid>
+            <TextBlock FontSize="20" FontWeight="Bold" TextAlignment="Center"><Run Language="pl-pl" Text="Wybierz pozycję"/></TextBlock>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <CheckBox Content="Support" Margin="5"/>
+                <CheckBox Content="Dół" Margin="5"/>
+                <CheckBox Content="Środek" Margin="5"/>
+                <CheckBox Content="Dżungla" Margin="5"/>
+                <CheckBox Content="Góra" Margin="5"/>
+            </StackPanel>
+            <Button Content="Wygeneruj kontrę" Width="150" Height="40" Click="Button_Click"/>
+
+        </StackPanel>
+
+    </Grid>
+</Page>

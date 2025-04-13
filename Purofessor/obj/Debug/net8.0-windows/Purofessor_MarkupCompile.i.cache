@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\buchc\Source\Repos\PurofessorDesktopGit\Purofessor\obj\Debug\net8.0-windows\
+C:\Users\buchc\Source\Repos\PurofessorDesktopGit2\Purofessor\obj\Debug\net8.0-windows\
 Purofessor
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\buchc\Source\Repos\PurofessorDesktopGit\Purofessor\App.xaml
-2-105707752
+C:\Users\buchc\Source\Repos\PurofessorDesktopGit2\Purofessor\App.xaml
+42094421955
 
-7-394931041
+9-993559322
 1981839832580
-components\TopPanel.xaml;MainWindow.xaml;
+components\TopPanel.xaml;MainWindow.xaml;Views\Counterpick.xaml;Views\ServerStatus.xaml;
 
 True
 

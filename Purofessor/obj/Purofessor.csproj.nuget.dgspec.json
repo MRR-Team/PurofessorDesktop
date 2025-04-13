@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktopGit\\Purofessor\\Purofessor.csproj": {}
+    "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktopGit2\\Purofessor\\Purofessor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktopGit\\Purofessor\\Purofessor.csproj": {
+    "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktopGit2\\Purofessor\\Purofessor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktopGit\\Purofessor\\Purofessor.csproj",
+        "projectUniqueName": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktopGit2\\Purofessor\\Purofessor.csproj",
         "projectName": "Purofessor",
-        "projectPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktopGit\\Purofessor\\Purofessor.csproj",
+        "projectPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktopGit2\\Purofessor\\Purofessor.csproj",
         "packagesPath": "C:\\Users\\buchc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktopGit\\Purofessor\\obj\\",
+        "outputPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktopGit2\\Purofessor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -3,33 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Purofessor" Height="350" Width="500"
         Background="gray"
-        xmlns:local="clr-namespace:Purofessor.components"
+        xmlns:components="clr-namespace:Purofessor.components"
 >
     <Grid>
-        <local:TopPanel HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
-            <TextBlock FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"><Run Language="pl-pl" Text="Wybierz championa przeciwnika"/></TextBlock>
-
-            <!-- Zamiast PlaceholderText stosujemy "hint" w postaci TextBlock -->
-            <Grid Margin="0,0,0,10">
-                <TextBox Name="MyTextBox" Width="200" Height="30" TextChanged="MyTextBox_TextChanged"/>
-                <TextBlock Text="Wpisz coś tutaj..." Foreground="Gray" 
-                           VerticalAlignment="Center" Margin="5,0,0,0"
-                           IsHitTestVisible="False" Visibility="Collapsed"/>
-            </Grid>
-            <TextBlock FontSize="20" FontWeight="Bold" TextAlignment="Center"><Run Language="pl-pl" Text="Wybierz pozycję"/></TextBlock>
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
-                <CheckBox Content="Support" Margin="5"/>
-                <CheckBox Content="Dół" Margin="5"/>
-                <CheckBox Content="Środek" Margin="5"/>
-                <CheckBox Content="Dżungla" Margin="5"/>
-                <CheckBox Content="Góra" Margin="5"/>
-            </StackPanel>
-            <Button Content="Wygeneruj kontrę" Width="150" Height="40" Click="Button_Click"/>
-
-        </StackPanel>
-
+        <components:TopPanel HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="0,50,0,0"/>
     </Grid>
 </Window>
