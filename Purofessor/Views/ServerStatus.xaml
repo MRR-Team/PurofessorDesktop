@@ -10,6 +10,8 @@
       Title="ServerStatus">
 
     <Grid Background="Gray">
+        <components:TopPanel HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 
             <TextBlock FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"><Run Language="pl-pl" Text="Status serwera: Działa!"/></TextBlock>
