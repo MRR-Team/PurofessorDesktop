@@ -19,7 +19,7 @@
             <TextBlock FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"><Run Language="pl-pl" Text="Wybierz championa przeciwnika"/></TextBlock>
 
             <Grid Margin="0,0,0,10">
-                <TextBox Name="MyTextBox" Width="200" Height="30" TextChanged="MyTextBox_TextChanged"/>
+                <TextBox Name="MyTextBox" Width="200" Height="30" TextChanged="MyTextBox_TextChanged" VerticalContentAlignment="Center"/>
                 <TextBlock Text="Wpisz coś tutaj..." Foreground="Gray" 
                    VerticalAlignment="Center" Margin="5,0,0,0"
                    IsHitTestVisible="False" Visibility="Collapsed"/>
