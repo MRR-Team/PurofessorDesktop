@@ -50,3 +50,5 @@ C:\Users\buchc\Source\Repos\PurofessorDesktopGit2\Purofessor\obj\Debug\net8.0-wi
 C:\Users\buchc\Source\Repos\PurofessorDesktopGit2\Purofessor\obj\Debug\net8.0-windows\Views\ServerStatus.g.cs
 C:\Users\buchc\Source\Repos\PurofessorDesktopGit2\Purofessor\obj\Debug\net8.0-windows\Views\Counterpick.baml
 C:\Users\buchc\Source\Repos\PurofessorDesktopGit2\Purofessor\obj\Debug\net8.0-windows\Views\ServerStatus.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktopGit2\Purofessor\obj\Debug\net8.0-windows\Views\Login.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktopGit2\Purofessor\obj\Debug\net8.0-windows\Views\Login.baml

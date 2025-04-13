@@ -8,6 +8,9 @@
     <Compile Update="Views\Counterpick.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ServerStatus.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
