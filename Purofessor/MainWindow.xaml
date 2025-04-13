@@ -6,7 +6,6 @@
         xmlns:components="clr-namespace:Purofessor.components"
 >
     <Grid>
-        <components:TopPanel HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="0,50,0,0"/>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
