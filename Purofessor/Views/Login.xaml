@@ -9,40 +9,53 @@
       Title="Login">
 
     <Grid>
-        <Border Background="#CCFFFFFF" CornerRadius="10" Padding="20" 
-            HorizontalAlignment="Center" VerticalAlignment="Center">
-            <StackPanel Width="300">
-                <TextBlock Text="Witaj w Purofessor!" 
-                       FontSize="24" 
-                       FontWeight="Bold" 
-                       Foreground="Black" 
-                       TextAlignment="Center" 
-                       Margin="0,0,0,20"/>
+        <Border Background="#CCFFFFFF"
+                CornerRadius="10"
+                Padding="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
 
-                <TextBlock Text="Login:" FontWeight="SemiBold" />
-                <TextBox x:Name="LoginTextBox" Margin="0,5,0,15" Height="30" VerticalContentAlignment="Center"/>
+            <StackPanel Width="300">
+                <TextBlock Text="Witaj w Purofessor!"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="Black"
+                           TextAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+                <TextBlock Text="Login:" FontWeight="SemiBold"/>
+                <TextBox x:Name="LoginTextBox"
+                         Margin="0,5,0,15"
+                         Height="30"
+                         VerticalContentAlignment="Center"/>
 
                 <TextBlock Text="Hasło:" FontWeight="SemiBold"/>
-                <PasswordBox x:Name="PasswordBox" Margin="0,5,0,20" Height="30" VerticalContentAlignment="Center"/>
+                <PasswordBox x:Name="PasswordBox"
+                             Margin="0,5,0,20"
+                             Height="30"
+                             VerticalContentAlignment="Center"/>
 
                 <Button Content="Zaloguj"
-                    Height="35"
-                    Background="DodgerBlue"
-                    Foreground="White"
-                    Click="LoginButton_Click"/>
+                        Height="35"
+                        Background="DodgerBlue"
+                        Foreground="White"
+                        Click="LoginButton_Click"/>
+
                 <TextBlock TextAlignment="Center" Margin="0,8,0,0">
                     Nie masz konta? 
-                <Hyperlink Click="RegisterLink_Click">
-                  Zarejestruj się!
-                </Hyperlink>
+                    <Hyperlink Click="RegisterLink_Click">
+                        Zarejestruj się!
+                    </Hyperlink>
                 </TextBlock>
+
                 <TextBlock TextAlignment="Center" Margin="0,5,0,0">
-                 Albo kontynuuj jako
-                <Hyperlink Click="GuestLink_Click">
-                   Gość
-                </Hyperlink>
+                    Albo kontynuuj jako
+                    <Hyperlink Click="GuestLink_Click">
+                        Gość
+                    </Hyperlink>
                 </TextBlock>
             </StackPanel>
+
         </Border>
     </Grid>
 </Page>

@@ -5,41 +5,54 @@
       Title="Register">
 
     <Grid>
-        <Border Background="#CCFFFFFF" CornerRadius="10" Padding="20"
-                HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border Background="#CCFFFFFF"
+                CornerRadius="10"
+                Padding="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
             <StackPanel Width="300">
-                <TextBlock Text="Utwórz konto" 
-                           FontSize="24" 
-                           FontWeight="Bold" 
-                           TextAlignment="Center" 
+                <TextBlock Text="Utwórz konto"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           TextAlignment="Center"
                            Margin="0,0,0,20"/>
 
                 <TextBlock Text="Login:" FontWeight="SemiBold"/>
-                <TextBox Margin="0,5,0,15" Height="30" VerticalContentAlignment="Center"/>
+                <TextBox Margin="0,5,0,15"
+                         Height="30"
+                         VerticalContentAlignment="Center"/>
 
                 <TextBlock Text="Hasło:" FontWeight="SemiBold"/>
-                <PasswordBox Margin="0,5,0,15" Height="30" VerticalContentAlignment="Center"/>
+                <PasswordBox Margin="0,5,0,15"
+                             Height="30"
+                             VerticalContentAlignment="Center"/>
 
                 <TextBlock Text="Powtórz hasło:" FontWeight="SemiBold"/>
-                <PasswordBox Margin="0,5,0,20" Height="30" VerticalContentAlignment="Center"/>
+                <PasswordBox Margin="0,5,0,20"
+                             Height="30"
+                             VerticalContentAlignment="Center"/>
 
                 <Button Content="Zarejestruj"
- Height="35"
- Background="DodgerBlue"
- Foreground="White"/>
+                        Height="35"
+                        Background="DodgerBlue"
+                        Foreground="White"/>
+
                 <TextBlock TextAlignment="Center" Margin="0,8,0,0">
-                    Masz konto? 
-                <Hyperlink Click="LoginLink_Click">
-                  Zaloguj się!
-                </Hyperlink>
+                    Masz konto?
+                    <Hyperlink Click="LoginLink_Click">
+                        Zaloguj się!
+                    </Hyperlink>
                 </TextBlock>
+
                 <TextBlock TextAlignment="Center" Margin="0,5,0,0">
-                 Albo kontynuuj jako
-                <Hyperlink Click="GuestLink_Click">
-                   Gość
-                </Hyperlink>
+                    Albo kontynuuj jako
+                    <Hyperlink Click="GuestLink_Click">
+                        Gość
+                    </Hyperlink>
                 </TextBlock>
             </StackPanel>
+
         </Border>
     </Grid>
 </Page>
