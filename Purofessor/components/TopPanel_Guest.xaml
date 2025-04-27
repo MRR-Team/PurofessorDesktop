@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Purofessor.components.TopPanel_Guest"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Height="50">
+    <Grid>
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="41" Fill="#80FFFFFF"/>
+        <Button Content="Kontra"
+                x:Name="KontraButton"
+                HorizontalAlignment="Left"
+                Margin="10,11,0,0"
+                VerticalAlignment="Top"
+                Width="58"
+                Height="21"
+                Click="Kontra_Click"
+                Background="Transparent"
+                BorderBrush="Blue"
+                BorderThickness="0,0,0,3"
+                Foreground="Black"/>
+
+        <Button Content="Status Servera LOL"
+                x:Name="KontraStatusButtonButton"
+                HorizontalAlignment="Left"
+                Margin="84,11,0,0"
+                VerticalAlignment="Top"
+                Width="115"
+                Height="21"
+                Click="Status_Click"
+                Background="Transparent"
+                BorderBrush="Blue"
+                BorderThickness="0,0,0,2"
+                Foreground="Black"/>
+    </Grid>
+</UserControl>

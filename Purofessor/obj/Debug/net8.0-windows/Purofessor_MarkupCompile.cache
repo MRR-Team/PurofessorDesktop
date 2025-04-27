@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\Visual Studio\PurofessorDesktop\Purofessor\App.xaml
-6-360405476
+9552085753
 
-92099514404
+122096353254
 198-1509178875
-components\TopPanel.xaml;LoginWindow.xaml;MainWindow.xaml;Views\Counterpick.xaml;Views\Login.xaml;Views\ServerStatus.xaml;
+components\TopPanel.xaml;components\TopPanel_Guest.xaml;GuestWindow.xaml;LoginWindow.xaml;MainWindow.xaml;Views\Counterpick.xaml;Views\Login.xaml;Views\Register.xaml;Views\ServerStatus.xaml;
 
 False
 

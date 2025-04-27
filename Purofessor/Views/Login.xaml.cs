@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,19 @@ namespace Purofessor.Views
             {
                 MessageBox.Show("Nieprawidłowy login lub hasło!");
             }
+        }
+        private void RegisterLink_Click(object sender, RoutedEventArgs e)
+        {
+            // Załaduj stronę rejestracji
+            this.NavigationService?.Navigate(new Register());
+        }
+        private void GuestLink_Click(object sender, RoutedEventArgs e)
+        {
+            // Załaduj stronę gościa
+            GuestWindow GuestWindow = new GuestWindow();
+            GuestWindow.Show();
+
+            Window.GetWindow(this)?.Close();
         }
     }
 }

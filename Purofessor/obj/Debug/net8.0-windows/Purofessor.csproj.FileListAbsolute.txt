@@ -84,3 +84,9 @@ D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\refint\Pu
 D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor.pdb
 D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor.genruntimeconfig.cache
 D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\ref\Purofessor.dll
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\components\TopPanel_Guest.baml
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\Register.baml
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\components\TopPanel_Guest.g.cs
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\GuestWindow.g.cs
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\Register.g.cs
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\GuestWindow.baml

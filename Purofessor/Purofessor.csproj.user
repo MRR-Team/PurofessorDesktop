@@ -5,6 +5,9 @@
     <Compile Update="components\TopPanel.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="GuestWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -14,12 +17,24 @@
     <Compile Update="Views\Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Register.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ServerStatus.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="components\TopPanel_Guest.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GuestWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Register.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

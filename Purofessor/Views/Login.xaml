@@ -6,7 +6,6 @@
       xmlns:local="clr-namespace:Purofessor.Views"
       Background="Gray"
       mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="500"
       Title="Login">
 
     <Grid>
@@ -31,6 +30,18 @@
                     Background="DodgerBlue"
                     Foreground="White"
                     Click="LoginButton_Click"/>
+                <TextBlock TextAlignment="Center" Margin="0,8,0,0">
+                    Nie masz konta? 
+                <Hyperlink Click="RegisterLink_Click">
+                  Zarejestruj się!
+                </Hyperlink>
+                </TextBlock>
+                <TextBlock TextAlignment="Center" Margin="0,5,0,0">
+                 Albo kontynuuj jako
+                <Hyperlink Click="GuestLink_Click">
+                   Gość
+                </Hyperlink>
+                </TextBlock>
             </StackPanel>
         </Border>
     </Grid>
