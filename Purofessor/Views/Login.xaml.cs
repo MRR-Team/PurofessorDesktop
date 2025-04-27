@@ -29,14 +29,16 @@ namespace Purofessor.Views
             string login = LoginTextBox.Text;
             string haslo = PasswordBox.Password;
 
-            if (login == "admin" && haslo == "1234")
+            if (LoginTextBox.Text == "admin" && PasswordBox.Password == "1234")
             {
-                this.NavigationService.Navigate(new Counterpick());
-                MessageBox.Show("Zalogowano pomyślnie!");
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+
+                Window.GetWindow(this)?.Close(); 
             }
             else
             {
-                MessageBox.Show("Nieprawidłowy login lub hasło.");
+                MessageBox.Show("Nieprawidłowy login lub hasło!");
             }
         }
     }

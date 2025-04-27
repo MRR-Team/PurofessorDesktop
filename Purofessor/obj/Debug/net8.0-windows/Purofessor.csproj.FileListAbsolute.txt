@@ -52,3 +52,35 @@ C:\Users\buchc\Source\Repos\PurofessorDesktopGit2\Purofessor\obj\Debug\net8.0-wi
 C:\Users\buchc\Source\Repos\PurofessorDesktopGit2\Purofessor\obj\Debug\net8.0-windows\Views\ServerStatus.baml
 C:\Users\buchc\Source\Repos\PurofessorDesktopGit2\Purofessor\obj\Debug\net8.0-windows\Views\Login.g.cs
 C:\Users\buchc\Source\Repos\PurofessorDesktopGit2\Purofessor\obj\Debug\net8.0-windows\Views\Login.baml
+D:\Visual Studio\PurofessorDesktop\Purofessor\bin\Debug\net8.0-windows\Purofessor.exe
+D:\Visual Studio\PurofessorDesktop\Purofessor\bin\Debug\net8.0-windows\Purofessor.deps.json
+D:\Visual Studio\PurofessorDesktop\Purofessor\bin\Debug\net8.0-windows\Purofessor.runtimeconfig.json
+D:\Visual Studio\PurofessorDesktop\Purofessor\bin\Debug\net8.0-windows\Purofessor.dll
+D:\Visual Studio\PurofessorDesktop\Purofessor\bin\Debug\net8.0-windows\Purofessor.pdb
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\components\TopPanel.baml
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\components\TopPanel.g.cs
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\LoginWindow.g.cs
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\Counterpick.g.cs
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\Login.g.cs
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\ServerStatus.g.cs
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\App.g.cs
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor_MarkupCompile.cache
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor_MarkupCompile.lref
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\LoginWindow.baml
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\MainWindow.baml
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\Counterpick.baml
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\Login.baml
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\ServerStatus.baml
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor.g.resources
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor.GeneratedMSBuildEditorConfig.editorconfig
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor.AssemblyInfoInputs.cache
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor.AssemblyInfo.cs
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor.csproj.CoreCompileInputs.cache
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor.sourcelink.json
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor.dll
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\refint\Purofessor.dll
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor.pdb
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor.genruntimeconfig.cache
+D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\ref\Purofessor.dll

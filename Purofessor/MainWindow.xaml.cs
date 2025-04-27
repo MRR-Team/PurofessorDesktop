@@ -7,7 +7,7 @@ namespace Purofessor
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new Views.Login());
+            MainFrame.Navigate(new Views.Counterpick());
         }
 
 
