@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studio\\PurofessorDesktop\\Purofessor\\Purofessor.csproj",
+      "projectUniqueName": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop3\\Purofessor\\Purofessor.csproj",
       "projectName": "Purofessor",
-      "projectPath": "D:\\Visual Studio\\PurofessorDesktop\\Purofessor\\Purofessor.csproj",
+      "projectPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop3\\Purofessor\\Purofessor.csproj",
       "packagesPath": "C:\\Users\\buchc\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual Studio\\PurofessorDesktop\\Purofessor\\obj\\",
+      "outputPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop3\\Purofessor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,7 +51,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -75,7 +76,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -90,3 +90,44 @@ D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\component
 D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\GuestWindow.g.cs
 D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\Register.g.cs
 D:\Visual Studio\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\GuestWindow.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\components\TopPanel.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\components\TopPanel_Guest.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Views\Register.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\components\TopPanel.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\components\TopPanel_Guest.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\GuestWindow.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\LoginWindow.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Views\Counterpick.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Views\Login.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Views\Register.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Views\ServerStatus.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor_MarkupCompile.cache
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor_MarkupCompile.lref
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor.dll
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\refint\Purofessor.dll
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor.pdb
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\bin\Debug\net8.0-windows\Purofessor.exe
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\bin\Debug\net8.0-windows\Purofessor.deps.json
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\bin\Debug\net8.0-windows\Purofessor.runtimeconfig.json
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\bin\Debug\net8.0-windows\Purofessor.dll
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\bin\Debug\net8.0-windows\Purofessor.pdb
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\GuestWindow.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\LoginWindow.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Views\Counterpick.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Views\Login.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Views\ServerStatus.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor.g.resources
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor.Resources.Strings.resources
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor.Resources.StringsPL.resources
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor.csproj.GenerateResource.cache
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor.AssemblyInfoInputs.cache
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor.AssemblyInfo.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor.csproj.CoreCompileInputs.cache
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor.sourcelink.json
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\Purofessor.genruntimeconfig.cache
+C:\Users\buchc\Source\Repos\PurofessorDesktop3\Purofessor\obj\Debug\net8.0-windows\ref\Purofessor.dll
