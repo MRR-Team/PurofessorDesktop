@@ -4,30 +4,45 @@
              Height="50">
     <Grid>
         <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="41" Fill="#80FFFFFF"/>
-        <Button Content="Kontra"
-                x:Name="KontraButton"
-                HorizontalAlignment="Left"
-                Margin="10,11,0,0"
-                VerticalAlignment="Top"
-                Width="58"
-                Height="21"
-                Click="Kontra_Click"
-                Background="Transparent"
-                BorderBrush="Blue"
-                BorderThickness="0,0,0,3"
-                Foreground="Black"/>
 
-        <Button Content="Status Servera LOL"
-                x:Name="KontraStatusButtonButton"
-                HorizontalAlignment="Left"
-                Margin="84,11,0,0"
-                VerticalAlignment="Top"
-                Width="115"
-                Height="21"
-                Click="Status_Click"
-                Background="Transparent"
-                BorderBrush="Blue"
-                BorderThickness="0,0,0,2"
-                Foreground="Black"/>
+        <Grid Margin="10,5,10,0" VerticalAlignment="Top" Height="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Button Content="Kontra"
+                        x:Name="KontraButton"
+                        Width="58"
+                        Margin="0,0,10,0"
+                        Click="Kontra_Click"
+                        Background="Transparent"
+                        BorderBrush="Blue"
+                        BorderThickness="0,0,0,3"
+                        Foreground="Black"/>
+                <Button Content="Status Servera LOL"
+                        x:Name="KontraStatusButtonButton"
+                        Width="115"
+                        Click="Status_Click"
+                        Background="Transparent"
+                        BorderBrush="Blue"
+                        BorderThickness="0,0,0,2"
+                        Foreground="Black"/>
+            </StackPanel>
+
+            <ComboBox x:Name="LanguageComboBox"
+                      Margin="5,0,0,0"
+                      Width="100"
+                      Height="22"
+                      Grid.Column="2"
+                      VerticalAlignment="Center"
+                      >
+                <!--SelectionChanged="LanguageComboBox_SelectionChanged"-->
+                <ComboBoxItem Tag="en" Content="English"/>
+                <ComboBoxItem Tag="pl" Content="Polski"/>
+            </ComboBox>
+        </Grid>
     </Grid>
 </UserControl>
