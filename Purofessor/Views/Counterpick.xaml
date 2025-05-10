@@ -1,6 +1,5 @@
 ﻿<Page x:Class="Purofessor.Views.Counterpick"
       
-      xmlns:resx="clr-namespace:Purofessor.Resources"
       xmlns:sys="clr-namespace:System;assembly=mscorlib"
       
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -12,7 +11,10 @@
       mc:Ignorable="d" 
       Background="Gray"
       d:DesignHeight="350" d:DesignWidth="500"
-      Title="Counterpick">
+        Title="Counterpick">
+      
+
+      
 
 
 

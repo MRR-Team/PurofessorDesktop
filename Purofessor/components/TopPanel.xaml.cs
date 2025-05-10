@@ -43,7 +43,14 @@ namespace Purofessor.components
 
         private void LangBtns_Click(object sender, RoutedEventArgs e)
         {
-            SetLang(((Button)sender).Tag.ToString());
+            if (sender is Button button && button.Tag is string lang)
+            {
+                SetLang(lang);
+            }
+            else
+            {
+                MessageBox.Show("Language change error.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
         private void SetLang(String lang)
         {

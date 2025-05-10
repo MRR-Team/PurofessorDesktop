@@ -44,7 +44,10 @@
                         BorderBrush="Gray"
                         BorderThickness="1"
                         Foreground="Black" 
-                        Click="LangBtns_Click"/>
+                        Click="LangBtns_Click"
+                        IsEnabled="False"
+                        />
+                        
                 <Button Content="EN"
                         Tag="en"
                         x:Name="EnglishBtn"

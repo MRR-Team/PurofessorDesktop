@@ -31,6 +31,12 @@
     <Page Update="GuestWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Languages\Dictionary-en.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Languages\Dictionary-pl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
