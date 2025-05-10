@@ -9,7 +9,6 @@
       xmlns:local="clr-namespace:Purofessor.Views"
       xmlns:components="clr-namespace:Purofessor.components"
       mc:Ignorable="d" 
-      Background="Gray"
       d:DesignHeight="350" d:DesignWidth="500"
         Title="Counterpick">
       
@@ -20,7 +19,6 @@
 
     <Grid>
 
-        <components:TopPanel HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="{DynamicResource ChooseChamp}" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"><Run Language="pl-pl"/></TextBlock>

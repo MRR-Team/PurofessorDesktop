@@ -24,23 +24,39 @@ namespace Purofessor.components
     /// </summary>
     public partial class TopPanel : UserControl
     {
+        private Button _previousTabButton;
         public TopPanel()
         {
             InitializeComponent();
+            _previousTabButton = KontraButton;
+            SetLang(Properties.Settings.Default.lang);
         }
 
         private void Kontra_Click(object sender, RoutedEventArgs e)
         {
+            SetActiveTab(KontraButton);
             var parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow?.MainFrame.Navigate(new Counterpick());
         }
 
         private void Status_Click(object sender, RoutedEventArgs e)
         {
+            SetActiveTab(StatusButton);
             var parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow?.MainFrame.Navigate(new ServerStatus());
         }
-
+        private void SetActiveTab(Button newActiveButton)
+        {
+            if (newActiveButton != _previousTabButton)
+            {
+                if (_previousTabButton != null)
+                {
+                    _previousTabButton.BorderThickness = new Thickness(0, 0, 0, 2);
+                }
+                newActiveButton.BorderThickness = new Thickness(0, 0, 0, 3);
+                _previousTabButton = newActiveButton;
+            }
+        }
         private void LangBtns_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button button && button.Tag is string lang)
@@ -75,6 +91,8 @@ namespace Purofessor.components
                     break;
 
             }
+            Properties.Settings.Default.lang = lang;
+            Properties.Settings.Default.Save();
         }
     }
 }

@@ -9,8 +9,7 @@
       d:DesignHeight="350" d:DesignWidth="500"
       Title="ServerStatus">
 
-    <Grid Background="Gray">
-        <components:TopPanel HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+    <Grid>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 

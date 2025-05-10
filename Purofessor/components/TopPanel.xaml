@@ -12,6 +12,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
+            <!-- Zakładki -->
             <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
                 <Button Content="Kontra"
                         x:Name="KontraButton"
@@ -23,7 +24,7 @@
                         BorderThickness="0,0,0,3"
                         Foreground="Black"/>
                 <Button Content="Status Servera LOL"
-                        x:Name="KontraStatusButtonButton"
+                        x:Name="StatusButton"
                         Width="115"
                         Click="Status_Click"
                         Background="Transparent"
@@ -32,7 +33,7 @@
                         Foreground="Black"/>
             </StackPanel>
 
-            <!-- ZAMIANA ComboBox NA DWA PRZYCISKI -->
+            <!-- Przyciski językowe -->
             <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center" Margin="5,0,0,0">
                 <Button Content="PL"
                         Tag="pl"
@@ -45,9 +46,7 @@
                         BorderThickness="1"
                         Foreground="Black" 
                         Click="LangBtns_Click"
-                        IsEnabled="False"
-                        />
-                        
+                        IsEnabled="False"/>
                 <Button Content="EN"
                         Tag="en"
                         x:Name="EnglishBtn"

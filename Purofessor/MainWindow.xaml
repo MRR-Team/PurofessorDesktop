@@ -4,8 +4,11 @@
         Title="Purofessor" Height="350" Width="500"
         Background="gray"
         xmlns:components="clr-namespace:Purofessor.components"
+        
 >
     <Grid>
+        <components:TopPanel HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
