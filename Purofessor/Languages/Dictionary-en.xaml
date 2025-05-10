@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:System="clr-namespace:System;assembly=System.Runtime">
+
+    <System:String x:Key="ChooseChamp">Choose enemy champion</System:String>
+    <System:String x:Key="InsertChamp">Enter champion name...</System:String>
+    <System:String x:Key="ChoosePos">Choose role</System:String>
+    <System:String x:Key="Supp">Support</System:String>
+    <System:String x:Key="Bottom">Bottom</System:String>
+    <System:String x:Key="Mid">Middle</System:String>
+    <System:String x:Key="Jungle">Jungle</System:String>
+    <System:String x:Key="Top">Top</System:String>
+    <System:String x:Key="GenCounter">Generate counterpick</System:String>
+</ResourceDictionary>

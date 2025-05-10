@@ -12,7 +12,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" >
+            <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
                 <Button Content="Kontra"
                         x:Name="KontraButton"
                         Width="58"
@@ -32,17 +32,30 @@
                         Foreground="Black"/>
             </StackPanel>
 
-            <ComboBox x:Name="LanguageComboBox"
-                      Margin="5,0,0,0"
-                      Width="100"
-                      Height="22"
-                      Grid.Column="2"
-                      VerticalAlignment="Center"
-                      >
-                <!--SelectionChanged="LanguageComboBox_SelectionChanged"-->
-                <ComboBoxItem Tag="en" Content="English"/>
-                <ComboBoxItem Tag="pl" Content="Polski"/>
-            </ComboBox>
+            <!-- ZAMIANA ComboBox NA DWA PRZYCISKI -->
+            <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center" Margin="5,0,0,0">
+                <Button Content="PL"
+                        Tag="pl"
+                        x:Name="PolishBtn"
+                        Width="40"
+                        Height="22"
+                        Margin="0,0,5,0"
+                        Background="Transparent"
+                        BorderBrush="Gray"
+                        BorderThickness="1"
+                        Foreground="Black" 
+                        Click="LangBtns_Click"/>
+                <Button Content="EN"
+                        Tag="en"
+                        x:Name="EnglishBtn"
+                        Width="40"
+                        Height="22"
+                        Background="Transparent"
+                        BorderBrush="Gray"
+                        BorderThickness="1"
+                        Foreground="Black" 
+                        Click="LangBtns_Click"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </UserControl>

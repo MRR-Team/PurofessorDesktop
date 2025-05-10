@@ -13,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
+using System.Globalization;
+using System.Security.Policy;
 
 namespace Purofessor.components
 {
@@ -36,6 +39,35 @@ namespace Purofessor.components
         {
             var parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow?.MainFrame.Navigate(new ServerStatus());
+        }
+
+        private void LangBtns_Click(object sender, RoutedEventArgs e)
+        {
+            SetLang(((Button)sender).Tag.ToString());
+        }
+        private void SetLang(String lang)
+        {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(lang);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
+
+            Application.Current.Resources.MergedDictionaries.Clear();
+            ResourceDictionary resdict = new ResourceDictionary()
+            {
+                Source = new Uri($"/Languages/Dictionary-{lang}.xaml", UriKind.Relative)
+            };
+            Application.Current.Resources.MergedDictionaries.Add(resdict);
+            EnglishBtn.IsEnabled = true;
+            PolishBtn.IsEnabled = true;
+            switch (lang) 
+            { 
+                case "en":
+                    EnglishBtn.IsEnabled = false;
+                    break;
+                case "pl":
+                    PolishBtn.IsEnabled = false;
+                    break;
+
+            }
         }
     }
 }
