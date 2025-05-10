@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Purofessor.Resources;
 namespace Purofessor.Views
 {
     /// <summary>
@@ -23,6 +23,7 @@ namespace Purofessor.Views
         public Counterpick()
         {
             InitializeComponent();
+            MessageBox.Show(Strings.TEST);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {

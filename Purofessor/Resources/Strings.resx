@@ -153,4 +153,8 @@
   <data name="Label_ServerStatus" xml:space="preserve">
     <value>Server status: Working!</value>
   </data>
+  <data name="TEST" xml:space="preserve">
+    <value>DZIAŁAMAAGAHAHA</value>
+    <comment>TESTESTG</comment>
+  </data>
 </root>

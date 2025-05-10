@@ -167,5 +167,14 @@ namespace Purofessor.Resources {
                 return ResourceManager.GetString("Radio_Top", resourceCulture);
             }
         }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu DZIAŁAMAAGAHAHA.
+        /// </summary>
+        internal static string TEST {
+            get {
+                return ResourceManager.GetString("TEST", resourceCulture);
+            }
+        }
     }
 }
