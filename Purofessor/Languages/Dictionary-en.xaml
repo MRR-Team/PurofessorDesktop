@@ -8,7 +8,17 @@
     <System:String x:Key="Supp">Support</System:String>
     <System:String x:Key="Bottom">Bottom</System:String>
     <System:String x:Key="Mid">Middle</System:String>
+    <System:String x:Key="Welcome">Welcome to Purofessor!</System:String>
     <System:String x:Key="Jungle">Jungle</System:String>
     <System:String x:Key="Top">Top</System:String>
+    <System:String x:Key="CounterButton">Counterpick tool</System:String>
+    <System:String x:Key="ServerStatusButton">Server status</System:String>
+    <System:String x:Key="ServerStatus">Server Status: Running!</System:String>
     <System:String x:Key="GenCounter">Generate counterpick</System:String>
+    <System:String x:Key="Password">Password</System:String>
+    <System:String x:Key="LogIn">Log In</System:String>
+    <System:String x:Key="RegisterLink">Register</System:String>
+    <System:String x:Key="NoAccountQ">Don't have an account?</System:String>
+    <System:String x:Key="ContinueAsQuest">Or continue as</System:String>
+    <System:String x:Key="ContinueAsQuestLink">Quest</System:String>
 </ResourceDictionary>

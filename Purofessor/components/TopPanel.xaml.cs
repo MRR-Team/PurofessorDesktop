@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.Threading;
 using System.Globalization;
 using System.Security.Policy;
+using Purofessor.Helpers;
 
 namespace Purofessor.components
 {
@@ -29,7 +30,7 @@ namespace Purofessor.components
         {
             InitializeComponent();
             _previousTabButton = KontraButton;
-            SetLang(Properties.Settings.Default.lang);
+            LanguageHelper.SetLang(Properties.Settings.Default.lang);
         }
 
         private void Kontra_Click(object sender, RoutedEventArgs e)
@@ -61,38 +62,25 @@ namespace Purofessor.components
         {
             if (sender is Button button && button.Tag is string lang)
             {
-                SetLang(lang);
+                EnglishBtn.IsEnabled = true;
+                PolishBtn.IsEnabled = true;
+                switch (lang)
+                {
+                    case "en":
+                        EnglishBtn.IsEnabled = false;
+                        break;
+                    case "pl":
+                        PolishBtn.IsEnabled = false;
+                        break;
+
+                }
+                LanguageHelper.SetLang(lang);
             }
             else
             {
                 MessageBox.Show("Language change error.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
-        private void SetLang(String lang)
-        {
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(lang);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
-
-            Application.Current.Resources.MergedDictionaries.Clear();
-            ResourceDictionary resdict = new ResourceDictionary()
-            {
-                Source = new Uri($"/Languages/Dictionary-{lang}.xaml", UriKind.Relative)
-            };
-            Application.Current.Resources.MergedDictionaries.Add(resdict);
-            EnglishBtn.IsEnabled = true;
-            PolishBtn.IsEnabled = true;
-            switch (lang) 
-            { 
-                case "en":
-                    EnglishBtn.IsEnabled = false;
-                    break;
-                case "pl":
-                    PolishBtn.IsEnabled = false;
-                    break;
-
-            }
-            Properties.Settings.Default.lang = lang;
-            Properties.Settings.Default.Save();
-        }
+        
     }
 }

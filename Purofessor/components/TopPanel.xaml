@@ -14,18 +14,20 @@
 
             <!-- Zakładki -->
             <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
-                <Button Content="Kontra"
+                <Button Content="{DynamicResource CounterButton}"
                         x:Name="KontraButton"
-                        Width="58"
+                        Width="auto"
+                        Padding="8,0,8,0"
                         Margin="0,0,10,0"
                         Click="Kontra_Click"
                         Background="Transparent"
                         BorderBrush="Blue"
                         BorderThickness="0,0,0,3"
                         Foreground="Black"/>
-                <Button Content="Status Servera LOL"
+                <Button Content="{DynamicResource ServerStatusButton}"
                         x:Name="StatusButton"
-                        Width="115"
+                        Width="auto"
+                        Padding="8,0,8,0"
                         Click="Status_Click"
                         Background="Transparent"
                         BorderBrush="Blue"

@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:Purofessor"
         mc:Ignorable="d"
         Title="Witamy w Purofessor" Height="500" Width="400">
+    
     <Grid>
+
         <Frame x:Name="LoginFrame" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

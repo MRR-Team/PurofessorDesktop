@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Globalization;
+using Purofessor.Helpers;
 
 namespace Purofessor
 {
@@ -24,7 +26,8 @@ namespace Purofessor
             
                 InitializeComponent();
                 LoginFrame.Navigate(new Views.Login());
-            
+                LanguageHelper.SetLang(Properties.Settings.Default.lang);
+
         }
     }
 }
