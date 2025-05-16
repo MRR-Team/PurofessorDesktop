@@ -21,25 +21,28 @@ namespace Purofessor.Views
     /// </summary>
     public partial class Login : Page
     {
+        private readonly ApiService _apiService;
         public Login()
         {
             InitializeComponent();
+            _apiService = new ApiService();
         }
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
+
+        private async void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             string login = LoginTextBox.Text;
-            string haslo = PasswordBox.Password;
+            string password = PasswordBox.Password;
 
-            if (LoginTextBox.Text == "admin" && PasswordBox.Password == "1234")
+            try
             {
+                string token = await _apiService.LoginAsync(login, password);
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
-
-                Window.GetWindow(this)?.Close(); 
+                Window.GetWindow(this)?.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Nieprawidłowy login lub hasło!");
+                MessageBox.Show($"Błąd logowania:\n{ex}", "Błąd");
             }
         }
         private void RegisterLink_Click(object sender, RoutedEventArgs e)

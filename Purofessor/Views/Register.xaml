@@ -19,21 +19,41 @@
                            Margin="0,0,0,20"/>
 
                 <TextBlock Text="Login:" FontWeight="SemiBold"/>
-                <TextBox Margin="0,5,0,15"
+                <TextBox x:Name="LoginTextBox"
+                         Margin="0,5,0,15"
+                         Height="30"
+                         VerticalContentAlignment="Center"/>
+
+                <TextBlock Text="Email:" FontWeight="SemiBold"/>
+                <TextBox x:Name="EmailTextBox"
+                         Margin="0,5,0,15"
                          Height="30"
                          VerticalContentAlignment="Center"/>
 
                 <TextBlock Text="Hasło:" FontWeight="SemiBold"/>
-                <PasswordBox Margin="0,5,0,15"
-                             Height="30"
-                             VerticalContentAlignment="Center"/>
+                <PasswordBox x:Name="PasswordBox"
+             Margin="0,5,0,5"
+             Height="30"
+             VerticalContentAlignment="Center"
+             GotFocus="PasswordBox_GotFocus"
+             LostFocus="PasswordBox_LostFocus"/>
+
+                <!-- Podpowiedź -->
+                <TextBlock x:Name="PasswordHintText"
+           Text="Hasło musi mieć co najmniej 8 znaków."
+           Foreground="DarkRed"
+           FontSize="12"
+           Visibility="Collapsed"
+           Margin="0,0,0,10"/>
 
                 <TextBlock Text="Powtórz hasło:" FontWeight="SemiBold"/>
-                <PasswordBox Margin="0,5,0,20"
+                <PasswordBox x:Name="ConfirmPasswordBox"
+                             Margin="0,5,0,20"
                              Height="30"
                              VerticalContentAlignment="Center"/>
 
                 <Button Content="Zarejestruj"
+                        Click="RegisterButton_Click"
                         Height="35"
                         Background="DodgerBlue"
                         Foreground="White"/>

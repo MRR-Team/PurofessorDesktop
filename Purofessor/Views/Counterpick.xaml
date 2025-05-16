@@ -38,7 +38,6 @@
                 <RadioButton Content="{DynamicResource Top}" GroupName="Pozycje" Margin="5"/>
             </StackPanel>
             <Button Content="{DynamicResource GenCounter}" Width="150" Height="40" Click="Button_Click"/>
-
         </StackPanel>
 
     </Grid>

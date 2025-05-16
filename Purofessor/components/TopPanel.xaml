@@ -42,7 +42,7 @@
                         x:Name="PolishBtn"
                         Width="40"
                         Height="22"
-                        Margin="0,0,5,0"
+                        Margin="5,0,5,0"
                         Background="Transparent"
                         BorderBrush="Gray"
                         BorderThickness="1"
@@ -59,6 +59,16 @@
                         BorderThickness="1"
                         Foreground="Black" 
                         Click="LangBtns_Click"/>
+                <Button  Width="22"
+                        Height="22"
+                        Margin="5,0,5,0"
+                        Background="Transparent"
+                        BorderBrush="Gray"
+                        BorderThickness="0"
+                        ToolTip="Profil" 
+                        >
+                    <Image Source="/Images/UserIcon.png" Stretch="Uniform"/>
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>

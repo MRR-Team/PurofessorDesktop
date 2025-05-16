@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Purofessor.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Purofessor.Helpers;
+
 namespace Purofessor.Views
 {
     /// <summary>
@@ -19,9 +22,12 @@ namespace Purofessor.Views
     /// </summary>
     public partial class Counterpick : Page
     {
+
+        private readonly ApiService _apiService;
         public Counterpick()
         {
             InitializeComponent();
+            _apiService = new ApiService();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
