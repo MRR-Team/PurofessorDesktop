@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Height="50">
     <Grid>
-        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="41" Fill="#80FFFFFF"/>
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="80" Fill="#80FFFFFF"/>
 
         <Grid Margin="10,5,10,0" VerticalAlignment="Top" Height="30">
             <Grid.ColumnDefinitions>
@@ -18,12 +18,12 @@
                         x:Name="KontraButton"
                         Width="auto"
                         Padding="8,0,8,0"
-                        Margin="0,0,10,0"
+                        Margin="0,,10,0"
                         Click="Kontra_Click"
                         Background="Transparent"
                         BorderBrush="Blue"
                         BorderThickness="0,0,0,3"
-                        Foreground="Black"/>
+                        Foreground="Black" Height="30"/>
                 <Button Content="{DynamicResource ServerStatusButton}"
                         x:Name="StatusButton"
                         Width="auto"
@@ -37,28 +37,14 @@
 
             <!-- Przyciski językowe -->
             <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center" Margin="5,0,0,0">
-                <Button Content="PL"
-                        Tag="pl"
-                        x:Name="PolishBtn"
-                        Width="40"
-                        Height="22"
-                        Margin="5,0,5,0"
-                        Background="Transparent"
-                        BorderBrush="Gray"
-                        BorderThickness="1"
-                        Foreground="Black" 
-                        Click="LangBtns_Click"
-                        IsEnabled="False"/>
-                <Button Content="EN"
-                        Tag="en"
-                        x:Name="EnglishBtn"
-                        Width="40"
-                        Height="22"
-                        Background="Transparent"
-                        BorderBrush="Gray"
-                        BorderThickness="1"
-                        Foreground="Black" 
-                        Click="LangBtns_Click"/>
+                <ComboBox x:Name="LanguageSelector"
+              Width="100"
+              Height="22"
+              VerticalAlignment="Center"
+              SelectionChanged="LanguageSelector_SelectionChanged">
+                    <ComboBoxItem Content="Polski" Tag="pl"/>
+                    <ComboBoxItem Content="English" Tag="en"/>
+                </ComboBox>
                 <Button x:Name="ProfileButton"
                         Content="{DynamicResource ProfileButtonHi}"
                         Height="22"

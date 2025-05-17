@@ -40,8 +40,17 @@ namespace Purofessor.components
             {
                 ProfileButton.Content = "Profil";
             }
-            _previousTabButton = KontraButton;
             LanguageHelper.SetLang(Properties.Settings.Default.lang);
+            foreach (ComboBoxItem item in LanguageSelector.Items)
+            {
+                if ((string)item.Tag == Properties.Settings.Default.lang)
+                {
+                    LanguageSelector.SelectedItem = item;
+                    break;
+                }
+            }
+            _previousTabButton = KontraButton;
+
         }
 
         private void Kontra_Click(object sender, RoutedEventArgs e)
@@ -69,29 +78,17 @@ namespace Purofessor.components
                 _previousTabButton = newActiveButton;
             }
         }
-        private void LangBtns_Click(object sender, RoutedEventArgs e)
+        private void LanguageSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (sender is Button button && button.Tag is string lang)
+            if (LanguageSelector.SelectedItem is ComboBoxItem selectedItem && selectedItem.Tag is string lang)
             {
-                EnglishBtn.IsEnabled = true;
-                PolishBtn.IsEnabled = true;
-                switch (lang)
-                {
-                    case "en":
-                        EnglishBtn.IsEnabled = false;
-                        break;
-                    case "pl":
-                        PolishBtn.IsEnabled = false;
-                        break;
-
-                }
                 LanguageHelper.SetLang(lang);
-            }
-            else
-            {
-                MessageBox.Show("Language change error.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+                // Save language choice to settings if needed
+                Properties.Settings.Default.lang = lang;
+                Properties.Settings.Default.Save();
             }
         }
-        
+
     }
 }
