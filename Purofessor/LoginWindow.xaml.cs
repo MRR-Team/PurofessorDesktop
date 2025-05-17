@@ -23,10 +23,10 @@ namespace Purofessor
     {
         public LoginWindow()
         {
-            
-                InitializeComponent();
-                LoginFrame.Navigate(new Views.Login());
-                LanguageHelper.SetLang(Properties.Settings.Default.lang);
+           
+            LanguageHelper.SetLang(Properties.Settings.Default.lang);
+            InitializeComponent();
+            LoginFrame.Navigate(new Views.Login());
 
         }
     }
