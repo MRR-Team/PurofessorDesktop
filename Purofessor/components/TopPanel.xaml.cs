@@ -17,6 +17,7 @@ using System.Threading;
 using System.Globalization;
 using System.Security.Policy;
 using Purofessor.Helpers;
+using System.Text.Json;
 
 namespace Purofessor.components
 {
@@ -29,6 +30,16 @@ namespace Purofessor.components
         public TopPanel()
         {
             InitializeComponent();
+            var user = App.ApiService.LoggedUser;
+            if (user != null)
+            {
+                string ProfileButtonHi = ProfileButton.Content?.ToString() ?? "Welcome";
+                ProfileButton.Content = $"{ProfileButtonHi}, {user.Name}";
+            }
+            else
+            {
+                ProfileButton.Content = "Profil";
+            }
             _previousTabButton = KontraButton;
             LanguageHelper.SetLang(Properties.Settings.Default.lang);
         }

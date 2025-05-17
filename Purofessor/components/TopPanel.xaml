@@ -59,16 +59,18 @@
                         BorderThickness="1"
                         Foreground="Black" 
                         Click="LangBtns_Click"/>
-                <Button  Width="22"
+                <Button x:Name="ProfileButton"
+                        Content="{DynamicResource ProfileButtonHi}"
                         Height="22"
-                        Margin="5,0,5,0"
+                        Padding="5,0"
                         Background="Transparent"
                         BorderBrush="Gray"
                         BorderThickness="0"
-                        ToolTip="Profil" 
-                        >
-                    <Image Source="/Images/UserIcon.png" Stretch="Uniform"/>
-                </Button>
+                        Foreground="Black"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        IsHitTestVisible="False" />
             </StackPanel>
         </Grid>
     </Grid>

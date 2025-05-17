@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Purofessor.Models;
 public class ApiService
 {
+    public User LoggedUser { get; private set; }
     private readonly HttpClient _client;
     public string AuthToken { get; private set; }
     public ApiService()
@@ -44,10 +45,17 @@ public class ApiService
         if (response.IsSuccessStatusCode)
         {
             var json = await response.Content.ReadAsStringAsync();
+
             using JsonDocument doc = JsonDocument.Parse(json);
             string token = doc.RootElement.GetProperty("token").GetString();
+            var userElement = doc.RootElement.GetProperty("user").GetRawText();
 
-            // Zapamiętujemy token
+            // Deserializacja użytkownika
+            LoggedUser = JsonSerializer.Deserialize<User>(userElement, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
             AuthToken = token;
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 

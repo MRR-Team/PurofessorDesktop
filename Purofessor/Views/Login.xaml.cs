@@ -21,11 +21,9 @@ namespace Purofessor.Views
     /// </summary>
     public partial class Login : Page
     {
-        private readonly ApiService _apiService;
         public Login()
         {
             InitializeComponent();
-            _apiService = new ApiService();
         }
 
         private async void LoginButton_Click(object sender, RoutedEventArgs e)
@@ -35,14 +33,17 @@ namespace Purofessor.Views
 
             try
             {
-                string token = await _apiService.LoginAsync(login, password);
+                // używamy globalnego ApiService
+                string token = await App.ApiService.LoginAsync(login, password);
+
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
+
                 Window.GetWindow(this)?.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd logowania:\n{ex}", "Błąd");
+                MessageBox.Show($"Błąd logowania:\n{ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         private void RegisterLink_Click(object sender, RoutedEventArgs e)
