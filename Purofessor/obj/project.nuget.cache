@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4H3ZgtdcpJc=",
+  "dgSpecHash": "I5JtEFvhk6U=",
   "success": true,
   "projectFilePath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop2\\Purofessor\\Purofessor.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\buchc\\.nuget\\packages\\extended.wpf.toolkit\\4.7.25104.5739\\extended.wpf.toolkit.4.7.25104.5739.nupkg.sha512"
+  ],
   "logs": []
 }

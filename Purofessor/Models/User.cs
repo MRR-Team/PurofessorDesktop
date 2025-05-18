@@ -16,4 +16,5 @@ namespace Purofessor.Models
         public DateTime UpdatedAt { get; set; }
         public bool IsAdmin { get; set; }
     }
+
 }
