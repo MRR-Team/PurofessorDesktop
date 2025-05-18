@@ -64,6 +64,25 @@ public class ApiService
 
         throw new Exception("Nie udało się zalogować. Sprawdź dane.");
     }
+    public async Task LogoutAsync()
+    {
+        if (string.IsNullOrEmpty(AuthToken))
+            throw new InvalidOperationException("Brak tokenu autoryzacyjnego.");
+
+        var request = new HttpRequestMessage(HttpMethod.Post, "logout");
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", AuthToken);
+
+        var response = await _client.SendAsync(request);
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception($"Wylogowanie nie powiodło się: {response.StatusCode}");
+        }
+
+        // Wyczyść stan klienta
+        AuthToken = null;
+        LoggedUser = null;
+        _client.DefaultRequestHeaders.Authorization = null;
+    }
 
     public async Task<bool> RegisterAsync(string login, string password, string email)
     {
@@ -79,5 +98,41 @@ public class ApiService
 
         var response = await _client.PostAsync("users", content);
         return response.IsSuccessStatusCode;
+    }
+    public async Task<List<string>> GetCounterAsync(string role, string enemyChampion)
+    {
+        var response = await _client.GetAsync($"counter/{role}/{enemyChampion}");
+
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+
+            var champions = JsonSerializer.Deserialize<List<Champion>>(json, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+            return champions.Select(c => c.Name).ToList();
+        }
+
+        throw new Exception($"Nie udało się pobrać kontr: {response.StatusCode}");
+    }
+    public async Task<List<string>> GetChampionsAsync()
+    {
+        var response = await _client.GetAsync("champions");
+
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+
+            var champions = JsonSerializer.Deserialize<List<Champion>>(json, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+            return champions.Select(c => c.Name).ToList();
+        }
+
+        throw new Exception($"Nie udało się pobrać championów: {response.StatusCode}");
     }
 }

@@ -89,6 +89,24 @@ namespace Purofessor.components
                 Properties.Settings.Default.Save();
             }
         }
+        private async void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                await App.ApiService.LogoutAsync(); // jeśli masz ApiService jako singleton/globalnie dostępny
+
+                // Przekieruj użytkownika na stronę logowania lub zamknij okno
+                var loginWindow = new LoginWindow();
+                loginWindow.Show();
+
+                // Zamknij aktualne okno główne (np. MainWindow)
+                Window.GetWindow(this)?.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Błąd podczas wylogowywania: {ex.Message}");
+            }
+        }
 
     }
 }
