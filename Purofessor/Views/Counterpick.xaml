@@ -1,7 +1,5 @@
 ﻿<Page x:Class="Purofessor.Views.Counterpick"
-      
       xmlns:sys="clr-namespace:System;assembly=mscorlib"
-      
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -10,35 +8,49 @@
       xmlns:components="clr-namespace:Purofessor.components"
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="500"
-        Title="Counterpick">
-      
-
-      
-
-
+      Title="Counterpick">
 
     <Grid>
-
-
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="{DynamicResource ChooseChamp}" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"><Run Language="pl-pl"/></TextBlock>
+
+            <!-- Nagłówek -->
+            <TextBlock Text="{DynamicResource ChooseChamp}" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10">
+                <Run Language="pl-pl"/>
+            </TextBlock>
+
+            <!-- Wprowadzanie championa -->
             <Grid Margin="0,0,0,10">
-                <TextBox Name="MyTextBox" Width="200" Height="30" TextChanged="MyTextBox_TextChanged" VerticalContentAlignment="Center"/>
-                <TextBlock Text="{DynamicResource InsertChamp}" Foreground="Gray" 
-                   VerticalAlignment="Center" Margin="5,0,0,0"
-                   IsHitTestVisible="False" Visibility="Collapsed"/>
+                <StackPanel>
+                    <TextBox Name="MyTextBox" Width="200" Height="30" TextChanged="MyTextBox_TextChanged" VerticalContentAlignment="Center"/>
+                    <ListBox Name="SuggestionsListBox"
+                 Width="200"
+                 MaxHeight="100"
+                 Visibility="Collapsed"
+                 MouseLeftButtonUp="SuggestionsListBox_MouseLeftButtonUp"
+                 Margin="0,2,0,0"/>
+                </StackPanel>
             </Grid>
-            <TextBlock Text="{DynamicResource ChoosePos}" FontSize="20" FontWeight="Bold" TextAlignment="Center"><Run Language="pl-pl"/></TextBlock>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
-                <RadioButton Content="{DynamicResource Supp}" GroupName="Pozycje" Margin="5"/>
-                <RadioButton Content="{DynamicResource Bottom}" GroupName="Pozycje" Margin="5"/>
-                <RadioButton Content="{DynamicResource Mid}" GroupName="Pozycje" Margin="5"/>
-                <RadioButton Content="{DynamicResource Jungle}" GroupName="Pozycje" Margin="5"/>
-                <RadioButton Content="{DynamicResource Top}" GroupName="Pozycje" Margin="5"/>
+
+
+            <!-- Wybór pozycji -->
+            <TextBlock Text="{DynamicResource ChoosePos}" FontSize="20" FontWeight="Bold" TextAlignment="Center">
+                <Run Language="pl-pl"/>
+            </TextBlock>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Name="PositionStackPanel">
+                <RadioButton Content="{DynamicResource Supp}" GroupName="Pozycje" Margin="5" Name="RadioSupp"/>
+                <RadioButton Content="{DynamicResource Bottom}" GroupName="Pozycje" Margin="5" Name="RadioBottom"/>
+                <RadioButton Content="{DynamicResource Mid}" GroupName="Pozycje" Margin="5" Name="RadioMid"/>
+                <RadioButton Content="{DynamicResource Jungle}" GroupName="Pozycje" Margin="5" Name="RadioJungle"/>
+                <RadioButton Content="{DynamicResource Top}" GroupName="Pozycje" Margin="5" Name="RadioTop"/>
             </StackPanel>
-            <Button Content="{DynamicResource GenCounter}" Width="150" Height="40" Click="Button_Click"/>
-        </StackPanel>
 
+            <!-- Przycisk do generowania kontry -->
+            <Button Content="{DynamicResource GenCounter}" Width="150" Height="40" Click="Button_Click"/>
+
+            <!-- Miejsce na wynik -->
+            <TextBlock Name="ResultTextBlock" Text="" TextAlignment="Center" Margin="10" FontWeight="Bold" Foreground="Green"/>
+        </StackPanel>
     </Grid>
 </Page>
