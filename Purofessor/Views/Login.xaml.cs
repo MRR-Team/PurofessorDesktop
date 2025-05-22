@@ -36,9 +36,21 @@ namespace Purofessor.Views
                 // używamy globalnego ApiService
                 string token = await App.ApiService.LoginAsync(login, password);
 
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
+                var user = App.ApiService.LoggedUser;
 
+                // sprawdzenie roli
+                if (user.IsAdmin)
+                {
+                    AdminWindow adminWindow = new AdminWindow();
+                    adminWindow.Show();
+                }
+                else
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                }
+
+                // zamknij okno logowania
                 Window.GetWindow(this)?.Close();
             }
             catch (Exception ex)
@@ -46,6 +58,7 @@ namespace Purofessor.Views
                 MessageBox.Show($"Błąd logowania:\n{ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
         private void RegisterLink_Click(object sender, RoutedEventArgs e)
         {
             // Załaduj stronę rejestracji

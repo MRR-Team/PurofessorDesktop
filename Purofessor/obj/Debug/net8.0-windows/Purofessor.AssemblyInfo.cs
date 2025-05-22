@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Purofessor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+159e39af9e95458283306d0ff43ed126dafb6bae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e395bae80e895b60cb8030da00fa912679ec17d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Purofessor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Purofessor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
