@@ -14,9 +14,7 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 
             <!-- Nagłówek -->
-            <TextBlock Text="{DynamicResource ChooseChamp}" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10">
-                <Run Language="pl-pl"/>
-            </TextBlock>
+            <TextBlock Text="{DynamicResource ChooseChamp}" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"/>
 
             <!-- Wprowadzanie championa -->
             <Grid Margin="0,0,0,10">
@@ -34,9 +32,7 @@
 
 
             <!-- Wybór pozycji -->
-            <TextBlock Text="{DynamicResource ChoosePos}" FontSize="20" FontWeight="Bold" TextAlignment="Center">
-                <Run Language="pl-pl"/>
-            </TextBlock>
+            <TextBlock Text="{DynamicResource ChoosePos}" FontSize="20" FontWeight="Bold" TextAlignment="Center"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Name="PositionStackPanel">
                 <RadioButton Content="{DynamicResource Supp}" GroupName="Pozycje" Margin="5" Name="RadioSupp"/>
