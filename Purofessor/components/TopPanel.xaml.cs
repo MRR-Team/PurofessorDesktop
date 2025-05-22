@@ -33,21 +33,11 @@ namespace Purofessor.components
             var user = App.ApiService.LoggedUser;
             if (user != null)
             {
-                string ProfileButtonHi = ProfileButton.Content?.ToString() ?? "Welcome";
-                ProfileButton.Content = $"{ProfileButtonHi}, {user.Name}";
+                ProfileUsername.Text = $", {user.Name}";
             }
             else
             {
-                ProfileButton.Content = "Profil";
-            }
-            LanguageHelper.SetLang(Properties.Settings.Default.lang);
-            foreach (ComboBoxItem item in LanguageSelector.Items)
-            {
-                if ((string)item.Tag == Properties.Settings.Default.lang)
-                {
-                    LanguageSelector.SelectedItem = item;
-                    break;
-                }
+                ProfileUsername.Text = "Profil";
             }
             _previousTabButton = KontraButton;
 
@@ -78,17 +68,7 @@ namespace Purofessor.components
                 _previousTabButton = newActiveButton;
             }
         }
-        private void LanguageSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (LanguageSelector.SelectedItem is ComboBoxItem selectedItem && selectedItem.Tag is string lang)
-            {
-                LanguageHelper.SetLang(lang);
 
-                // Save language choice to settings if needed
-                Properties.Settings.Default.lang = lang;
-                Properties.Settings.Default.Save();
-            }
-        }
         private async void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
             try
