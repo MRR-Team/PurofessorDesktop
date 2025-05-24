@@ -8,6 +8,9 @@
     <Compile Update="components\PanelCompoments\LangSelector.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="components\PanelCompoments\LogoutButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="components\TopPanel.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

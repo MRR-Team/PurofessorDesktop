@@ -4,8 +4,14 @@
              xmlns:pc="clr-namespace:Purofessor.components.PanelComponents"
              Height="50">
     <Grid>
-        <Rectangle VerticalAlignment="Center" Height="100" Fill="#80FFFFFF"/>
-
+        <Rectangle VerticalAlignment="Center" Height="100">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#9370DB" Offset="0"/>
+                    <GradientStop Color="#4B0082" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
         <Grid Margin="10,5,10,0" VerticalAlignment="Top" Height="30">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -57,20 +63,7 @@ VerticalAlignment="Center"/>
         HorizontalAlignment="Right"
         VerticalAlignment="Center"
         IsHitTestVisible="False" />
-
-                <Button x:Name="LogoutButton"
-        Content="Wyloguj"
-        Height="22"
-        Padding="5,0"
-        Margin="5,0,0,0"
-        Background="Transparent"
-        BorderBrush="Gray"
-        BorderThickness="0"
-        Foreground="Black"
-        FontWeight="Normal"
-        HorizontalAlignment="Right"
-        VerticalAlignment="Center"
-        Click="LogoutButton_Click"/>
+                <pc:LogoutButton VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,0,0,0"/>
             </StackPanel>
         </Grid>
     </Grid>

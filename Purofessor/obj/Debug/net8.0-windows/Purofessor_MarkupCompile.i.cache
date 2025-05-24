@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\App.xaml
-14-1777618929
+16-1258365813
 
-21542034412
+221473810476
 203-1140911118
-AdminWindow.xaml;components\PanelCompoments\LangSelector.xaml;components\TopPanel.xaml;components\TopPanel_Guest.xaml;GuestWindow.xaml;Languages\Dictionary-en.xaml;Languages\Dictionary-pl.xaml;LoginWindow.xaml;MainWindow.xaml;Themes\Styles.xaml;Views\Counterpick.xaml;Views\Login.xaml;Views\Register.xaml;Views\ServerStatus.xaml;
+AdminWindow.xaml;components\PanelCompoments\LangSelector.xaml;components\PanelCompoments\LogoutButton.xaml;components\TopPanel.xaml;components\TopPanel_Guest.xaml;GuestWindow.xaml;Languages\Dictionary-en.xaml;Languages\Dictionary-pl.xaml;LoginWindow.xaml;MainWindow.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;Views\Counterpick.xaml;Views\Login.xaml;Views\Register.xaml;Views\ServerStatus.xaml;
 
 False
 
