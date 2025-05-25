@@ -10,7 +10,7 @@
             Background="Transparent"
             BorderBrush="Gray"
             BorderThickness="0"
-            Foreground="Black"
+            Foreground="White"
             FontWeight="Normal"
             HorizontalAlignment="Right"
             VerticalAlignment="Center"

@@ -60,7 +60,7 @@ namespace Purofessor.components.PanelComponents {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Purofessor;V1.0.0.0;component/components/panelcompoments/langselector.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Purofessor;component/components/panelcompoments/langselector.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\components\PanelCompoments\LangSelector.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

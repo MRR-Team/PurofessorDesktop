@@ -1,11 +1,21 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!-- Kolory bazowe -->
     <Color x:Key="PrimaryColor">#9370DB</Color>
+    <Color x:Key="SecondaryColor">#4B0082</Color>
+    <Color x:Key="GradientStartColor">#7A5DC2</Color>
+    <!-- nowy: trochę ciemniejszy niż Primary -->
+    <Color x:Key="HoverBackgroundColor">#1A0D26</Color>
+    <!-- ciemny hover -->
     <Color x:Key="BackgroundColor">#FF1E1E1E</Color>
     <Color x:Key="ForegroundColor">#FFFFFFFF</Color>
-
+v
+    <!-- Brush-e -->
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}" />
+    <SolidColorBrush x:Key="GradientStartBrush" Color="{StaticResource GradientStartColor}" />
+    <SolidColorBrush x:Key="HoverBackgroundBrush" Color="{StaticResource HoverBackgroundColor}" />
     <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
     <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource ForegroundColor}" />
 
