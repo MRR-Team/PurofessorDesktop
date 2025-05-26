@@ -8,13 +8,13 @@ namespace Purofessor.Models
 {
     public class User
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string EmailVerifiedAt { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
-        public bool IsAdmin { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string email { get; set; }
+        public string emailverifiedat { get; set; }
+        public DateTime createdat { get; set; }
+        public DateTime updatedat { get; set; }
+        public bool is_admin { get; set; }
     }
 
 }

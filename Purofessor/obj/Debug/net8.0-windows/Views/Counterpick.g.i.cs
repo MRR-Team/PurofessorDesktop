@@ -126,7 +126,7 @@ namespace Purofessor.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Purofessor;component/views/counterpick.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Purofessor;V1.0.0.0;component/views/counterpick.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\Counterpick.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

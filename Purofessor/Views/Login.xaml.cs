@@ -39,7 +39,7 @@ namespace Purofessor.Views
                 var user = App.ApiService.LoggedUser;
 
                 // sprawdzenie roli
-                if (user.IsAdmin)
+                if (user.is_admin)
                 {
                     AdminWindow adminWindow = new AdminWindow();
                     adminWindow.Show();
