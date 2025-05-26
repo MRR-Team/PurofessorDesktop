@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Purofessor"
         mc:Ignorable="d"
+                Background="{DynamicResource BackgroundBrush}"
+        Foreground="{DynamicResource ForegroundBrush}"
         Title="AdminWindow" Height="450" Width="800">
     <Grid>
-        
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Wybierz motyw:" Margin="0,0,0,10" Foreground="{DynamicResource ForegroundBrush}"/>
+            <ToggleButton x:Name="ThemeToggle" Content="Tryb ciemny" Width="100"
+                  Checked="ThemeToggle_Checked"
+                  Unchecked="ThemeToggle_Unchecked"/>
+        </StackPanel>
     </Grid>
 </Window>

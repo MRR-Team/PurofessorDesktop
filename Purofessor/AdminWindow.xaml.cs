@@ -23,5 +23,23 @@ namespace Purofessor
         {
             InitializeComponent();
         }
+        private void ThemeToggle_Checked(object sender, RoutedEventArgs e)
+        {
+            ApplyTheme("DarkTheme.xaml");
+        }
+
+        private void ThemeToggle_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ApplyTheme("LightTheme.xaml");
+        }
+
+        private void ApplyTheme(string themeFile)
+        {
+            var dict = new ResourceDictionary();
+            dict.Source = new Uri($"Themes/{themeFile}", UriKind.Relative);
+
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(dict);
+        }
     }
 }

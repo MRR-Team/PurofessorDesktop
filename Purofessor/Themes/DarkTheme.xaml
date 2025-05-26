@@ -5,13 +5,9 @@
     <Color x:Key="PrimaryColor">#9370DB</Color>
     <Color x:Key="SecondaryColor">#4B0082</Color>
     <Color x:Key="GradientStartColor">#7A5DC2</Color>
-    <!-- nowy: trochę ciemniejszy niż Primary -->
     <Color x:Key="HoverBackgroundColor">#1A0D26</Color>
-    <!-- ciemny hover -->
     <Color x:Key="BackgroundColor">#FF1E1E1E</Color>
     <Color x:Key="ForegroundColor">#FFFFFFFF</Color>
-v
-    <!-- Brush-e -->
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}" />
     <SolidColorBrush x:Key="GradientStartBrush" Color="{StaticResource GradientStartColor}" />
