@@ -33,7 +33,7 @@ namespace Purofessor.components
             var user = App.ApiService.LoggedUser;
             if (user != null)
             {
-                ProfileUsername.Text = $", {user.Name}";
+                ProfileUsername.Text = $", {user.name}";
             }
             else
             {
@@ -42,6 +42,7 @@ namespace Purofessor.components
             _previousTabButton = KontraButton;
 
         }
+
 
         private void Kontra_Click(object sender, RoutedEventArgs e)
         {
