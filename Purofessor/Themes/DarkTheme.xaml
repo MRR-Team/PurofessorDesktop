@@ -4,13 +4,15 @@
     <!-- Kolory bazowe -->
     <Color x:Key="PrimaryColor">#9370DB</Color>
     <Color x:Key="SecondaryColor">#4B0082</Color>
-    <Color x:Key="GradientStartColor">#7A5DC2</Color>
+    <Color x:Key="GradientStartColor">#7C4DFF</Color>
+    <Color x:Key="GradientEndColor">#673AB7</Color>
     <Color x:Key="HoverBackgroundColor">#1A0D26</Color>
     <Color x:Key="BackgroundColor">#FF1E1E1E</Color>
     <Color x:Key="ForegroundColor">#FFFFFFFF</Color>
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}" />
     <SolidColorBrush x:Key="GradientStartBrush" Color="{StaticResource GradientStartColor}" />
+    <SolidColorBrush x:Key="GradientEndBrush" Color="{StaticResource GradientEndColor}" />
     <SolidColorBrush x:Key="HoverBackgroundBrush" Color="{StaticResource HoverBackgroundColor}" />
     <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
     <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource ForegroundColor}" />
