@@ -304,3 +304,7 @@ C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-window
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\components\PanelCompoments\LogoutButton.g.cs
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Themes\DarkTheme.baml
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Themes\LightTheme.baml
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\Profile.baml
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\Profile.g.cs
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\components\PanelCompoments\ThemeSelector.baml
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\components\PanelCompoments\ThemeSelector.g.cs

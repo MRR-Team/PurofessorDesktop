@@ -11,6 +11,9 @@
     <Compile Update="components\PanelCompoments\LogoutButton.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="components\PanelCompoments\ThemeSelector.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="components\TopPanel.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -24,6 +27,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Profile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Register.xaml.cs">

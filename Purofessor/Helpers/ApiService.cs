@@ -64,6 +64,30 @@ public class ApiService
 
         throw new Exception("Nie udało się zalogować. Sprawdź dane.");
     }
+    public async Task<bool> UpdateUserAsync(int id, string name, string email, string password)
+{
+    var payload = new Dictionary<string, object>();
+
+    // Tylko jeśli użytkownik wprowadził nowe wartości
+    if (!string.IsNullOrWhiteSpace(name))
+        payload["name"] = name;
+
+    if (!string.IsNullOrWhiteSpace(email))
+        payload["email"] = email;
+
+    if (!string.IsNullOrWhiteSpace(password))
+        payload["password"] = password;
+
+    // Nie wysyłamy pustego payloadu!
+    if (payload.Count == 0)
+        throw new Exception("Nie podano żadnych danych do aktualizacji.");
+
+    var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
+    var response = await _client.PutAsync($"users/{id}", content);
+
+    return response.IsSuccessStatusCode;
+}
+
     public async Task LogoutAsync()
     {
         if (string.IsNullOrEmpty(AuthToken))
