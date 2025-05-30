@@ -88,6 +88,14 @@ namespace Purofessor.components
                 MessageBox.Show($"Błąd podczas wylogowywania: {ex.Message}");
             }
         }
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            SetActiveTab(ProfileButton);
+            var parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow?.MainFrame.Navigate(new Profile());
+
+        }
+
 
     }
 }

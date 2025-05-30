@@ -7,11 +7,11 @@
     <UserControl.Resources>
         <Style x:Key="TopPanelButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Padding" Value="10,6"/>
             <Setter Property="Margin" Value="0,0,10,0"/>
-            <Setter Property="BorderBrush" Value="#4B0082"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource SecondaryBrush}"/>
             <Setter Property="BorderThickness" Value="0,0,0,2"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
@@ -29,21 +29,23 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#1A0D26"/>
-                    <Setter Property="BorderBrush" Value="#9370DB"/>
+                    <Setter Property="Background" Value="{DynamicResource HoverBackgroundBrush}"/>
+                    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
+
     <Grid>
         <Rectangle VerticalAlignment="Center" Height="60">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop Color="#7A5DC2" Offset="0"/>
-                    <GradientStop Color="#4B0082" Offset="1"/>
+                    <GradientStop Color="{DynamicResource GradientStartColor}" Offset="0"/>
+                    <GradientStop Color="{DynamicResource GradientEndColor}" Offset="1"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
+
         <Grid Margin="10,15,10,0" VerticalAlignment="Top" Height="30">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -53,37 +55,48 @@
 
             <!-- Zakładki -->
             <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
-                <Button Style="{StaticResource TopPanelButtonStyle}"
-        Content="{DynamicResource CounterButton}"
-        x:Name="KontraButton"
-        Click="Kontra_Click"/>
-
-                <Button Style="{StaticResource TopPanelButtonStyle}"
-        Content="{DynamicResource ServerStatusButton}"
-        x:Name="StatusButton"
-        Click="Status_Click"/>
+                <Button Style="{DynamicResource TopPanelButtonStyle}"
+                        Content="{DynamicResource CounterButton}"
+                        x:Name="KontraButton"
+                        Click="Kontra_Click"/>
+                <Button Style="{DynamicResource TopPanelButtonStyle}"
+                        Content="{DynamicResource ServerStatusButton}"
+                        x:Name="StatusButton"
+                        Click="Status_Click"/>
             </StackPanel>
 
-            <!-- Przyciski językowe -->
+            <!-- Przyciski językowe i profilowe -->
             <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center" Margin="5,0,0,0">
-                <pc:LangSelector VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <pc:ThemeSelector VerticalAlignment="Center" Margin="0,0,5,0"/>
 
-                <TextBlock Text="{DynamicResource ProfileButtonHi}" Height="22"
-        Padding="0,4,0,0"
-Background="Transparent"
-Foreground="White"
-HorizontalAlignment="Right"
-VerticalAlignment="Center"/>
+                <TextBlock Text="{DynamicResource ProfileButtonHi}"
+                           Height="22"
+                           Padding="0,4,0,0"
+                           Background="Transparent"
+                           Foreground="{DynamicResource ForegroundBrush}"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"/>
 
                 <TextBlock x:Name="ProfileUsername"
-        Height="22"
-        Padding="0,4,0,0"
-                           
-        Background="Transparent"
-        Foreground="White"
-        HorizontalAlignment="Right"
-        VerticalAlignment="Center"
-        IsHitTestVisible="False" />
+                           Height="22"
+                           Padding="0,4,0,0"
+                           Background="Transparent"
+                           Foreground="{DynamicResource ForegroundBrush}"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"
+                           IsHitTestVisible="False" />
+
+                <Button x:Name="ProfileButton"
+                        Width="30"
+                        Height="30"
+                        Margin="0,0,10,0"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        ToolTip="Profil"
+                        Click="ProfileButton_Click">
+                    <Image Source="pack://application:,,,/Images/UserIcon.png" Width="30" Height="30"/>
+                </Button>
+
                 <pc:LogoutButton VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,0,0,0"/>
             </StackPanel>
         </Grid>
