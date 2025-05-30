@@ -13,18 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Globalization;
 using Purofessor.Helpers;
+using Purofessor.Properties;
 
 namespace Purofessor
 {
-    /// <summary>
-    /// Interaction logic for LoginWindow.xaml
-    /// </summary>
     public partial class LoginWindow : Window
     {
         public LoginWindow()
         {
-           
-            LanguageHelper.SetLang(Properties.Settings.Default.lang);
+            ThemeHelper.SetTheme(Settings.Default.theme);
             InitializeComponent();
             LoginFrame.Navigate(new Views.Login());
 
