@@ -5,5 +5,8 @@
     <Setting Name="lang" Type="System.String" Scope="User">
       <Value Profile="(Default)">pl</Value>
     </Setting>
+    <Setting Name="theme" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DarkTheme.xaml</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
