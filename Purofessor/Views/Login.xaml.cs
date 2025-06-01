@@ -36,21 +36,11 @@ namespace Purofessor.Views
                 // używamy globalnego ApiService
                 string token = await App.ApiService.LoginAsync(login, password);
 
-                var user = App.ApiService.LoggedUser;
-
-                // sprawdzenie roli
-                if (user.is_admin)
-                {
-                    AdminWindow adminWindow = new AdminWindow();
-                    adminWindow.Show();
-                }
-                else
-                {
+                /// CHYBA NIE POTRZEBNE
+                /// var user = App.ApiService.LoggedUser;
+                
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
-                }
-
-                // zamknij okno logowania
                 Window.GetWindow(this)?.Close();
             }
             catch (Exception ex)
