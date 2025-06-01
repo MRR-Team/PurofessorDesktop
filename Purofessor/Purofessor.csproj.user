@@ -5,13 +5,13 @@
     <Compile Update="AdminWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="components\PanelCompoments\LangSelector.xaml.cs">
+    <Compile Update="components\SettingsCompoments\LangSelector.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="components\PanelCompoments\LogoutButton.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="components\PanelCompoments\ThemeSelector.xaml.cs">
+    <Compile Update="components\SettingsCompoments\ThemeSelector.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="components\TopPanel.xaml.cs">
@@ -21,6 +21,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="LoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SettingsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Counterpick.xaml.cs">
