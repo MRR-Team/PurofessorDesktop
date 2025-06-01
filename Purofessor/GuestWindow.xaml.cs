@@ -22,6 +22,7 @@ namespace Purofessor
         public GuestWindow()
         {
             InitializeComponent();
+            GuestFrame.Navigate(new Views.Counterpick());
         }
     }
 }
