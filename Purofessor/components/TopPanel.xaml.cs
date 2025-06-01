@@ -18,6 +18,7 @@ using System.Globalization;
 using System.Security.Policy;
 using Purofessor.Helpers;
 using System.Text.Json;
+using Purofessor.Properties;
 
 namespace Purofessor.components
 {
@@ -59,7 +60,7 @@ namespace Purofessor.components
         }
         private void SetActiveTab(Button newActiveButton)
         {
-            if (newActiveButton != _previousTabButton)
+            if (newActiveButton!= null && newActiveButton != _previousTabButton)
             {
                 if (_previousTabButton != null)
                 {
@@ -67,6 +68,11 @@ namespace Purofessor.components
                 }
                 newActiveButton.BorderThickness = new Thickness(0, 0, 0, 3);
                 _previousTabButton = newActiveButton;
+            }
+            else
+            {
+                _previousTabButton.BorderThickness = new Thickness(0, 0, 0, 2);
+                return;
             }
         }
 
@@ -88,9 +94,14 @@ namespace Purofessor.components
                 MessageBox.Show($"Błąd podczas wylogowywania: {ex.Message}");
             }
         }
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsWindow settingsWindow = new SettingsWindow();
+            settingsWindow.ShowDialog();
+        }
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
-            SetActiveTab(ProfileButton);
+            SetActiveTab(null);
             var parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow?.MainFrame.Navigate(new Profile());
 

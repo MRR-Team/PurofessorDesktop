@@ -37,5 +37,12 @@ namespace Purofessor.components
             var parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow?.MainFrame.Navigate(new ServerStatus());
         }
+
+        private void LoginLink_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            Window.GetWindow(this)?.Close();
+        }
     }
 }

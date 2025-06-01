@@ -1,33 +1,35 @@
 ﻿<UserControl x:Class="Purofessor.components.TopPanel_Guest"
+                xmlns:pc="clr-namespace:Purofessor.components.PanelComponents"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Height="50">
     <Grid>
-        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="41" Fill="#80FFFFFF"/>
-        <Button Content="Kontra"
-                x:Name="KontraButton"
-                HorizontalAlignment="Left"
-                Margin="10,11,0,0"
-                VerticalAlignment="Top"
-                Width="58"
-                Height="21"
-                Click="Kontra_Click"
-                Background="Transparent"
-                BorderBrush="Blue"
-                BorderThickness="0,0,0,3"
-                Foreground="Black"/>
+        <Rectangle VerticalAlignment="Center" Height="60">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="{DynamicResource GradientStartColor}" Offset="0"/>
+                    <GradientStop Color="{DynamicResource GradientEndColor}" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
 
-        <Button Content="Status Servera LOL"
-                x:Name="KontraStatusButtonButton"
-                HorizontalAlignment="Left"
-                Margin="84,11,0,0"
-                VerticalAlignment="Top"
-                Width="115"
-                Height="21"
-                Click="Status_Click"
-                Background="Transparent"
-                BorderBrush="Blue"
-                BorderThickness="0,0,0,2"
-                Foreground="Black"/>
+        <Grid Margin="10,15,10,0" VerticalAlignment="Top" Height="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Zakładki -->
+            <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock FontSize="20" TextAlignment="Center" Foreground="{DynamicResource ForegroundBrush}">
+     <Run Text="Aby odblokować wszystkie funkcjonalności aplikacji" />
+     <Hyperlink Click="LoginLink_Click">
+         <Run Background="White" Text="Zaloguj sie" />
+     </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+
+        </Grid>
     </Grid>
 </UserControl>

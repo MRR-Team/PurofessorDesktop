@@ -67,8 +67,6 @@
 
             <!-- Przyciski językowe i profilowe -->
             <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center" Margin="5,0,0,0">
-                <pc:ThemeSelector VerticalAlignment="Center" Margin="0,0,5,0"/>
-
                 <TextBlock Text="{DynamicResource ProfileButtonHi}"
                            Height="22"
                            Padding="0,4,0,0"
@@ -79,12 +77,27 @@
 
                 <TextBlock x:Name="ProfileUsername"
                            Height="22"
-                           Padding="0,4,0,0"
+                           Padding="0,4,10,0"
                            Background="Transparent"
                            Foreground="{DynamicResource ForegroundBrush}"
                            HorizontalAlignment="Right"
                            VerticalAlignment="Center"
                            IsHitTestVisible="False" />
+
+                <Button x:Name="SettingsButton"
+        Width="30"
+        Height="30"
+        Margin="0,0,10,0"
+        BorderThickness="0"
+        Background="{DynamicResource GradientStartBrush}"
+        ToolTip="Ustawienia"
+        Click="SettingsButton_Click">
+                    <TextBlock Text="⚙" 
+               FontSize="16" 
+               Foreground="White" 
+               VerticalAlignment="Center" 
+               HorizontalAlignment="Center"/>
+                </Button>
 
                 <Button x:Name="ProfileButton"
                         Width="30"
@@ -96,7 +109,6 @@
                         Click="ProfileButton_Click">
                     <Image Source="pack://application:,,,/Images/UserIcon.png" Width="30" Height="30"/>
                 </Button>
-
                 <pc:LogoutButton VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,0,0,0"/>
             </StackPanel>
         </Grid>
