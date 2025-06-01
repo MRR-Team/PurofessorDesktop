@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using Purofessor.Helpers;
 
-namespace Purofessor.components.PanelComponents
+namespace Purofessor.components.SettingsComponents
 {
     public partial class LangSelector : UserControl
     {
