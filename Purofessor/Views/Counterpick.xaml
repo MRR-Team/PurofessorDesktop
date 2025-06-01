@@ -11,42 +11,99 @@
       Title="Counterpick">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border
+        CornerRadius="10"
+        Padding="20"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="{DynamicResource GradientStartColor}" Offset="0"/>
+                    <GradientStop Color="{DynamicResource GradientEndColor}" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
 
-            <!-- Nagłówek -->
-            <TextBlock Text="{DynamicResource ChooseChamp}" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"/>
+            <StackPanel Width="450">
+                <!-- Nagłówek -->
+                <TextBlock Text="{DynamicResource ChooseChamp}"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Foreground="{DynamicResource ForegroundBrush}"
+                       TextAlignment="Center"
+                       Margin="0,0,0,20"/>
 
-            <!-- Wprowadzanie championa -->
-            <Grid Margin="0,0,0,10">
-                <StackPanel>
-                    <TextBox Name="MyTextBox" Width="200" Height="30" TextChanged="MyTextBox_TextChanged" VerticalContentAlignment="Center"/>
-                    <ListBox Name="SuggestionsListBox"
-                 Width="200"
-                 MaxHeight="100"
-                 Visibility="Collapsed"
-                 MouseLeftButtonUp="SuggestionsListBox_MouseLeftButtonUp"
-                 Margin="0,2,0,0"/>
+                <!-- Wprowadzanie championa -->
+                <TextBlock Text="{DynamicResource ChampionName}"
+                       FontWeight="SemiBold"
+                       Foreground="{DynamicResource ForegroundBrush}"/>
+                <Grid>
+                    <TextBox Name="MyTextBox"
+                         Width="Auto"
+                         Height="30"
+                         Margin="0,5,0,5"
+                         Background="{DynamicResource BackgroundBrush}"
+                         Foreground="{DynamicResource ForegroundBrush}"
+                         VerticalContentAlignment="Center"
+                         TextChanged="MyTextBox_TextChanged"/>
+                    <Popup Name="SuggestionsPopup"
+                       PlacementTarget="{Binding ElementName=MyTextBox}"
+                       Placement="Bottom"
+                       StaysOpen="False">
+                        <Border Background="{DynamicResource BackgroundBrush}"
+                            BorderThickness="1"
+                            BorderBrush="Gray"
+                            CornerRadius="4"
+                            MaxHeight="150">
+                            <ListBox Name="SuggestionsListBox"
+                                 Background="{DynamicResource BackgroundBrush}"
+                                 Foreground="{DynamicResource ForegroundBrush}"
+                                 MouseLeftButtonUp="SuggestionsListBox_MouseLeftButtonUp"
+                                 BorderThickness="0"
+                                 MinWidth="{Binding ActualWidth, ElementName=MyTextBox}"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                        </Border>
+                    </Popup>
+                </Grid>
+
+                <!-- Wybór pozycji -->
+                <TextBlock Text="{DynamicResource ChoosePos}"
+                       FontWeight="SemiBold"
+                       Foreground="{DynamicResource ForegroundBrush}"
+                       Margin="0,10,0,5"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,15" Name="PositionStackPanel">
+                    <RadioButton Content="{DynamicResource Supp}" GroupName="Pozycje" Style="{StaticResource ButtonRadioStyle}" Name="RadioSupp"/>
+                    <RadioButton Content="{DynamicResource Bottom}" GroupName="Pozycje" Style="{StaticResource ButtonRadioStyle}" Name="RadioBottom"/>
+                    <RadioButton Content="{DynamicResource Mid}" GroupName="Pozycje" Style="{StaticResource ButtonRadioStyle}" Name="RadioMid"/>
+                    <RadioButton Content="{DynamicResource Jungle}" GroupName="Pozycje" Style="{StaticResource ButtonRadioStyle}" Name="RadioJungle"/>
+                    <RadioButton Content="{DynamicResource Top}" GroupName="Pozycje" Style="{StaticResource ButtonRadioStyle}" Name="RadioTop"/>
                 </StackPanel>
-            </Grid>
 
+                <!-- Przycisk -->
+                <Button Content="{DynamicResource GenCounter}"
+                    Height="35"
+                    Background="{DynamicResource GradientStartBrush}"
+                    Foreground="{DynamicResource ForegroundBrush}"
+                    FontWeight="Bold"
+                    Click="Button_Click"/>
 
-
-            <!-- Wybór pozycji -->
-            <TextBlock Text="{DynamicResource ChoosePos}" FontSize="20" FontWeight="Bold" TextAlignment="Center"/>
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Name="PositionStackPanel">
-                <RadioButton Content="{DynamicResource Supp}" GroupName="Pozycje" Margin="5" Name="RadioSupp"/>
-                <RadioButton Content="{DynamicResource Bottom}" GroupName="Pozycje" Margin="5" Name="RadioBottom"/>
-                <RadioButton Content="{DynamicResource Mid}" GroupName="Pozycje" Margin="5" Name="RadioMid"/>
-                <RadioButton Content="{DynamicResource Jungle}" GroupName="Pozycje" Margin="5" Name="RadioJungle"/>
-                <RadioButton Content="{DynamicResource Top}" GroupName="Pozycje" Margin="5" Name="RadioTop"/>
+                <!-- Wynik -->
+                <Border Name="ResultBorder"
+                    Margin="0,15,0,0"
+                    Padding="10"
+                    CornerRadius="5"
+                    Background="{DynamicResource BackgroundBrush}"
+                    MinHeight="40"
+                    HorizontalAlignment="Stretch"
+                    Visibility="Collapsed">
+                    <TextBlock Name="ResultTextBlock"
+                           Text=""
+                           TextAlignment="Left"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource ForegroundBrush}"
+                           TextWrapping="Wrap"/>
+                </Border>
             </StackPanel>
-
-            <!-- Przycisk do generowania kontry -->
-            <Button Content="{DynamicResource GenCounter}" Width="150" Height="40" Click="Button_Click"/>
-
-            <!-- Miejsce na wynik -->
-            <TextBlock Name="ResultTextBlock" Text="" TextAlignment="Center" Margin="10" FontWeight="Bold" Foreground="Green"/>
-        </StackPanel>
+        </Border>
     </Grid>
 </Page>
