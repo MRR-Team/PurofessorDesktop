@@ -141,7 +141,7 @@ public class ApiService
 
         throw new Exception($"Nie udało się pobrać kontr: {response.StatusCode}");
     }
-    public async Task<List<string>> GetChampionsAsync()
+    public async Task<List<Champion>> GetChampionsAsync()
     {
         var response = await _client.GetAsync("champions");
 
@@ -154,9 +154,10 @@ public class ApiService
                 PropertyNameCaseInsensitive = true
             });
 
-            return champions.Select(c => c.Name).ToList();
+            return champions;
         }
 
         throw new Exception($"Nie udało się pobrać championów: {response.StatusCode}");
     }
+
 }
