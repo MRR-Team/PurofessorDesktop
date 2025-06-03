@@ -4,8 +4,11 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Purofessor.Models;
+using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
+using MyItem = Purofessor.Models.Item;
 public class ApiService
 {
+    MyItem item = new MyItem();
     public User LoggedUser { get; private set; }
     private readonly HttpClient _client;
     public string AuthToken { get; private set; }
@@ -159,5 +162,23 @@ public class ApiService
 
         throw new Exception($"Nie udało się pobrać championów: {response.StatusCode}");
     }
+    public async Task<List<string>> GetBuildAsync(string enemyChampionId, string myChampionId)
+    {
+        var response = await _client.GetAsync($"build/{enemyChampionId}/against/{myChampionId}");
+
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            var items = JsonSerializer.Deserialize<List<MyItem>>(json, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+            return items.Select(i => i.Name).ToList();
+        }
+
+        throw new Exception($"Nie udało się pobrać builda: {response.StatusCode}");
+    }
+
 
 }
