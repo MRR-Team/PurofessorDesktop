@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\App.xaml
-201942200258
+22-1524588986
 
-24-176778263
+27819217658
 203-1140911118
-AdminWindow.xaml;components\PanelCompoments\LogoutButton.xaml;components\SettingsCompoments\LangSelector.xaml;components\SettingsCompoments\ThemeSelector.xaml;components\TopPanel.xaml;components\TopPanel_Guest.xaml;GuestWindow.xaml;Languages\Dictionary-en.xaml;Languages\Dictionary-pl.xaml;LoginWindow.xaml;MainWindow.xaml;SettingsWindow.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;Themes\Style.xaml;Views\Counterpick.xaml;Views\Login.xaml;Views\Profile.xaml;Views\Register.xaml;Views\ServerStatus.xaml;
+AdminWindow.xaml;components\PanelCompoments\LogoutButton.xaml;components\SettingsCompoments\LangSelector.xaml;components\SettingsCompoments\ThemeSelector.xaml;components\TopPanel.xaml;components\TopPanel_Admin.xaml;components\TopPanel_Guest.xaml;GuestWindow.xaml;Languages\Dictionary-en.xaml;Languages\Dictionary-pl.xaml;LoginWindow.xaml;MainWindow.xaml;SettingsWindow.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;Themes\Style.xaml;Views\BuildMaker.xaml;Views\Counterpick.xaml;Views\Login.xaml;Views\Profile.xaml;Views\Register.xaml;Views\ServerStatus.xaml;
 
 False
 

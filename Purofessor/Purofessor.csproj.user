@@ -17,6 +17,9 @@
     <Compile Update="components\TopPanel.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="components\TopPanel_Admin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="GuestWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -24,6 +27,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="SettingsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\BuildMaker.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Counterpick.xaml.cs">

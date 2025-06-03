@@ -311,3 +311,7 @@ C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-window
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Themes\Style.baml
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\SettingsWindow.g.cs
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\SettingsWindow.baml
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\components\TopPanel_Admin.g.cs
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\components\TopPanel_Admin.baml
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\BuildMaker.g.cs
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\BuildMaker.baml
