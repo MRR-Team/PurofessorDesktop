@@ -21,19 +21,41 @@
                            FontSize="24" FontWeight="Bold" Foreground="{DynamicResource ForegroundBrush}"
                            TextAlignment="Center" Margin="0,0,0,20"/>
 
-                <!-- Nasz champion -->
+                <!-- Twój champion -->
                 <TextBlock Text="Twój champion:" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
-                <TextBox x:Name="MyChampionTextBox" Height="30" Margin="0,5,0,15"
-                         Background="{DynamicResource BackgroundBrush}"
-                         Foreground="{DynamicResource ForegroundBrush}"
-                         VerticalContentAlignment="Center"/>
+                <Grid>
+                    <TextBox x:Name="MyChampionTextBox" Height="30" Margin="0,5,0,5"
+             Background="{DynamicResource BackgroundBrush}"
+             Foreground="{DynamicResource ForegroundBrush}"
+             VerticalContentAlignment="Center"/>
+                    <Popup Name="MyChampPopup" PlacementTarget="{Binding ElementName=MyChampionTextBox}" Placement="Bottom" StaysOpen="False">
+                        <Border Background="{DynamicResource BackgroundBrush}" BorderThickness="1" BorderBrush="Gray" CornerRadius="4" MaxHeight="150">
+                            <ListBox Name="MyChampSuggestions" Background="{DynamicResource BackgroundBrush}" 
+                     Foreground="{DynamicResource ForegroundBrush}"
+                     BorderThickness="0"
+                     MinWidth="{Binding ActualWidth, ElementName=MyChampionTextBox}"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                        </Border>
+                    </Popup>
+                </Grid>
 
                 <!-- Przeciwnik -->
                 <TextBlock Text="Przeciwnik:" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
-                <TextBox x:Name="EnemyChampionTextBox" Height="30" Margin="0,5,0,15"
-                         Background="{DynamicResource BackgroundBrush}"
-                         Foreground="{DynamicResource ForegroundBrush}"
-                         VerticalContentAlignment="Center"/>
+                <Grid>
+                    <TextBox x:Name="EnemyChampionTextBox" Height="30" Margin="0,5,0,5"
+             Background="{DynamicResource BackgroundBrush}"
+             Foreground="{DynamicResource ForegroundBrush}"
+             VerticalContentAlignment="Center"/>
+                    <Popup Name="EnemyChampPopup" PlacementTarget="{Binding ElementName=EnemyChampionTextBox}" Placement="Bottom" StaysOpen="False">
+                        <Border Background="{DynamicResource BackgroundBrush}" BorderThickness="1" BorderBrush="Gray" CornerRadius="4" MaxHeight="150">
+                            <ListBox Name="EnemyChampSuggestions" Background="{DynamicResource BackgroundBrush}"
+                     Foreground="{DynamicResource ForegroundBrush}"
+                     BorderThickness="0"
+                     MinWidth="{Binding ActualWidth, ElementName=EnemyChampionTextBox}"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                        </Border>
+                    </Popup>
+                </Grid>
 
                 <!-- Przycisk -->
                 <Button Content="Generuj build"

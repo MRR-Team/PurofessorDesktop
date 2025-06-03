@@ -2,120 +2,81 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
+using Purofessor.Helpers;
 
 namespace Purofessor.Views
 {
-    /// <summary>
-    /// Logika interakcji dla klasy Counterpick.xaml
-    /// </summary>
     public partial class Counterpick : Page
     {
-        private List<Champion> _allChampions = new List<Champion>();
-        private readonly ApiService _apiService;
+        private List<Champion> _allChampions = new();
+        private readonly ApiService _apiService = new();
+        private readonly ChampionAutocompleteHelper _autocompleteHelper = new();
 
         public Counterpick()
         {
             InitializeComponent();
-            _apiService = new ApiService();
-            Loaded += Champions_Loaded;
+            Loaded += OnChampionsLoaded;
         }
 
-        private async void Champions_Loaded(object sender, RoutedEventArgs e)
+        private async void OnChampionsLoaded(object sender, RoutedEventArgs e)
         {
             try
             {
                 _allChampions = await _apiService.GetChampionsAsync();
+                _autocompleteHelper.SetChampionList(_allChampions);
+                _autocompleteHelper.Attach(MyTextBox, SuggestionsPopup, SuggestionsListBox);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Błąd pobierania championów: " + ex.Message);
+                ShowError("Błąd pobierania championów", ex);
             }
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void OnGenerateCounterClick(object sender, RoutedEventArgs e)
         {
             string championName = MyTextBox.Text.Trim();
             string position = GetSelectedPosition();
 
-            if (string.IsNullOrEmpty(championName) || string.IsNullOrEmpty(position))
+            if (string.IsNullOrWhiteSpace(championName) || string.IsNullOrWhiteSpace(position))
             {
-                MessageBox.Show("Wpisz nazwę championa i wybierz pozycję.");
+                ShowMessage("Wpisz nazwę championa i wybierz pozycję.");
                 return;
             }
 
-            // Szukamy championa po nazwie (ignorując wielkość liter)
             var champion = _allChampions.FirstOrDefault(c =>
                 string.Equals(c.Name, championName, StringComparison.OrdinalIgnoreCase));
 
             if (champion == null)
             {
-                MessageBox.Show($"Nie znaleziono championa o nazwie: {championName}");
+                ShowMessage($"Nie znaleziono championa o nazwie: {championName}");
                 return;
             }
 
             try
             {
-                // Wysyłamy zapytanie z ID
                 var result = await _apiService.GetCounterAsync(position, champion.Id.ToString());
-
-                // Pokazujemy border, nawet jeśli wynik pusty
-                ResultBorder.Visibility = Visibility.Visible;
-
-                if (result == null || !result.Any())
-                {
-                    ResultTextBlock.Text = $"Brak kontr dla {championName} ({position}).";
-                    return;
-                }
-
-                var formattedResult = string.Join("\n", result.Select(r => "• " + r));
-                ResultTextBlock.Text = $"Kontry na {championName} ({position}):\n{formattedResult}";
+                DisplayCounterResults(result, championName, position);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Błąd pobierania danych: " + ex.Message);
+                ShowError("Błąd pobierania danych", ex);
             }
         }
 
-        private void MyTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void DisplayCounterResults(IEnumerable<string> results, string name, string pos)
         {
-            string typedText = MyTextBox.Text.ToLower();
+            ResultBorder.Visibility = Visibility.Visible;
 
-            if (string.IsNullOrWhiteSpace(typedText))
+            if (results == null || !results.Any())
             {
-                SuggestionsPopup.IsOpen = false;
+                ResultTextBlock.Text = $"Brak kontr dla {name} ({pos}).";
                 return;
             }
 
-            var filtered = _allChampions
-                .Where(c => c.Name.ToLower().Contains(typedText))
-                .Select(c => char.ToUpper(c.Name[0]) + c.Name.Substring(1)) // Wielka litera
-                .ToList();
-
-            if (filtered.Any())
-            {
-                SuggestionsListBox.ItemsSource = filtered;
-                SuggestionsPopup.IsOpen = true;
-            }
-            else
-            {
-                SuggestionsPopup.IsOpen = false;
-            }
+            ResultTextBlock.Text = $"Kontry na {name} ({pos}):\n• {string.Join("\n• ", results)}";
         }
-
-        private void SuggestionsListBox_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            if (SuggestionsListBox.SelectedItem != null)
-            {
-                MyTextBox.Text = SuggestionsListBox.SelectedItem.ToString();
-                SuggestionsPopup.IsOpen = false;
-            }
-        }
-
 
         private string GetSelectedPosition()
         {
@@ -127,9 +88,7 @@ namespace Purofessor.Views
             return null;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            // Tu chyba nieużywane – można usunąć, jeśli zbędne
-        }
+        private void ShowMessage(string message) => MessageBox.Show(message);
+        private void ShowError(string title, Exception ex) => MessageBox.Show($"{title}: {ex.Message}");
     }
 }

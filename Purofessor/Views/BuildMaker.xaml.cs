@@ -1,4 +1,5 @@
-﻿using Purofessor.Models;
+﻿using Purofessor.Helpers;
+using Purofessor.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,13 @@ namespace Purofessor.Views
     {
         private List<Champion> _champions;
         private readonly ApiService _apiService;
+        private readonly ChampionAutocompleteHelper _autocompleteHelper;
 
         public BuildMaker()
         {
             InitializeComponent();
             _apiService = new ApiService();
+            _autocompleteHelper = new ChampionAutocompleteHelper();
             Loaded += BuildMaker_Loaded;
         }
 
@@ -26,6 +29,10 @@ namespace Purofessor.Views
             try
             {
                 _champions = await _apiService.GetChampionsAsync();
+
+                _autocompleteHelper.SetChampionList(_champions);
+                _autocompleteHelper.Attach(MyChampionTextBox, MyChampPopup, MyChampSuggestions);
+                _autocompleteHelper.Attach(EnemyChampionTextBox, EnemyChampPopup, EnemyChampSuggestions);
             }
             catch (Exception ex)
             {
