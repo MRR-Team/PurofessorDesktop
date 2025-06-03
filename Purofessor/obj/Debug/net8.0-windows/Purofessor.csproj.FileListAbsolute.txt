@@ -395,3 +395,11 @@ C:\Users\buchc\Source\Repos\PurofessorDesktop1\Purofessor\obj\Debug\net8.0-windo
 C:\Users\buchc\Source\Repos\PurofessorDesktop1\Purofessor\obj\Debug\net8.0-windows\Purofessor.pdb
 C:\Users\buchc\Source\Repos\PurofessorDesktop1\Purofessor\obj\Debug\net8.0-windows\Purofessor.genruntimeconfig.cache
 C:\Users\buchc\Source\Repos\PurofessorDesktop1\Purofessor\obj\Debug\net8.0-windows\ref\Purofessor.dll
+C:\Users\buchc\Source\Repos\PurofessorDesktop1\Purofessor\obj\Debug\net8.0-windows\Views\Admin\Notification.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop1\Purofessor\obj\Debug\net8.0-windows\Views\Admin\Stats.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop1\Purofessor\obj\Debug\net8.0-windows\Views\Admin\Users.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop1\Purofessor\obj\Debug\net8.0-windows\Views\Admin\Notification.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop1\Purofessor\obj\Debug\net8.0-windows\Views\Admin\Stats.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop1\Purofessor\obj\Debug\net8.0-windows\Views\Admin\Users.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop1\Purofessor\obj\Debug\net8.0-windows\Views\Admin\Rotations.g.cs
+C:\Users\buchc\Source\Repos\PurofessorDesktop1\Purofessor\obj\Debug\net8.0-windows\Views\Admin\Rotations.baml

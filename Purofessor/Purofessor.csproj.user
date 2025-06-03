@@ -29,6 +29,18 @@
     <Compile Update="SettingsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Admin\Notification.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\Rotations.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\Stats.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\Users.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\BuildMaker.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -62,6 +74,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Admin\Notification.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Admin\Rotations.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Admin\Stats.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Admin\Users.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Register.xaml">
