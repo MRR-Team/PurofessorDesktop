@@ -60,7 +60,7 @@ namespace Purofessor.components
         }
         private void SetActiveTab(Button newActiveButton)
         {
-            if (newActiveButton!= null && newActiveButton != _previousTabButton)
+            if (newActiveButton != null && newActiveButton != _previousTabButton)
             {
                 if (_previousTabButton != null)
                 {
@@ -106,7 +106,13 @@ namespace Purofessor.components
             parentWindow?.MainFrame.Navigate(new Profile());
 
         }
+        private void BuildMaker_Click(object sender, RoutedEventArgs e)
+        {
+            SetActiveTab(BuildMakerButton);
+            var parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow?.MainFrame.Navigate(new BuildMaker());
 
 
+        }
     }
 }
