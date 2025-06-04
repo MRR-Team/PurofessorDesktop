@@ -179,6 +179,23 @@ public class ApiService
 
         throw new Exception($"Nie udało się pobrać builda: {response.StatusCode}");
     }
+    public async Task<List<ChampionSearchStats>> GetChampionSearchStatsAsync()
+    {
+        var response = await _client.GetAsync("stats/counter-search");
 
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+
+            var stats = JsonSerializer.Deserialize<List<ChampionSearchStats>>(json, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+            return stats;
+        }
+
+        throw new Exception($"Nie udało się pobrać statystyk wyszukiwania championów: {response.StatusCode}");
+    }
 
 }

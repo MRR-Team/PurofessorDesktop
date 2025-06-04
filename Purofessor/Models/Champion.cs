@@ -42,4 +42,9 @@ namespace Purofessor.Models
         public DateTime Updated_At { get; set; }
         public bool IsAvailable { get; set; }
     }
+    public class ChampionSearchStats
+    {
+        public Champion Champion { get; set; }
+        public int Total { get; set; }
+    }
 }

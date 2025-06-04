@@ -36,6 +36,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="TopPanelButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
@@ -64,5 +65,36 @@
                 <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}"/>
             </Trigger>
         </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="MainBorderStyle" TargetType="Border">
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Padding" Value="20"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="{DynamicResource GradientStartColor}" Offset="0"/>
+                    <GradientStop Color="{DynamicResource GradientEndColor}" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ContentStackPanelStyle" TargetType="StackPanel">
+        <Setter Property="Width" Value="475"/>
+    </Style>
+    
+    <Style x:Key="LoginBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Padding" Value="20"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="LoginStackPanelStyle" TargetType="StackPanel">
+        <Setter Property="Width" Value="300"/>
     </Style>
 </ResourceDictionary>

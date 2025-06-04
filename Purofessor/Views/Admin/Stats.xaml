@@ -9,6 +9,84 @@
       Title="Stats">
 
     <Grid>
-        
+        <Border Style="{StaticResource MainBorderStyle}">
+
+            <StackPanel Style="{StaticResource ContentStackPanelStyle}">
+                <TextBlock Text="Statystyki wyszukiwań championów"
+               FontSize="20"
+               FontWeight="Bold"
+               Foreground="{DynamicResource ForegroundBrush}"
+               Margin="0,0,0,20"
+               HorizontalAlignment="Center" />
+
+                <ListView x:Name="StatsListView"
+          Height="350"
+          ScrollViewer.VerticalScrollBarVisibility="Auto"
+          Background="{StaticResource BackgroundBrush}"
+          Foreground="{StaticResource ForegroundBrush}"
+          BorderThickness="1"
+          BorderBrush="{StaticResource PrimaryBrush}"
+          Margin="0,0,0,10"
+          FontSize="14"
+          FontWeight="SemiBold">
+
+                    <ListView.Resources>
+                        <!-- Styl nagłówków -->
+                        <Style TargetType="GridViewColumnHeader">
+                            <Setter Property="Background" Value="{StaticResource GradientStartBrush}" />
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Padding" Value="5,3"/>
+                            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}"/>
+
+                            <Setter Property="Focusable" Value="False"/>
+                            <!-- 👈 nie da się tabować -->
+                        </Style>
+
+                        <!-- Styl pojedynczego elementu -->
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+                            <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}" />
+                            <Setter Property="Margin" Value="0,0,0,2"/>
+                            <Setter Property="Padding" Value="5"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+                            <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}" />
+                            <Setter Property="Margin" Value="0,0,0,2"/>
+                            <Setter Property="Padding" Value="5"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}" />
+                            <Setter Property="BorderThickness" Value="1" />
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            <Setter Property="IsHitTestVisible" Value="False" />
+                            <!-- 👈 wyłącza interakcję -->
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource GradientEndBrush}" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                        
+                    </ListView.Resources>
+
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Champion" DisplayMemberBinding="{Binding Champion.Name}" Width="233"/>
+                            <GridViewColumn Header="Liczba wyszukiwań" Width="232">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Total}"
+                       HorizontalAlignment="Right"
+                       TextAlignment="Right"
+                       Padding="0,0,5,0" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>
