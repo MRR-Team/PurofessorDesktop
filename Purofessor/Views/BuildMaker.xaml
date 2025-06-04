@@ -8,15 +8,9 @@
       >
 
     <Grid>
-        <Border CornerRadius="10" Padding="20" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="{DynamicResource GradientStartColor}" Offset="0"/>
-                    <GradientStop Color="{DynamicResource GradientEndColor}" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
+        <Border Style="{StaticResource MainBorderStyle}">
 
-            <StackPanel Width="475">
+            <StackPanel Style="{StaticResource ContentStackPanelStyle}">
                 <TextBlock Text="Wpisz twojego championa i przeciwnika"
                            FontSize="24" FontWeight="Bold" Foreground="{DynamicResource ForegroundBrush}"
                            TextAlignment="Center" Margin="0,0,0,20"/>

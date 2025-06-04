@@ -6,9 +6,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Purofessor"
         mc:Ignorable="d"
+                Height="750" Width="1000"
+        MinWidth="640" MinHeight="640"
                 Background="{DynamicResource BackgroundBrush}"
         Foreground="{DynamicResource ForegroundBrush}"
-        Title="AdminWindow" Height="450" Width="800">
+        Title="AdminWindow">
     <Grid>
         <components:TopPanel_Admin HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>

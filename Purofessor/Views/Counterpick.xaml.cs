@@ -26,7 +26,7 @@ namespace Purofessor.Views
             {
                 _allChampions = await _apiService.GetChampionsAsync();
                 _autocompleteHelper.SetChampionList(_allChampions);
-                _autocompleteHelper.Attach(MyTextBox, SuggestionsPopup, SuggestionsListBox);
+                _autocompleteHelper.Attach(EnemyChampTextBox, SuggestionsPopup, SuggestionsListBox);
             }
             catch (Exception ex)
             {
@@ -36,7 +36,7 @@ namespace Purofessor.Views
 
         private async void OnGenerateCounterClick(object sender, RoutedEventArgs e)
         {
-            string championName = MyTextBox.Text.Trim();
+            string championName = EnemyChampTextBox.Text.Trim();
             string position = GetSelectedPosition();
 
             if (string.IsNullOrWhiteSpace(championName) || string.IsNullOrWhiteSpace(position))

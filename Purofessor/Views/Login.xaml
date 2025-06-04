@@ -8,13 +8,9 @@
       Title="Login">
 
     <Grid>
-        <Border Background="{DynamicResource BackgroundBrush}"
-                CornerRadius="10"
-                Padding="20"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
+        <Border Style="{StaticResource LoginBorderStyle}">
 
-            <StackPanel Width="300">
+            <StackPanel Style="{StaticResource LoginStackPanelStyle}">
                 <TextBlock Text="{DynamicResource Welcome}"
                            FontSize="24"
                            FontWeight="Bold"

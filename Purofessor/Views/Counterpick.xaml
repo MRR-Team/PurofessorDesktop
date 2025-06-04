@@ -4,24 +4,16 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:Purofessor.Views"
+      xmlns:compoments="clr-namespace:Purofessor.components"
       mc:Ignorable="d"
       d:DesignHeight="350"
       d:DesignWidth="500"
       Title="Counterpick">
 
     <Grid>
-        <Border CornerRadius="10"
-                Padding="20"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="{DynamicResource GradientStartColor}" Offset="0"/>
-                    <GradientStop Color="{DynamicResource GradientEndColor}" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
+        <Border Style="{StaticResource MainBorderStyle}">
 
-            <StackPanel Width="450">
+            <StackPanel Style="{StaticResource ContentStackPanelStyle}">
                 <TextBlock Text="{DynamicResource ChooseChamp}"
                            FontSize="24"
                            FontWeight="Bold"
@@ -34,7 +26,7 @@
                            Foreground="{DynamicResource ForegroundBrush}"/>
 
                 <Grid>
-                    <TextBox Name="MyTextBox"
+                    <TextBox Name="EnemyChampTextBox"
                              Height="30"
                              Margin="0,5,0,5"
                              Background="{DynamicResource BackgroundBrush}"

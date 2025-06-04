@@ -9,6 +9,10 @@
       Title="Users">
 
     <Grid>
-        
+        <Border Style="{StaticResource MainBorderStyle}">
+
+            <StackPanel Style="{StaticResource ContentStackPanelStyle}">
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>
