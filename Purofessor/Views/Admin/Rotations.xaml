@@ -5,13 +5,34 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Purofessor.Views.Admin"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
       Title="Rotation">
 
     <Grid>
         <Border Style="{StaticResource MainBorderStyle}">
-
             <StackPanel Style="{StaticResource ContentStackPanelStyle}">
+
+                <TextBlock Text="Edycja rotacji championów"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="{DynamicResource ForegroundBrush}"
+                           TextAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl Name="ChampionListBox">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <CheckBox Content="{Binding Name}"
+                                              IsChecked="{Binding IsAvailable, Mode=TwoWay}"
+                                              Checked="OnCheckboxToggled"
+                                              Unchecked="OnCheckboxToggled"
+                                              Tag="{Binding Id}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
             </StackPanel>
         </Border>
     </Grid>

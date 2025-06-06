@@ -1,28 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Purofessor.Models;
 
 namespace Purofessor.Views.Admin
 {
-    /// <summary>
-    /// Interaction logic for Users.xaml
-    /// </summary>
     public partial class Users : Page
     {
+        private readonly ApiService _apiService = new();
+        private List<User> _allUsers = new();
+
         public Users()
         {
             InitializeComponent();
+            Loaded += OnLoaded;
+        }
+
+        private async void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                _allUsers = await _apiService.GetUsersAsync();
+                UsersDataGrid.ItemsSource = _allUsers;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Błąd ładowania użytkowników: {ex.Message}");
+            }
+        }
+
+        private async void EditUser_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.Tag is User selectedUser)
+            {
+                var editWindow = new AdminUserEditWindow(_apiService, selectedUser);
+                bool? result = editWindow.ShowDialog();
+
+                if (result == true)
+                {
+                    try
+                    {
+                        _allUsers = await _apiService.GetUsersAsync();
+                        UsersDataGrid.ItemsSource = null;
+                        UsersDataGrid.ItemsSource = _allUsers;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Błąd odświeżania listy: {ex.Message}");
+                    }
+                }
+            }
         }
     }
 }
