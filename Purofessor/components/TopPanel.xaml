@@ -35,6 +35,10 @@
                         Content="{DynamicResource ServerStatusButton}"
                         x:Name="StatusButton"
                         Click="Status_Click"/>
+                <Button Style="{DynamicResource TopPanelButtonStyle}"
+                        Content="Rotacja"
+                        x:Name="ShowRotationsButton"
+                        Click="ShowRotations_Click"/>
             </StackPanel>
 
             <!-- Przyciski językowe i profilowe -->

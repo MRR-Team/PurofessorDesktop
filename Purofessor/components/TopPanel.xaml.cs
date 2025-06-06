@@ -58,6 +58,13 @@ namespace Purofessor.components
             var parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow?.MainFrame.Navigate(new ServerStatus());
         }
+
+        private void ShowRotations_Click(object sender, RoutedEventArgs e)
+        {
+            SetActiveTab(StatusButton);
+            var parentWindow = Window.GetWindow(this) as MainWindow;
+            parentWindow?.MainFrame.Navigate(new ShowRotations());
+        }
         private void SetActiveTab(Button newActiveButton)
         {
             if (newActiveButton != null && newActiveButton != _previousTabButton)
