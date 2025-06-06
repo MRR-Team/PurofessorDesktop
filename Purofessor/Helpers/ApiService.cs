@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Purofessor.Models;
 using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 using MyItem = Purofessor.Models.Item;
+using Purofessor.Helpers;
+using Purofessor.Properties;
 public class ApiService
 {
     MyItem item = new MyItem();
@@ -15,7 +17,7 @@ public class ApiService
     public ApiService()
     {
         _client = new HttpClient();
-        _client.BaseAddress = new Uri("http://localhost/api/");
+        _client.BaseAddress = new Uri(Settings.Default.ApiBaseUrl);
         _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         // _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "TWÓJ_TOKEN"); jeśli chcemy "zapamiętaj mnie"
     }
@@ -68,28 +70,28 @@ public class ApiService
         throw new Exception("Nie udało się zalogować. Sprawdź dane.");
     }
     public async Task<bool> UpdateUserAsync(int id, string name, string email, string password)
-{
-    var payload = new Dictionary<string, object>();
+    {
+        var payload = new Dictionary<string, object>();
 
-    // Tylko jeśli użytkownik wprowadził nowe wartości
-    if (!string.IsNullOrWhiteSpace(name))
-        payload["name"] = name;
+        // Tylko jeśli użytkownik wprowadził nowe wartości
+        if (!string.IsNullOrWhiteSpace(name))
+            payload["name"] = name;
 
-    if (!string.IsNullOrWhiteSpace(email))
-        payload["email"] = email;
+        if (!string.IsNullOrWhiteSpace(email))
+            payload["email"] = email;
 
-    if (!string.IsNullOrWhiteSpace(password))
-        payload["password"] = password;
+        if (!string.IsNullOrWhiteSpace(password))
+            payload["password"] = password;
 
-    // Nie wysyłamy pustego payloadu!
-    if (payload.Count == 0)
-        throw new Exception("Nie podano żadnych danych do aktualizacji.");
+        // Nie wysyłamy pustego payloadu!
+        if (payload.Count == 0)
+            throw new Exception("Nie podano żadnych danych do aktualizacji.");
 
-    var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
-    var response = await _client.PutAsync($"users/{id}", content);
+        var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
+        var response = await _client.PutAsync($"users/{id}", content);
 
-    return response.IsSuccessStatusCode;
-}
+        return response.IsSuccessStatusCode;
+    }
 
     public async Task LogoutAsync()
     {
@@ -139,7 +141,7 @@ public class ApiService
                 PropertyNameCaseInsensitive = true
             });
 
-            return champions.Select(c => c.Name).ToList();
+            return champions.Select(i => StringHelper.CapitalizeFirstLetter(i.Name)).ToList();
         }
 
         throw new Exception($"Nie udało się pobrać kontr: {response.StatusCode}");
@@ -151,17 +153,23 @@ public class ApiService
         if (response.IsSuccessStatusCode)
         {
             var json = await response.Content.ReadAsStringAsync();
-
             var champions = JsonSerializer.Deserialize<List<Champion>>(json, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             });
+
+            // Upewniamy się, że nazwy zaczynają się wielką literą
+            foreach (var champ in champions)
+            {
+                champ.Name = StringHelper.CapitalizeFirstLetter(champ.Name);
+            }
 
             return champions;
         }
 
         throw new Exception($"Nie udało się pobrać championów: {response.StatusCode}");
     }
+
     public async Task<List<string>> GetBuildAsync(string enemyChampionId, string myChampionId)
     {
         var response = await _client.GetAsync($"build/{enemyChampionId}/against/{myChampionId}");
@@ -174,7 +182,7 @@ public class ApiService
                 PropertyNameCaseInsensitive = true
             });
 
-            return items.Select(i => i.Name).ToList();
+            return items.Select(i => StringHelper.CapitalizeFirstLetter(i.Name)).ToList();
         }
 
         throw new Exception($"Nie udało się pobrać builda: {response.StatusCode}");
@@ -192,10 +200,89 @@ public class ApiService
                 PropertyNameCaseInsensitive = true
             });
 
+            // Upewniamy się, że nazwy championów zaczynają się wielką literą
+            foreach (var stat in stats)
+            {
+                if (!string.IsNullOrWhiteSpace(stat.Champion?.Name))
+                {
+                    stat.Champion.Name = StringHelper.CapitalizeFirstLetter(stat.Champion.Name);
+                }
+            }
+
             return stats;
         }
 
         throw new Exception($"Nie udało się pobrać statystyk wyszukiwania championów: {response.StatusCode}");
     }
+    public async Task<bool> ToggleChampionAvailabilityAsync(int championId)
+    {
+        var request = new HttpRequestMessage(HttpMethod.Patch, $"champions/toggle-availability/{championId}");
+        request.Content = new StringContent("", Encoding.UTF8, "application/json"); // pusty content
+
+        var response = await _client.SendAsync(request);
+        return response.IsSuccessStatusCode;
+    }
+    public async Task<List<Champion>> GetFreeRotationAsync()
+    {
+        var response = await _client.GetAsync("available-champions");
+
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            var champions = JsonSerializer.Deserialize<List<Champion>>(json, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+            foreach (var champ in champions)
+            {
+                champ.Name = StringHelper.CapitalizeFirstLetter(champ.Name);
+            }
+
+            return champions;
+        }
+
+        throw new Exception($"Nie udało się pobrać rotacji: {response.StatusCode}");
+    }
+    public async Task<List<User>> GetUsersAsync()
+    {
+        var response = await _client.GetAsync("users");
+
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            var users = JsonSerializer.Deserialize<List<User>>(json, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+            return users;
+        }
+
+        throw new Exception($"Nie udało się pobrać użytkowników: {response.StatusCode}");
+    }
+    public async Task<bool> UpdateUserAsync(int id, string name, string email)
+    {
+        var payload = new Dictionary<string, string>();
+
+        if (!string.IsNullOrWhiteSpace(name))
+            payload["name"] = name;
+
+        if (!string.IsNullOrWhiteSpace(email))
+            payload["email"] = email;
+
+        if (payload.Count == 0)
+            throw new Exception("Nie podano żadnych danych do aktualizacji.");
+
+        var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
+        var response = await _client.PutAsync($"users/{id}", content);
+
+        if (response.IsSuccessStatusCode)
+            return true;
+
+        var error = await response.Content.ReadAsStringAsync();
+        throw new Exception($"Nie udało się zaktualizować użytkownika: {response.StatusCode}\n{error}");
+    }
+
 
 }
