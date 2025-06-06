@@ -2,6 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="Views\Admin\AdminUserEditWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AdminWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -27,6 +30,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="SettingsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\Logs.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Admin\Notification.xaml.cs">
@@ -57,6 +63,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\ServerStatus.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ShowRotations.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
