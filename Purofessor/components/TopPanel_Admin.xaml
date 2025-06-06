@@ -23,6 +23,8 @@
             <!-- Przyciski admina -->
             <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left">
                 <Button Style="{DynamicResource TopPanelButtonStyle}" Content="Rotacja" Click="Rotation_Click"/>
+                <Button Style="{DynamicResource TopPanelButtonStyle}" Content="Logi" Click="Logs_Click"/>
+
                 <Button Style="{DynamicResource TopPanelButtonStyle}" Content="Statystyki" Click="Stats_Click"/>
                 <Button Style="{DynamicResource TopPanelButtonStyle}" Content="Użytkownicy" Click="Users_Click"/>
                 <Button Style="{DynamicResource TopPanelButtonStyle}" Content="Powiadomienia" Click="Notify_Click"/>

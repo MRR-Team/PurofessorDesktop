@@ -17,6 +17,11 @@ namespace Purofessor.components
             NavigateTo(new Rotations());
         }
 
+        private void Logs_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateTo(new Logs());
+        }
+
         private void Stats_Click(object sender, RoutedEventArgs e)
         {
             NavigateTo(new Stats());
