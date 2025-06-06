@@ -45,11 +45,6 @@ namespace Purofessor.Views
 
             try
             {
-                if (_apiService.LoggedUser == null)
-                {
-                    MessageBox.Show("Musisz być zalogowany, aby zaktualizować profil.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return;
-                }
 
                 bool success = await _apiService.UpdateUserAsync(_apiService.LoggedUser.id, username, email, password);
 

@@ -12,8 +12,8 @@
 
     <Grid>
         <Border Style="{StaticResource MainBorderStyle}">
-
             <StackPanel Style="{StaticResource ContentStackPanelStyle}">
+
                 <TextBlock Text="{DynamicResource ChooseChamp}"
                            FontSize="24"
                            FontWeight="Bold"
@@ -26,15 +26,17 @@
                            Foreground="{DynamicResource ForegroundBrush}"/>
 
                 <Grid>
+                    <!-- Upewniamy się, że nazwa to 'EnemyChampTextBox' -->
                     <TextBox Name="EnemyChampTextBox"
                              Height="30"
                              Margin="0,5,0,5"
                              Background="{DynamicResource BackgroundBrush}"
                              Foreground="{DynamicResource ForegroundBrush}"
-                             VerticalContentAlignment="Center" />
+                             VerticalContentAlignment="Center"/>
 
+                    <!-- Naprawiony PlacementTarget i MinWidth -->
                     <Popup Name="SuggestionsPopup"
-                           PlacementTarget="{Binding ElementName=MyTextBox}"
+                           PlacementTarget="{Binding ElementName=EnemyChampTextBox}"
                            Placement="Bottom"
                            StaysOpen="False">
                         <Border Background="{DynamicResource BackgroundBrush}"
@@ -46,7 +48,7 @@
                                      Background="{DynamicResource BackgroundBrush}"
                                      Foreground="{DynamicResource ForegroundBrush}"
                                      BorderThickness="0"
-                                     MinWidth="{Binding ActualWidth, ElementName=MyTextBox}"
+                                     MinWidth="{Binding ActualWidth, ElementName=EnemyChampTextBox}"
                                      ScrollViewer.VerticalScrollBarVisibility="Auto"/>
                         </Border>
                     </Popup>
