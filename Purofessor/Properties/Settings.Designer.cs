@@ -49,7 +49,7 @@ namespace Purofessor.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/api/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://collegiumpizzerona.pl/api")]
         public string ApiBaseUrl {
             get {
                 return ((string)(this["ApiBaseUrl"]));

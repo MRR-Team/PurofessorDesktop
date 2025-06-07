@@ -11,7 +11,7 @@ using Purofessor.Properties;
 public class ApiService : ObservableObject
 {
     private static readonly ApiService _instance = new ApiService();
-    public static ApiService Instance => _instance;
+public static ApiService Instance => _instance;
     MyItem item = new MyItem();
     private User _loggedUser;
     public User LoggedUser
