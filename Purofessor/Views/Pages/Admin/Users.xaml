@@ -70,10 +70,10 @@
                     </DataGrid.Resources>
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="Auto"/>
-                        <DataGridTextColumn Header="Nick" Binding="{Binding name}" Width="*" />
-                        <DataGridTextColumn Header="Email" Binding="{Binding email}" Width="*" />
-                        <DataGridCheckBoxColumn Header="Admin" Binding="{Binding is_admin}" Width="Auto" />
+                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto"/>
+                        <DataGridTextColumn Header="Nick" Binding="{Binding Name}" Width="*" />
+                        <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*" />
+                        <DataGridCheckBoxColumn Header="Admin" Binding="{Binding IsAdmin}" Width="Auto" />
                         <DataGridTemplateColumn Header="Akcje" Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
