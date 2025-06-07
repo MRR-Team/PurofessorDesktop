@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using Purofessor.Views;
-using Purofessor.Views.Admin;
+using Purofessor.Views.Pages.Admin;
+using Purofessor.Views.Windows.Admin;
 
 namespace Purofessor.components
 {

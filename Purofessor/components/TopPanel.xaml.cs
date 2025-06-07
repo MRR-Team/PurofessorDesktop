@@ -1,4 +1,4 @@
-﻿using Purofessor.Views;
+﻿using Purofessor.Views.Pages.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +19,7 @@ using System.Security.Policy;
 using Purofessor.Helpers;
 using System.Text.Json;
 using Purofessor.Properties;
+using Purofessor.Views.Windows.Guest;
 
 namespace Purofessor.components
 {

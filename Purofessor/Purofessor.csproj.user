@@ -2,10 +2,10 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="Views\Admin\AdminUserEditWindow.xaml.cs">
+    <Compile Update="Views\Windows\Admin\AdminUserEditWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="AdminWindow.xaml.cs">
+    <Compile Update="Views\Windows\Admin\AdminWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="components\SettingsCompoments\LangSelector.xaml.cs">
@@ -23,49 +23,49 @@
     <Compile Update="components\TopPanel_Admin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="GuestWindow.xaml.cs">
+    <Compile Update="Views\Windows\Guest\GuestWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="LoginWindow.xaml.cs">
+    <Compile Update="Views\Windows\Guest\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SettingsWindow.xaml.cs">
+    <Compile Update="Views\Windows\User\SettingsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Admin\Logs.xaml.cs">
+    <Compile Update="Views\Pages\Admin\Logs.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Admin\Notification.xaml.cs">
+    <Compile Update="Views\Pages\Admin\Notification.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Admin\Rotations.xaml.cs">
+    <Compile Update="Views\Pages\Admin\Rotations.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Admin\Stats.xaml.cs">
+    <Compile Update="Views\Pages\Admin\Stats.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Admin\Users.xaml.cs">
+    <Compile Update="Views\Pages\Admin\Users.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\BuildMaker.xaml.cs">
+    <Compile Update="Views\Pages\User\BuildMaker.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Counterpick.xaml.cs">
+    <Compile Update="Views\Pages\User\Counterpick.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Login.xaml.cs">
+    <Compile Update="Views\Pages\Guest\Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Profile.xaml.cs">
+    <Compile Update="Views\Pages\User\Profile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Register.xaml.cs">
+    <Compile Update="Views\Pages\Guest\Register.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\ServerStatus.xaml.cs">
+    <Compile Update="Views\Pages\User\ServerStatus.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\ShowRotations.xaml.cs">
+    <Compile Update="Views\Pages\User\ShowRotations.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -73,7 +73,7 @@
     <Page Update="components\TopPanel_Guest.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="GuestWindow.xaml">
+    <Page Update="Views\Windows\Guest\GuestWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Languages\Dictionary-en.xaml">
@@ -82,22 +82,22 @@
     <Page Update="Languages\Dictionary-pl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="LoginWindow.xaml">
+    <Page Update="Views\Windows\Guest\LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Admin\Notification.xaml">
+    <Page Update="Views\Pages\Admin\Notification.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Admin\Rotations.xaml">
+    <Page Update="Views\Pages\Admin\Rotations.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Admin\Stats.xaml">
+    <Page Update="Views\Pages\Admin\Stats.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Admin\Users.xaml">
+    <Page Update="Views\Pages\Admin\Users.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Register.xaml">
+    <Page Update="Views\Pages\Guest\Register.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

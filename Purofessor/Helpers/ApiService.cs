@@ -283,6 +283,16 @@ public class ApiService
         var error = await response.Content.ReadAsStringAsync();
         throw new Exception($"Nie udało się zaktualizować użytkownika: {response.StatusCode}\n{error}");
     }
+    public async Task<bool> DeleteUserAsync(int userId)
+    {
+        var response = await _client.DeleteAsync($"users/{userId}");
+
+        if (response.IsSuccessStatusCode)
+            return true;
+
+        var error = await response.Content.ReadAsStringAsync();
+        throw new Exception($"Nie udało się usunąć użytkownika: {response.StatusCode}\n{error}");
+    }
 
 
 }

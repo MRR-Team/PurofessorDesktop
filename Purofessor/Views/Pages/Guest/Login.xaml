@@ -1,0 +1,59 @@
+﻿<Page x:Class="Purofessor.Views.Pages.Guest.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Purofessor.Views"
+      mc:Ignorable="d" 
+      Title="Login">
+
+    <Grid>
+        <Border Style="{StaticResource LoginBorderStyle}">
+
+            <StackPanel Style="{StaticResource LoginStackPanelStyle}">
+                <TextBlock Text="{DynamicResource Welcome}"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="{DynamicResource ForegroundBrush}"
+                           TextAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+                <TextBlock Text="E-mail" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
+                <TextBox x:Name="LoginTextBox"
+                         Margin="0,5,0,15"
+                         Height="30"
+                         Background="{DynamicResource PrimaryBrush}"
+                         Foreground="{DynamicResource ForegroundBrush}"
+                         VerticalContentAlignment="Center"/>
+
+                <TextBlock Text="{DynamicResource Password}" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
+                <PasswordBox x:Name="PasswordBox"
+                             Margin="0,5,0,20"
+                             Height="30"
+                             Background="{DynamicResource PrimaryBrush}"
+                             Foreground="{DynamicResource ForegroundBrush}"
+                             VerticalContentAlignment="Center"/>
+
+                <Button Content="{DynamicResource LogIn}"
+                        Height="35"
+                        Background="{DynamicResource GradientStartBrush}"
+                        Foreground="{DynamicResource ForegroundBrush}"
+                        Click="LoginButton_Click"/>
+
+                <TextBlock TextAlignment="Center" Margin="0,8,0,0" Foreground="{DynamicResource ForegroundBrush}">
+                    <Run Text="{StaticResource NoAccountQ}" />
+                    <Hyperlink Click="RegisterLink_Click">
+                        <Run Text="{StaticResource RegisterLink}" />
+                    </Hyperlink>
+                </TextBlock>
+
+                <TextBlock TextAlignment="Center" Margin="0,5,0,0" Foreground="{DynamicResource ForegroundBrush}">
+                    <Run Text="{StaticResource ContinueAsQuest}" />
+                    <Hyperlink Click="GuestLink_Click">
+                        <Run Text="{StaticResource ContinueAsQuestLink}" />
+                    </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

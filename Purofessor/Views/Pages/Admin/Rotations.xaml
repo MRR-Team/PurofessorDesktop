@@ -1,0 +1,56 @@
+﻿<Page x:Class="Purofessor.Views.Pages.Admin.Rotations"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      Title="Rotation">
+
+    <Grid>
+        <Border Style="{StaticResource MainBorderStyle}">
+            <StackPanel Style="{StaticResource ContentStackPanelStyle}">
+
+                <TextBlock Text="Edycja rotacji championów"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="{DynamicResource ForegroundBrush}"
+                           TextAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20" />
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl Name="ChampionListBox">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" Margin="10" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="{DynamicResource BackgroundBrush}"
+                                        BorderBrush="{StaticResource PrimaryBrush}"
+                                        BorderThickness="1"
+                                        CornerRadius="10"
+                                        Margin="5"
+                                        Padding="10"
+                                        Width="150"
+                                        Height="50">
+                                    <CheckBox Content="{Binding Name}"
+                                              IsChecked="{Binding IsAvailable, Mode=TwoWay}"
+                                              Checked="OnCheckboxToggled"
+                                              Unchecked="OnCheckboxToggled"
+                                              Tag="{Binding Id}"
+                                              VerticalAlignment="Center"
+                                              Foreground="{DynamicResource ForegroundBrush}"
+                                              FontWeight="SemiBold" />
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
