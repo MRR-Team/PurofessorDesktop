@@ -52,13 +52,14 @@
                            VerticalAlignment="Center"/>
 
                 <TextBlock x:Name="ProfileUsername"
-                           Height="22"
-                           Padding="0,4,10,0"
-                           Background="Transparent"
-                           Foreground="{DynamicResource ForegroundBrush}"
-                           HorizontalAlignment="Right"
-                           VerticalAlignment="Center"
-                           IsHitTestVisible="False" />
+           Text="{Binding LoggedUser.Name, StringFormat=\, {0}}"
+           Height="22"
+           Padding="0,4,10,0"
+           Background="Transparent"
+           Foreground="{DynamicResource ForegroundBrush}"
+           HorizontalAlignment="Right"
+           VerticalAlignment="Center"
+           IsHitTestVisible="False" />
 
                 <Button x:Name="SettingsButton"
         Width="30"

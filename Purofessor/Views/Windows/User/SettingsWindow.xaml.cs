@@ -24,7 +24,7 @@ namespace Purofessor
         {
             InitializeComponent();
             var user = App.ApiService.LoggedUser;
-            if (user != null && user.is_admin)
+            if (user != null && user.IsAdmin)
             {
                 AdminButton.Visibility = Visibility.Visible;
             }

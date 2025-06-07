@@ -1,20 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
+using Purofessor.Helpers;
 
 namespace Purofessor.Models
 {
-    public class User
+    public class User : ObservableObject
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string email { get; set; }
-        public string emailverifiedat { get; set; }
-        public DateTime createdat { get; set; }
-        public DateTime updatedat { get; set; }
-        public bool is_admin { get; set; }
-    }
+        private int _id;
+        public int Id
+        {
+            get => _id;
+            set => SetField(ref _id, value);
+        }
 
+        private string _name;
+        public string Name
+        {
+            get => _name;
+            set => SetField(ref _name, value);
+        }
+
+        private string _email;
+        public string Email
+        {
+            get => _email;
+            set => SetField(ref _email, value);
+        }
+
+        private bool _isAdmin;
+
+        [JsonPropertyName("is_admin")] // <- Mapowanie JSON -> właściwość
+        public bool IsAdmin
+        {
+            get => _isAdmin;
+            set => SetField(ref _isAdmin, value);
+        }
+
+        private string _token;
+        public string Token
+        {
+            get => _token;
+            set => SetField(ref _token, value);
+        }
+
+        private string _password;
+        public string Password
+        {
+            get => _password;
+            set => SetField(ref _password, value);
+        }
+    }
 }

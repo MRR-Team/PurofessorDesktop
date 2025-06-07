@@ -8,10 +8,15 @@ using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 using MyItem = Purofessor.Models.Item;
 using Purofessor.Helpers;
 using Purofessor.Properties;
-public class ApiService
+public class ApiService : ObservableObject
 {
     MyItem item = new MyItem();
-    public User LoggedUser { get; private set; }
+    private User _loggedUser;
+    public User LoggedUser
+    {
+        get => _loggedUser;
+        set => SetField(ref _loggedUser, value);
+    }
     private readonly HttpClient _client;
     public string AuthToken { get; private set; }
     public ApiService()

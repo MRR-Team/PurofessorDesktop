@@ -28,8 +28,8 @@ namespace Purofessor.Views.Pages.User
 
             if (user != null)
             {
-                UsernameTextBox.Text = user.name;
-                EmailTextBox.Text = user.email;
+                UsernameTextBox.Text = user.Name;
+                EmailTextBox.Text = user.Email;
             }
             else
             {
@@ -46,12 +46,12 @@ namespace Purofessor.Views.Pages.User
             try
             {
 
-                bool success = await _apiService.UpdateUserAsync(_apiService.LoggedUser.id, username, email, password);
+                bool success = await _apiService.UpdateUserAsync(_apiService.LoggedUser.Id, username, email, password);
 
                 if (success)
                 {
-                    _apiService.LoggedUser.name = username;
-                    _apiService.LoggedUser.email = email;
+                    _apiService.LoggedUser.Name = username;
+                    _apiService.LoggedUser.Email = email;
                     MessageBox.Show("Dane zostały zaktualizowane!", "Sukces", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else

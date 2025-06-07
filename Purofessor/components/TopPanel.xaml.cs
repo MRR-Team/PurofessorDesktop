@@ -33,14 +33,7 @@ namespace Purofessor.components
         {
             InitializeComponent();
             var user = App.ApiService.LoggedUser;
-            if (user != null)
-            {
-                ProfileUsername.Text = $", {user.name}";
-            }
-            else
-            {
-                ProfileUsername.Text = "Profil";
-            }
+            DataContext = App.ApiService;
             _previousTabButton = KontraButton;
 
         }

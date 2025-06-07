@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop123\\Purofessor\\Purofessor.csproj": {}
+    "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop321321321\\Purofessor\\Purofessor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop123\\Purofessor\\Purofessor.csproj": {
+    "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop321321321\\Purofessor\\Purofessor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop123\\Purofessor\\Purofessor.csproj",
+        "projectUniqueName": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop321321321\\Purofessor\\Purofessor.csproj",
         "projectName": "Purofessor",
-        "projectPath": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop123\\Purofessor\\Purofessor.csproj",
+        "projectPath": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop321321321\\Purofessor\\Purofessor.csproj",
         "packagesPath": "C:\\Users\\buchc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop123\\Purofessor\\obj\\",
+        "outputPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop321321321\\Purofessor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

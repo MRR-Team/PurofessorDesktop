@@ -16,8 +16,8 @@ namespace Purofessor.Views.Windows.Admin
             _apiService = apiService;
             _user = user;
 
-            NameTextBox.Text = _user.name;
-            EmailTextBox.Text = _user.email;
+            NameTextBox.Text = _user.Name;
+            EmailTextBox.Text = _user.Email;
         }
 
         private async void Save_Click(object sender, RoutedEventArgs e)
@@ -28,7 +28,7 @@ namespace Purofessor.Views.Windows.Admin
                 string email = EmailTextBox.Text.Trim();
                 string password = PasswordBox.Password.Trim();
 
-                bool updated = await _apiService.UpdateUserAsync(_user.id, name, email, password);
+                bool updated = await _apiService.UpdateUserAsync(_user.Id, name, email, password);
 
                 if (updated)
                 {

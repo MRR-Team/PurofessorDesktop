@@ -58,7 +58,7 @@ namespace Purofessor.Views.Pages.Admin
         {
             if (sender is Button button && button.Tag is UserModel selectedUser)
             {
-                var confirm = MessageBox.Show($"Czy na pewno chcesz usunąć użytkownika '{selectedUser.name}'?",
+                var confirm = MessageBox.Show($"Czy na pewno chcesz usunąć użytkownika '{selectedUser.Name}'?",
                                               "Potwierdzenie",
                                               MessageBoxButton.YesNo,
                                               MessageBoxImage.Warning);
@@ -67,7 +67,7 @@ namespace Purofessor.Views.Pages.Admin
                 {
                     try
                     {
-                        await _apiService.DeleteUserAsync(selectedUser.id);
+                        await _apiService.DeleteUserAsync(selectedUser.Id);
                         _allUsers = await _apiService.GetUsersAsync();
                         UsersDataGrid.ItemsSource = null;
                         UsersDataGrid.ItemsSource = _allUsers;
