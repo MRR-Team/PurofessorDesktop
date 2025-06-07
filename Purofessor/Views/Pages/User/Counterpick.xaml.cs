@@ -11,7 +11,6 @@ namespace Purofessor.Views.Pages.User
     public partial class Counterpick : Page
     {
         private List<Champion> _allChampions = new();
-        private readonly ApiService _apiService = new();
         private readonly ChampionAutocompleteHelper _autocompleteHelper = new();
 
         public Counterpick()
@@ -24,8 +23,7 @@ namespace Purofessor.Views.Pages.User
         {
             try
             {
-                _allChampions = await _apiService.GetChampionsAsync();
-                _autocompleteHelper.SetChampionList(_allChampions);
+                _allChampions = await ApiService.Instance.GetChampionsAsync(); _autocompleteHelper.SetChampionList(_allChampions);
                 _autocompleteHelper.Attach(EnemyChampTextBox, SuggestionsPopup, SuggestionsListBox);
             }
             catch (Exception ex)
@@ -56,8 +54,7 @@ namespace Purofessor.Views.Pages.User
 
             try
             {
-                var result = await _apiService.GetCounterAsync(position, champion.Id.ToString());
-                DisplayCounterResults(result, championName, position);
+                var result = await ApiService.Instance.GetCounterAsync(position, champion.Id.ToString()); DisplayCounterResults(result, championName, position);
             }
             catch (Exception ex)
             {

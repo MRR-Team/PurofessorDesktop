@@ -8,7 +8,6 @@ namespace Purofessor.Views.Pages.Admin
 {
     public partial class Rotations : Page
     {
-        private readonly ApiService _apiService = new ApiService();
         private List<Champion> _champions;
 
         public Rotations()
@@ -21,7 +20,7 @@ namespace Purofessor.Views.Pages.Admin
         {
             try
             {
-                _champions = await _apiService.GetChampionsAsync();
+                _champions = await ApiService.Instance.GetChampionsAsync();
                 ChampionListBox.ItemsSource = _champions.OrderBy(c => c.Name).ToList();
             }
             catch
@@ -36,7 +35,7 @@ namespace Purofessor.Views.Pages.Admin
             {
                 try
                 {
-                    bool success = await _apiService.ToggleChampionAvailabilityAsync(id);
+                    bool success = await ApiService.Instance.ToggleChampionAvailabilityAsync(id);
                     if (!success)
                     {
                         MessageBox.Show("Nie udało się zaktualizować rotacji.");

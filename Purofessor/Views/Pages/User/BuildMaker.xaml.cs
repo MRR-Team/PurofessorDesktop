@@ -19,7 +19,6 @@ namespace Purofessor.Views.Pages.User
         public BuildMaker()
         {
             InitializeComponent();
-            _apiService = new ApiService();
             _autocompleteHelper = new ChampionAutocompleteHelper();
             Loaded += BuildMaker_Loaded;
         }
@@ -28,7 +27,7 @@ namespace Purofessor.Views.Pages.User
         {
             try
             {
-                _champions = await _apiService.GetChampionsAsync();
+                _champions = await ApiService.Instance.GetChampionsAsync();
 
                 _autocompleteHelper.SetChampionList(_champions);
                 _autocompleteHelper.Attach(MyChampionTextBox, MyChampPopup, MyChampSuggestions);
@@ -62,7 +61,7 @@ namespace Purofessor.Views.Pages.User
 
             try
             {
-                var buildItems = await _apiService.GetBuildAsync(enemyChamp.Id.ToString(), myChamp.Id.ToString());
+                var buildItems = await ApiService.Instance.GetBuildAsync(enemyChamp.Id.ToString(), myChamp.Id.ToString());
 
                 ResultBorder.Visibility = Visibility.Visible;
 

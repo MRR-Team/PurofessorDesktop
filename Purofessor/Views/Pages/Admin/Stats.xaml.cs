@@ -21,7 +21,6 @@ namespace Purofessor.Views.Pages.Admin
     /// </summary>
     public partial class Stats : Page
     {
-        private readonly ApiService _apiService = new ApiService();
 
         public Stats()
         {
@@ -29,11 +28,11 @@ namespace Purofessor.Views.Pages.Admin
             Loaded += Stats_Loaded;
         }
 
-        private async void Stats_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        private async void Stats_Loaded(object sender, RoutedEventArgs e)
         {
             try
             {
-                var stats = await _apiService.GetChampionSearchStatsAsync();
+                var stats = await ApiService.Instance.GetChampionSearchStatsAsync();
 
                 foreach (var stat in stats)
                 {
@@ -47,6 +46,7 @@ namespace Purofessor.Views.Pages.Admin
                 MessageBox.Show($"Błąd podczas pobierania statystyk: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
 
     }
 }

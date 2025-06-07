@@ -10,7 +10,6 @@ namespace Purofessor.Views.Pages.Admin
 {
     public partial class Users : Page
     {
-        private readonly ApiService _apiService = new();
         private List<UserModel> _allUsers = new();
 
         public Users()
@@ -23,7 +22,7 @@ namespace Purofessor.Views.Pages.Admin
         {
             try
             {
-                _allUsers = await _apiService.GetUsersAsync();
+                _allUsers = await ApiService.Instance.GetUsersAsync();
                 UsersDataGrid.ItemsSource = _allUsers;
             }
             catch (Exception ex)
@@ -36,14 +35,14 @@ namespace Purofessor.Views.Pages.Admin
         {
             if (sender is Button button && button.Tag is UserModel selectedUser)
             {
-                var editWindow = new AdminUserEditWindow(_apiService, selectedUser);
+                var editWindow = new AdminUserEditWindow(ApiService.Instance, selectedUser);
                 bool? result = editWindow.ShowDialog();
 
                 if (result == true)
                 {
                     try
                     {
-                        _allUsers = await _apiService.GetUsersAsync();
+                        _allUsers = await ApiService.Instance.GetUsersAsync();
                         UsersDataGrid.ItemsSource = null;
                         UsersDataGrid.ItemsSource = _allUsers;
                     }
@@ -54,6 +53,7 @@ namespace Purofessor.Views.Pages.Admin
                 }
             }
         }
+
         private async void DeleteUser_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button button && button.Tag is UserModel selectedUser)
@@ -67,8 +67,8 @@ namespace Purofessor.Views.Pages.Admin
                 {
                     try
                     {
-                        await _apiService.DeleteUserAsync(selectedUser.Id);
-                        _allUsers = await _apiService.GetUsersAsync();
+                        await ApiService.Instance.DeleteUserAsync(selectedUser.Id);
+                        _allUsers = await ApiService.Instance.GetUsersAsync();
                         UsersDataGrid.ItemsSource = null;
                         UsersDataGrid.ItemsSource = _allUsers;
                     }

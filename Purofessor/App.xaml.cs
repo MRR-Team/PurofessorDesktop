@@ -19,8 +19,7 @@ namespace Purofessor
 
             LanguageHelper.SetLang(Settings.Default.lang);
 
-            ApiService = new ApiService();
-
+            ApiService = ApiService.Instance;
             base.OnStartup(e);
         }
     }
