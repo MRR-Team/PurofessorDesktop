@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using Purofessor.Helpers;
+using Purofessor.Views.Pages.User;
 using Purofessor.Views.Windows.Guest;
 
 namespace Purofessor.Views.Pages.Guest
@@ -61,8 +62,9 @@ namespace Purofessor.Views.Pages.Guest
                 bool success = await ApiService.Instance.RegisterAsync(login, password, email);
                 if (success)
                 {
-                    MessageBox.Show("Rejestracja zakończona sukcesem!");
-                    // Możesz tutaj przejść do strony logowania
+                    MessageBox.Show("Rejestracja zakończona sukcesem! Wysłaliśmy do ciebie maila w celu weryfikacji");
+                    var parentWindow = Window.GetWindow(this) as LoginWindow;
+                    parentWindow?.LoginFrame.Navigate(new Login());
                 }
                 else
                 {

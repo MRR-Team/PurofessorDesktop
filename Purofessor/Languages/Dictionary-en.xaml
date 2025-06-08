@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:System="clr-namespace:System;assembly=System.Runtime">
-    <System:String x:Key="LogoutButton">Logout</System:String>
+                    xmlns:System="clr-namespace:System;assembly=System.Runtime">
 
+    <System:String x:Key="LogoutButton">Logout</System:String>
     <System:String x:Key="ChooseChamp">Choose enemy champion</System:String>
     <System:String x:Key="InsertChamp">Enter champion name...</System:String>
     <System:String x:Key="ChoosePos">Choose role</System:String>
@@ -21,6 +21,48 @@
     <System:String x:Key="RegisterLink">Register</System:String>
     <System:String x:Key="NoAccountQ">Don't have an account?</System:String>
     <System:String x:Key="ContinueAsQuest">Or continue as</System:String>
-    <System:String x:Key="ContinueAsQuestLink">Quest</System:String>
+    <System:String x:Key="ContinueAsQuestLink">Guest</System:String>
     <System:String x:Key="ProfileButtonHi">Welcome</System:String>
+    <System:String x:Key="EnterChampionsPrompt">Enter your champion and the opponent</System:String>
+    <System:String x:Key="YourChampion">Your champion:</System:String>
+    <System:String x:Key="EnemyChampion">Opponent:</System:String>
+    <System:String x:Key="GenerateBuildButton">Generate build</System:String>
+    <System:String x:Key="ChampionName">Champion name:</System:String>
+    <System:String x:Key="YourProfile">Your profile</System:String>
+    <System:String x:Key="UsernameLabel">Username</System:String>
+    <System:String x:Key="EmailLabel">Email</System:String>
+    <System:String x:Key="NewPasswordLabel">New password</System:String>
+    <System:String x:Key="SaveButton">Save</System:String>
+    <System:String x:Key="CurrentRotation">Current champion rotation:</System:String>
+    <System:String x:Key="AdminLogsTitle">Admin logs</System:String>
+    <System:String x:Key="EditRotation">Edit champion rotation</System:String>
+    <System:String x:Key="ChampionSearchStats">Champion search statistics</System:String>
+    <System:String x:Key="ChampionColumn">Champion</System:String>
+    <System:String x:Key="SearchCountColumn">Search count</System:String>
+    <System:String x:Key="UserListTitle">User list</System:String>
+    <System:String x:Key="ColumnId">ID</System:String>
+    <System:String x:Key="ColumnNick">Nickname</System:String>
+    <System:String x:Key="ColumnEmail">Email</System:String>
+    <System:String x:Key="ColumnAdmin">Admin</System:String>
+    <System:String x:Key="ColumnActions">Actions</System:String>
+    <System:String x:Key="EditButton">Edit</System:String>
+    <System:String x:Key="DeleteButton">Delete</System:String>
+    <System:String x:Key="DarkTheme">Dark</System:String>
+    <System:String x:Key="LightTheme">Light</System:String>
+    <System:String x:Key="BuildMakerButton">Generate items</System:String>
+    <System:String x:Key="RotationButton">Rotation</System:String>
+    <System:String x:Key="SettingsTooltip">Settings</System:String>
+    <System:String x:Key="ProfileTooltip">Profile</System:String>
+    <System:String x:Key="LogsButton">Logs</System:String>
+    <System:String x:Key="StatsButton">Statistics</System:String>
+    <System:String x:Key="UsersButton">Users</System:String>
+    <System:String x:Key="NotificationsButton">Notifications</System:String>
+    <System:String x:Key="ExitTooltip">Exit</System:String>
+    <System:String x:Key="GuestUnlockMessage">To unlock all app features</System:String>
+    <System:String x:Key="LoginLink">Log in</System:String>
+    <System:String x:Key="SettingsTitle">Settings</System:String>
+    <System:String x:Key="LanguageLabel">Language</System:String>
+    <System:String x:Key="ThemeLabel">Theme</System:String>
+    <System:String x:Key="AdminPanelButton">Admin Panel</System:String>
+
 </ResourceDictionary>

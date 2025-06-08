@@ -10,7 +10,7 @@
         <Border Style="{StaticResource MainBorderStyle}">
             <StackPanel Style="{StaticResource ContentStackPanelStyle}">
 
-                <TextBlock Text="Edycja rotacji championów"
+                <TextBlock Text="{DynamicResource EditRotation}"
                            FontSize="24"
                            FontWeight="Bold"
                            Foreground="{DynamicResource ForegroundBrush}"

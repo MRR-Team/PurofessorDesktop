@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Purofessor.components"
              Height="Auto" MinHeight="60">
+
     <Grid>
         <!-- Tło -->
         <Rectangle VerticalAlignment="Center" Height="60">
@@ -22,12 +23,25 @@
 
             <!-- Przyciski admina -->
             <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left">
-                <Button Style="{DynamicResource TopPanelButtonStyle}" Content="Rotacja" Click="Rotation_Click"/>
-                <Button Style="{DynamicResource TopPanelButtonStyle}" Content="Logi" Click="Logs_Click"/>
+                <Button Style="{DynamicResource TopPanelButtonStyle}" 
+                        Content="{DynamicResource RotationButton}" 
+                        Click="Rotation_Click"/>
 
-                <Button Style="{DynamicResource TopPanelButtonStyle}" Content="Statystyki" Click="Stats_Click"/>
-                <Button Style="{DynamicResource TopPanelButtonStyle}" Content="Użytkownicy" Click="Users_Click"/>
-                <Button Style="{DynamicResource TopPanelButtonStyle}" Content="Powiadomienia" Click="Notify_Click"/>
+                <Button Style="{DynamicResource TopPanelButtonStyle}" 
+                        Content="{DynamicResource LogsButton}" 
+                        Click="Logs_Click"/>
+
+                <Button Style="{DynamicResource TopPanelButtonStyle}" 
+                        Content="{DynamicResource StatsButton}" 
+                        Click="Stats_Click"/>
+
+                <Button Style="{DynamicResource TopPanelButtonStyle}" 
+                        Content="{DynamicResource UsersButton}" 
+                        Click="Users_Click"/>
+
+                <Button Style="{DynamicResource TopPanelButtonStyle}" 
+                        Content="{DynamicResource NotificationsButton}" 
+                        Click="Notify_Click"/>
             </StackPanel>
 
             <!-- Wyjdź -->
@@ -36,7 +50,7 @@
                         Width="30" Height="30" Margin="10,0,0,0"
                         BorderThickness="0"
                         Background="{DynamicResource GradientStartBrush}"
-                        ToolTip="Wyjdź"
+                        ToolTip="{DynamicResource ExitTooltip}"
                         Click="ExitButton_Click">
                     <TextBlock Text="⎋" FontSize="16" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Button>

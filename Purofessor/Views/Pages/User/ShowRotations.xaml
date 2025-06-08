@@ -10,26 +10,26 @@
     <Grid>
         <Border Style="{StaticResource MainBorderStyle}">
             <StackPanel Style="{StaticResource ContentStackPanelStyle}">
-                <TextBlock Text="Aktualna rotacja championów:" 
-               FontSize="18" 
-               FontWeight="Bold" 
-               Foreground="{DynamicResource ForegroundBrush}" 
-               Margin="0,0,0,10"/>
+
+                <TextBlock Text="{DynamicResource CurrentRotation}" 
+                           FontSize="18" 
+                           FontWeight="Bold" 
+                           Foreground="{DynamicResource ForegroundBrush}" 
+                           Margin="0,0,0,10"/>
 
                 <ListBox x:Name="RotationListBox"
-             Background="{DynamicResource PrimaryBrush}"
-             Foreground="{DynamicResource ForegroundBrush}"
-             BorderThickness="0"
-             FontSize="16">
+                         Background="{DynamicResource PrimaryBrush}"
+                         Foreground="{DynamicResource ForegroundBrush}"
+                         BorderThickness="0"
+                         FontSize="16">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}" Padding="5"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
+
             </StackPanel>
-
         </Border>
-
     </Grid>
 </Page>

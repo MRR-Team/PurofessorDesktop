@@ -16,7 +16,7 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="Lista użytkowników"
+                <TextBlock Text="{DynamicResource UserListTitle}"
                            FontSize="20"
                            FontWeight="Bold"
                            Foreground="{DynamicResource ForegroundBrush}"
@@ -43,7 +43,6 @@
                           Margin="0,0,0,10">
 
                     <DataGrid.Resources>
-                        <!-- Styl nagłówków -->
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="Background" Value="{StaticResource GradientStartBrush}" />
                             <Setter Property="Foreground" Value="White"/>
@@ -54,7 +53,6 @@
                             <Setter Property="Padding" Value="5,3"/>
                         </Style>
 
-                        <!-- Styl wierszy -->
                         <Style TargetType="DataGridRow">
                             <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
                             <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}" />
@@ -70,20 +68,20 @@
                     </DataGrid.Resources>
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto"/>
-                        <DataGridTextColumn Header="Nick" Binding="{Binding Name}" Width="*" />
-                        <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*" />
-                        <DataGridCheckBoxColumn Header="Admin" Binding="{Binding IsAdmin}" Width="Auto" />
-                        <DataGridTemplateColumn Header="Akcje" Width="Auto">
+                        <DataGridTextColumn Header="{DynamicResource ColumnId}" Binding="{Binding Id}" Width="Auto"/>
+                        <DataGridTextColumn Header="{DynamicResource ColumnNick}" Binding="{Binding Name}" Width="*" />
+                        <DataGridTextColumn Header="{DynamicResource ColumnEmail}" Binding="{Binding Email}" Width="*" />
+                        <DataGridCheckBoxColumn Header="{DynamicResource ColumnAdmin}" Binding="{Binding IsAdmin}" Width="Auto" />
+                        <DataGridTemplateColumn Header="{DynamicResource ColumnActions}" Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Button Content="Edytuj"
+                                        <Button Content="{DynamicResource EditButton}"
                                                 Click="EditUser_Click"
                                                 Padding="5,2"
                                                 Margin="0,0,5,0"
                                                 Tag="{Binding}" />
-                                        <Button Content="Usuń"
+                                        <Button Content="{DynamicResource DeleteButton}"
                                                 Click="DeleteUser_Click"
                                                 Padding="5,2"
                                                 Tag="{Binding}" />

@@ -14,8 +14,8 @@
                   BorderBrush="#9370DB"
                   BorderThickness="1"
                   SelectionChanged="ThemeComboBox_SelectionChanged">
-            <ComboBoxItem Content="Dark" Tag="DarkTheme.xaml"/>
-            <ComboBoxItem Content="Light" Tag="LightTheme.xaml"/>
+            <ComboBoxItem Content="{DynamicResource DarkTheme}" Tag="DarkTheme.xaml"/>
+            <ComboBoxItem Content="{DynamicResource LightTheme}" Tag="LightTheme.xaml"/>
         </ComboBox>
     </Grid>
 </UserControl>

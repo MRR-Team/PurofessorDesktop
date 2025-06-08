@@ -38,8 +38,8 @@ namespace Purofessor.E2E
             Assert.NotNull(loginButton);
 
             // podaj dane
-            loginBox.Enter("SzefSzef@Szef");
-            passwordBox.Enter("SzefSzefSzef");
+            loginBox.Enter("admin@example.com");
+            passwordBox.Enter("password");
 
             loginButton.Invoke();
 

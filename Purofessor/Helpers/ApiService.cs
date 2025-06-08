@@ -47,22 +47,21 @@ public static ApiService Instance => _instance;
     {
         var payload = new
         {
-            email = email,
-            password = password
+            email,
+            password
         };
 
         var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
         var response = await _client.PostAsync("login", content);
 
+        var json = await response.Content.ReadAsStringAsync();
+
         if (response.IsSuccessStatusCode)
         {
-            var json = await response.Content.ReadAsStringAsync();
-
-            using JsonDocument doc = JsonDocument.Parse(json);
+            using var doc = JsonDocument.Parse(json);
             string token = doc.RootElement.GetProperty("token").GetString();
             var userElement = doc.RootElement.GetProperty("user").GetRawText();
 
-            // Deserializacja użytkownika
             LoggedUser = JsonSerializer.Deserialize<User>(userElement, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
@@ -74,7 +73,15 @@ public static ApiService Instance => _instance;
             return token;
         }
 
-        throw new Exception("Nie udało się zalogować. Sprawdź dane.");
+        // Prosta próba odczytania message bez try-catch
+        string message = "Nie udało się zalogować.";
+        using var errorDoc = JsonDocument.Parse(json);
+        if (errorDoc.RootElement.TryGetProperty("message", out var msgProp))
+        {
+            message = msgProp.GetString() ?? message;
+        }
+
+        throw new Exception(message);
     }
     public async Task<bool> UpdateUserAsync(int id, string name, string email, string password)
     {
@@ -132,7 +139,7 @@ public static ApiService Instance => _instance;
 
         var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
 
-        var response = await _client.PostAsync("users", content);
+        var response = await _client.PostAsync("register", content);
         return response.IsSuccessStatusCode;
     }
     public async Task<List<string>> GetCounterAsync(string role, string enemyChampion)
@@ -223,7 +230,7 @@ public static ApiService Instance => _instance;
     }
     public async Task<bool> ToggleChampionAvailabilityAsync(int championId)
     {
-        var request = new HttpRequestMessage(HttpMethod.Patch, $"champions/toggle-availability/{championId}");
+        var request = new HttpRequestMessage(HttpMethod.Patch, $"champions/{championId}/toggle-availability");
         request.Content = new StringContent("", Encoding.UTF8, "application/json"); // pusty content
 
         var response = await _client.SendAsync(request);

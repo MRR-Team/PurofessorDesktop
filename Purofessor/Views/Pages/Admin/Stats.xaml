@@ -15,7 +15,7 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="Statystyki wyszukiwań championów"
+                <TextBlock Text="{DynamicResource ChampionSearchStats}"
                            FontSize="20"
                            FontWeight="Bold"
                            Foreground="{DynamicResource ForegroundBrush}"
@@ -42,7 +42,6 @@
                           Margin="0,0,0,10">
 
                     <DataGrid.Resources>
-                        <!-- Styl nagłówków -->
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="Background" Value="{StaticResource GradientStartBrush}" />
                             <Setter Property="Foreground" Value="White"/>
@@ -53,7 +52,6 @@
                             <Setter Property="Padding" Value="5,3"/>
                         </Style>
 
-                        <!-- Styl wierszy -->
                         <Style TargetType="DataGridRow">
                             <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
                             <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}" />
@@ -69,8 +67,8 @@
                     </DataGrid.Resources>
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Champion" Binding="{Binding Champion.Name}" Width="*" />
-                        <DataGridTextColumn Header="Liczba wyszukiwań" Binding="{Binding Total}" Width="200"
+                        <DataGridTextColumn Header="{DynamicResource ChampionColumn}" Binding="{Binding Champion.Name}" Width="*" />
+                        <DataGridTextColumn Header="{DynamicResource SearchCountColumn}" Binding="{Binding Total}" Width="200"
                                             ElementStyle="{StaticResource RightAlignedCellStyle}" />
                     </DataGrid.Columns>
                 </DataGrid>

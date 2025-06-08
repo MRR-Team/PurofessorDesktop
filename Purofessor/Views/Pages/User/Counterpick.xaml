@@ -10,8 +10,8 @@
       Title="Counterpick">
 
     <Grid>
-        <Border Style="{StaticResource MainBorderStyle}">
-            <StackPanel Style="{StaticResource ContentStackPanelStyle}">
+        <Border Style="{DynamicResource MainBorderStyle}">
+            <StackPanel Style="{DynamicResource ContentStackPanelStyle}">
 
                 <TextBlock Text="{DynamicResource ChooseChamp}"
                            FontSize="24"
@@ -25,7 +25,6 @@
                            Foreground="{DynamicResource ForegroundBrush}"/>
 
                 <Grid>
-                    <!-- Upewniamy się, że nazwa to 'EnemyChampTextBox' -->
                     <TextBox Name="EnemyChampTextBox"
                              Height="30"
                              Margin="0,5,0,5"
@@ -33,7 +32,6 @@
                              Foreground="{DynamicResource ForegroundBrush}"
                              VerticalContentAlignment="Center"/>
 
-                    <!-- Naprawiony PlacementTarget i MinWidth -->
                     <Popup Name="SuggestionsPopup"
                            PlacementTarget="{Binding ElementName=EnemyChampTextBox}"
                            Placement="Bottom"
@@ -62,11 +60,11 @@
                             HorizontalAlignment="Center"
                             Margin="0,0,0,15"
                             Name="PositionStackPanel">
-                    <RadioButton Content="{DynamicResource Supp}" GroupName="Pozycje" Style="{StaticResource ButtonRadioStyle}" Name="RadioSupp"/>
-                    <RadioButton Content="{DynamicResource Bottom}" GroupName="Pozycje" Style="{StaticResource ButtonRadioStyle}" Name="RadioBottom"/>
-                    <RadioButton Content="{DynamicResource Mid}" GroupName="Pozycje" Style="{StaticResource ButtonRadioStyle}" Name="RadioMid"/>
-                    <RadioButton Content="{DynamicResource Jungle}" GroupName="Pozycje" Style="{StaticResource ButtonRadioStyle}" Name="RadioJungle"/>
-                    <RadioButton Content="{DynamicResource Top}" GroupName="Pozycje" Style="{StaticResource ButtonRadioStyle}" Name="RadioTop"/>
+                    <RadioButton Content="{DynamicResource Supp}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" Name="RadioSupp"/>
+                    <RadioButton Content="{DynamicResource Bottom}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" Name="RadioBottom"/>
+                    <RadioButton Content="{DynamicResource Mid}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" Name="RadioMid"/>
+                    <RadioButton Content="{DynamicResource Jungle}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" Name="RadioJungle"/>
+                    <RadioButton Content="{DynamicResource Top}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" Name="RadioTop"/>
                 </StackPanel>
 
                 <Button Content="{DynamicResource GenCounter}"
