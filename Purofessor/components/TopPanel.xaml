@@ -6,7 +6,10 @@
              MinHeight="60">
 
     <Grid>
-        <Rectangle VerticalAlignment="Center" Height="60">
+        <!-- Tło -->
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="2"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                   MinHeight="60">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="{DynamicResource GradientStartColor}" Offset="0"/>
@@ -15,44 +18,40 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Grid Margin="10,15,10,0" VerticalAlignment="Top" Height="30">
+        <!-- Zawartość -->
+        <Grid Margin="10,15,10,0" VerticalAlignment="Top" MinHeight="30">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Zakładki -->
-            <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <!-- Przyciski główne -->
+            <WrapPanel Orientation="Horizontal" Grid.Column="0">
                 <Button Style="{DynamicResource TopPanelButtonStyle}"
                         Content="{DynamicResource CounterButton}"
                         x:Name="KontraButton"
                         Click="Kontra_Click"/>
-
                 <Button Style="{DynamicResource TopPanelButtonStyle}"
-                        Content="{DynamicResource BuildMakerButton}"
+                        Content="Generuj przedmioty"
                         x:Name="BuildMakerButton"
                         Click="BuildMaker_Click"/>
-
                 <Button Style="{DynamicResource TopPanelButtonStyle}"
                         Content="{DynamicResource ServerStatusButton}"
                         x:Name="StatusButton"
                         Click="Status_Click"/>
-
                 <Button Style="{DynamicResource TopPanelButtonStyle}"
-                        Content="{DynamicResource RotationButton}"
+                        Content="Rotacja"
                         x:Name="ShowRotationsButton"
                         Click="ShowRotations_Click"/>
-            </StackPanel>
+            </WrapPanel>
 
-            <!-- Przyciski językowe i profilowe -->
-            <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center" Margin="5,0,0,0">
+            <!-- Profil i inne przyciski -->
+            <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Top">
                 <TextBlock Text="{DynamicResource ProfileButtonHi}"
                            Height="22"
                            Padding="0,4,0,0"
                            Background="Transparent"
                            Foreground="{DynamicResource ForegroundBrush}"
-                           HorizontalAlignment="Right"
                            VerticalAlignment="Center"/>
 
                 <TextBlock x:Name="ProfileUsername"
@@ -61,9 +60,8 @@
                            Padding="0,4,10,0"
                            Background="Transparent"
                            Foreground="{DynamicResource ForegroundBrush}"
-                           HorizontalAlignment="Right"
                            VerticalAlignment="Center"
-                           IsHitTestVisible="False" />
+                           IsHitTestVisible="False"/>
 
                 <Button x:Name="SettingsButton"
                         Width="30"
@@ -71,12 +69,12 @@
                         Margin="0,0,10,0"
                         BorderThickness="0"
                         Background="{DynamicResource GradientStartBrush}"
-                        ToolTip="{DynamicResource SettingsTooltip}"
+                        ToolTip="Ustawienia"
                         Click="SettingsButton_Click">
-                    <TextBlock Text="⚙" 
-                               FontSize="16" 
-                               Foreground="White" 
-                               VerticalAlignment="Center" 
+                    <TextBlock Text="⚙"
+                               FontSize="16"
+                               Foreground="White"
+                               VerticalAlignment="Center"
                                HorizontalAlignment="Center"/>
                 </Button>
 
@@ -86,7 +84,7 @@
                         Margin="0,0,10,0"
                         BorderThickness="0"
                         Background="Transparent"
-                        ToolTip="{DynamicResource ProfileTooltip}"
+                        ToolTip="Profil"
                         Click="ProfileButton_Click">
                     <Image Source="pack://application:,,,/Images/UserIcon.png" Width="30" Height="30"/>
                 </Button>

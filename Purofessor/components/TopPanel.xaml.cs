@@ -20,6 +20,7 @@ using Purofessor.Helpers;
 using System.Text.Json;
 using Purofessor.Properties;
 using Purofessor.Views.Windows.Guest;
+using Purofessor.Views.Windows.Dialogs;
 
 namespace Purofessor.components
 {
@@ -55,7 +56,7 @@ namespace Purofessor.components
 
         private void ShowRotations_Click(object sender, RoutedEventArgs e)
         {
-            SetActiveTab(StatusButton);
+            SetActiveTab(ShowRotationsButton);
             var parentWindow = Window.GetWindow(this) as MainWindow;
             parentWindow?.MainFrame.Navigate(new ShowRotations());
         }
@@ -92,7 +93,7 @@ namespace Purofessor.components
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd podczas wylogowywania: {ex.Message}");
+                CustomMessageBox.Show($"Błąd podczas wylogowywania: {ex.Message}");
             }
         }
         private void SettingsButton_Click(object sender, RoutedEventArgs e)

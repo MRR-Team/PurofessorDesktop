@@ -6,8 +6,10 @@
 
     <Grid>
         <!-- Tło -->
-        <Rectangle VerticalAlignment="Center" Height="60">
-            <Rectangle.Fill>
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="2"
+           VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+           MinHeight="60">
+        <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="{DynamicResource GradientStartColor}" Offset="0"/>
                     <GradientStop Color="{DynamicResource GradientEndColor}" Offset="1"/>
@@ -15,14 +17,14 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Grid Margin="10,15,10,0" VerticalAlignment="Top" Height="30">
+        <Grid Margin="10,15,10,0" VerticalAlignment="Top" MinHeight="30">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <!-- Przyciski admina -->
-            <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left">
+            <WrapPanel Orientation="Horizontal" Grid.Column="0">
                 <Button Style="{DynamicResource TopPanelButtonStyle}" 
                         Content="{DynamicResource RotationButton}" 
                         Click="Rotation_Click"/>
@@ -42,12 +44,13 @@
                 <Button Style="{DynamicResource TopPanelButtonStyle}" 
                         Content="{DynamicResource NotificationsButton}" 
                         Click="Notify_Click"/>
-            </StackPanel>
+            </WrapPanel>
 
             <!-- Wyjdź -->
-            <StackPanel Orientation="Horizontal" Grid.Column="1">
+            <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Top">
                 <Button x:Name="ExitButton"
                         Width="30" Height="30" Margin="10,0,0,0"
+                        
                         BorderThickness="0"
                         Background="{DynamicResource GradientStartBrush}"
                         ToolTip="{DynamicResource ExitTooltip}"
