@@ -3,7 +3,6 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Purofessor.Views"
       mc:Ignorable="d" 
       Title="Login">
 
@@ -20,6 +19,7 @@
 
                 <TextBlock Text="E-mail" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
                 <TextBox x:Name="LoginTextBox"
+                         AutomationProperties.AutomationId="LoginTextBox" 
                          Margin="0,5,0,15"
                          Height="30"
                          Background="{DynamicResource PrimaryBrush}"
@@ -28,6 +28,7 @@
 
                 <TextBlock Text="{DynamicResource Password}" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
                 <PasswordBox x:Name="PasswordBox"
+                              AutomationProperties.AutomationId="PasswordBox"
                              Margin="0,5,0,20"
                              Height="30"
                              Background="{DynamicResource PrimaryBrush}"
@@ -35,6 +36,7 @@
                              VerticalContentAlignment="Center"/>
 
                 <Button Content="{DynamicResource LogIn}"
+                        AutomationProperties.AutomationId="LoginButton"
                         Height="35"
                         Background="{DynamicResource GradientStartBrush}"
                         Foreground="{DynamicResource ForegroundBrush}"
