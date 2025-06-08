@@ -2,6 +2,7 @@
 using System.Windows;
 using Purofessor.Models;
 using Purofessor.Helpers;
+using Purofessor.Views.Windows.Dialogs;
 
 namespace Purofessor.Views.Windows.Admin
 {
@@ -32,18 +33,18 @@ namespace Purofessor.Views.Windows.Admin
 
                 if (updated)
                 {
-                    MessageBox.Show("Użytkownik zaktualizowany.");
+                    CustomMessageBox.Show("Użytkownik zaktualizowany.");
                     DialogResult = true;
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show("Nie udało się zaktualizować użytkownika.");
+                    CustomMessageBox.Show("Nie udało się zaktualizować użytkownika.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd podczas aktualizacji: {ex.Message}");
+                CustomMessageBox.Show($"Błąd podczas aktualizacji: {ex.Message}");
             }
         }
 

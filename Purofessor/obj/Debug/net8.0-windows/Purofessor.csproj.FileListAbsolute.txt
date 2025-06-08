@@ -374,3 +374,5 @@ C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-window
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor.pdb
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Purofessor.genruntimeconfig.cache
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\ref\Purofessor.dll
+C:\Users\buchc\Source\Repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\Windows\Dialogs\CustomMessageBox.baml
+C:\Users\buchc\Source\Repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\Views\Windows\Dialogs\CustomMessageBox.g.cs

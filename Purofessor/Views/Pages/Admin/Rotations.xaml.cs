@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using Purofessor.Models;
+using Purofessor.Views.Windows.Dialogs;
 
 namespace Purofessor.Views.Pages.Admin
 {
@@ -25,7 +26,7 @@ namespace Purofessor.Views.Pages.Admin
             }
             catch
             {
-                MessageBox.Show("Nie udało się pobrać championów.");
+                CustomMessageBox.Show("Nie udało się pobrać championów.");
             }
         }
 
@@ -38,7 +39,7 @@ namespace Purofessor.Views.Pages.Admin
                     bool success = await ApiService.Instance.ToggleChampionAvailabilityAsync(id);
                     if (!success)
                     {
-                        MessageBox.Show("Nie udało się zaktualizować rotacji.");
+                        CustomMessageBox.Show("Nie udało się zaktualizować rotacji.");
                         // cofnij zmianę checkboxa
                         var champ = _champions.FirstOrDefault(c => c.Id == id);
                         if (champ != null) champ.IsAvailable = !champ.IsAvailable;
@@ -47,7 +48,7 @@ namespace Purofessor.Views.Pages.Admin
                 }
                 catch
                 {
-                    MessageBox.Show("Wystąpił błąd przy aktualizacji rotacji.");
+                    CustomMessageBox.Show("Wystąpił błąd przy aktualizacji rotacji.");
                 }
             }
         }

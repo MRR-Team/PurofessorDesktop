@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using Purofessor.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Purofessor.Views.Windows.Dialogs;
 
 namespace Purofessor.Views.Pages.User
 {
@@ -25,7 +26,7 @@ namespace Purofessor.Views.Pages.User
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show($"Błąd ładowania rotacji: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                CustomMessageBox.Show($"Błąd ładowania rotacji: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

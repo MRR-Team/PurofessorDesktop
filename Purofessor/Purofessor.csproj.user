@@ -23,6 +23,9 @@
     <Compile Update="components\TopPanel_Admin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Windows\Dialogs\CustomMessageBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Windows\Guest\GuestWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

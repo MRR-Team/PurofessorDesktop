@@ -3,6 +3,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using Purofessor.Views.Windows.Guest;
+using Purofessor.Views.Windows.Dialogs;
 
 namespace Purofessor.components.PanelComponents
 {
@@ -26,7 +27,7 @@ namespace Purofessor.components.PanelComponents
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd podczas wylogowywania: {ex.Message}");
+                CustomMessageBox.Show($"Błąd podczas wylogowywania: {ex.Message}");
             }
         }
     }

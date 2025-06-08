@@ -71,7 +71,6 @@
                         <DataGridTextColumn Header="{DynamicResource ColumnId}" Binding="{Binding Id}" Width="Auto"/>
                         <DataGridTextColumn Header="{DynamicResource ColumnNick}" Binding="{Binding Name}" Width="*" />
                         <DataGridTextColumn Header="{DynamicResource ColumnEmail}" Binding="{Binding Email}" Width="*" />
-                        <DataGridCheckBoxColumn Header="{DynamicResource ColumnAdmin}" Binding="{Binding IsAdmin}" Width="Auto" />
                         <DataGridTemplateColumn Header="{DynamicResource ColumnActions}" Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>

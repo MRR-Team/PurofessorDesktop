@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Purofessor.Helpers;
 using Purofessor.Views.Pages.User;
+using Purofessor.Views.Windows.Dialogs;
 using Purofessor.Views.Windows.Guest;
 
 namespace Purofessor.Views.Pages.Guest
@@ -47,13 +48,13 @@ namespace Purofessor.Views.Pages.Guest
             if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
             {
-                MessageBox.Show("Wypełnij wszystkie pola.");
+                CustomMessageBox.Show("Wypełnij wszystkie pola.");
                 return;
             }
 
             if (password != confirmPassword)
             {
-                MessageBox.Show("Hasła nie są takie same.");
+                CustomMessageBox.Show("Hasła nie są takie same.");
                 return;
             }
 
@@ -62,18 +63,18 @@ namespace Purofessor.Views.Pages.Guest
                 bool success = await ApiService.Instance.RegisterAsync(login, password, email);
                 if (success)
                 {
-                    MessageBox.Show("Rejestracja zakończona sukcesem! Wysłaliśmy do ciebie maila w celu weryfikacji");
+                    CustomMessageBox.Show("Rejestracja zakończona sukcesem! Wysłaliśmy do ciebie maila w celu weryfikacji");
                     var parentWindow = Window.GetWindow(this) as LoginWindow;
                     parentWindow?.LoginFrame.Navigate(new Login());
                 }
                 else
                 {
-                    MessageBox.Show("Rejestracja nie powiodła się. Sprawdź dane.");
+                    CustomMessageBox.Show("Rejestracja nie powiodła się. Sprawdź dane.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd podczas rejestracji: {ex.Message}");
+                CustomMessageBox.Show($"Błąd podczas rejestracji: {ex.Message}");
             }
         }
     }

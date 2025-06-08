@@ -1,4 +1,5 @@
 ﻿using Purofessor.Models;
+using Purofessor.Views.Windows.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +44,7 @@ namespace Purofessor.Views.Pages.Admin
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd podczas pobierania statystyk: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                CustomMessageBox.Show($"Błąd podczas pobierania statystyk: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Purofessor.Views.Windows.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,7 +34,7 @@ namespace Purofessor.Views.Pages.User
             }
             else
             {
-                MessageBox.Show("Nie jesteś zalogowany!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
+                CustomMessageBox.Show("Nie jesteś zalogowany!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
 
             }
         }
@@ -52,16 +53,16 @@ namespace Purofessor.Views.Pages.User
                 {
                     _apiService.LoggedUser.Name = username;
                     _apiService.LoggedUser.Email = email;
-                    MessageBox.Show("Dane zostały zaktualizowane!", "Sukces", MessageBoxButton.OK, MessageBoxImage.Information);
+                    CustomMessageBox.Show("Dane zostały zaktualizowane!", "Sukces", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Nie udało się zaktualizować danych.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                    CustomMessageBox.Show("Nie udało się zaktualizować danych.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                CustomMessageBox.Show($"Błąd: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

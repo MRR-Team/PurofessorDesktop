@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Purofessor.Views.Windows.Guest;
+using Purofessor.Views.Windows.Dialogs;
 
 namespace Purofessor.Views.Pages.Guest
 {
@@ -46,7 +47,7 @@ namespace Purofessor.Views.Pages.Guest
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd logowania:\n{ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                CustomMessageBox.Show($"Błąd logowania:\n{ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

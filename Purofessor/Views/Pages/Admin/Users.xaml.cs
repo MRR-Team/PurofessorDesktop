@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Purofessor.Models;
 using Purofessor.Views.Windows.Admin;
+using Purofessor.Views.Windows.Dialogs;
 using UserModel = Purofessor.Models.User;
 
 namespace Purofessor.Views.Pages.Admin
@@ -27,7 +28,7 @@ namespace Purofessor.Views.Pages.Admin
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd ładowania użytkowników: {ex.Message}");
+                CustomMessageBox.Show($"Błąd ładowania użytkowników: {ex.Message}");
             }
         }
 
@@ -48,7 +49,7 @@ namespace Purofessor.Views.Pages.Admin
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Błąd odświeżania listy: {ex.Message}");
+                        CustomMessageBox.Show($"Błąd odświeżania listy: {ex.Message}");
                     }
                 }
             }
@@ -58,12 +59,13 @@ namespace Purofessor.Views.Pages.Admin
         {
             if (sender is Button button && button.Tag is UserModel selectedUser)
             {
-                var confirm = MessageBox.Show($"Czy na pewno chcesz usunąć użytkownika '{selectedUser.Name}'?",
-                                              "Potwierdzenie",
-                                              MessageBoxButton.YesNo,
-                                              MessageBoxImage.Warning);
+                var confirm = CustomMessageBox.Show(
+                    $"Czy na pewno chcesz usunąć użytkownika '{selectedUser.Name}'?",
+                    "Potwierdzenie",
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Warning);
 
-                if (confirm == MessageBoxResult.Yes)
+                if (confirm == true)
                 {
                     try
                     {
@@ -74,10 +76,11 @@ namespace Purofessor.Views.Pages.Admin
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Błąd podczas usuwania użytkownika: {ex.Message}");
+                        CustomMessageBox.Show($"Błąd podczas usuwania użytkownika: {ex.Message}");
                     }
                 }
             }
         }
+
     }
 }
