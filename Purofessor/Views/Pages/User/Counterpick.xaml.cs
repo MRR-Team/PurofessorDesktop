@@ -23,7 +23,8 @@ namespace Purofessor.Views.Pages.User
         {
             try
             {
-                _allChampions = await ApiService.Instance.GetChampionsAsync(); _autocompleteHelper.SetChampionList(_allChampions);
+                _allChampions = await ApiService.Instance.GetChampionsAsync();
+                _autocompleteHelper.SetChampionList(_allChampions);
                 _autocompleteHelper.Attach(EnemyChampTextBox, SuggestionsPopup, SuggestionsListBox);
             }
             catch (Exception ex)
@@ -54,7 +55,8 @@ namespace Purofessor.Views.Pages.User
 
             try
             {
-                var result = await ApiService.Instance.GetCounterAsync(position, champion.Id.ToString()); DisplayCounterResults(result, championName, position);
+                var result = await ApiService.Instance.GetCounterAsync(position, champion.Id.ToString());
+                DisplayCounterResults(result, championName, position);
             }
             catch (Exception ex)
             {
@@ -64,15 +66,22 @@ namespace Purofessor.Views.Pages.User
 
         private void DisplayCounterResults(IEnumerable<string> results, string name, string pos)
         {
-            ResultBorder.Visibility = Visibility.Visible;
+            ResultScrollViewer.Visibility = Visibility.Visible;
 
             if (results == null || !results.Any())
             {
-                ResultTextBlock.Text = $"Brak kontr dla {name} ({pos}).";
+                CounterResultsItemsControl.ItemsSource = null;
+                ShowMessage($"Brak kontr dla {name} ({pos}).");
                 return;
             }
 
-            ResultTextBlock.Text = $"Kontry na {name} ({pos}):\n• {string.Join("\n• ", results)}";
+            var championItems = results.Select(r => new
+            {
+                Name = r,
+                IconUrl = $"https://cdn.purofessor.com/champions/icons/{r}.png" // lub ścieżka z API
+            });
+
+            CounterResultsItemsControl.ItemsSource = championItems;
         }
 
         private string GetSelectedPosition()

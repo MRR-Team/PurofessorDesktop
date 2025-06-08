@@ -3,7 +3,6 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:compoments="clr-namespace:Purofessor.components"
       mc:Ignorable="d"
       d:DesignHeight="350"
       d:DesignWidth="500"
@@ -74,21 +73,47 @@
                         FontWeight="Bold"
                         Click="OnGenerateCounterClick"/>
 
-                <Border Name="ResultBorder"
-                        Margin="0,15,0,0"
-                        Padding="10"
-                        CornerRadius="5"
-                        Background="{DynamicResource BackgroundBrush}"
-                        MinHeight="40"
-                        HorizontalAlignment="Stretch"
-                        Visibility="Collapsed">
-                    <TextBlock Name="ResultTextBlock"
-                               Text=""
-                               TextAlignment="Left"
-                               FontWeight="SemiBold"
-                               Foreground="{DynamicResource ForegroundBrush}"
-                               TextWrapping="Wrap"/>
-                </Border>
+                <ScrollViewer Name="ResultScrollViewer"
+                              Margin="0,15,0,0"
+                              Visibility="Collapsed"
+                              VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled"
+                              Height="Auto">
+                    <ItemsControl Name="CounterResultsItemsControl">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel HorizontalAlignment="Center"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="{DynamicResource BackgroundBrush}"
+                                        BorderBrush="{StaticResource PrimaryBrush}"
+                                        BorderThickness="1"
+                                        CornerRadius="10"
+                                        Margin="8"
+                                        Padding="10"
+                                        Width="150"
+                                        Height="150">
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Image Source="{Binding IconUrl}"
+                                               Width="60"
+                                               Height="60"
+                                               Margin="0,0,0,8"
+                                               Stretch="UniformToFill" />
+                                        <TextBlock Text="{Binding Name}"
+                                                   HorizontalAlignment="Center"
+                                                   TextAlignment="Center"
+                                                   Foreground="{DynamicResource ForegroundBrush}"
+                                                   FontWeight="SemiBold" />
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+
             </StackPanel>
         </Border>
     </Grid>

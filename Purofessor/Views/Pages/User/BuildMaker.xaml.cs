@@ -1,5 +1,6 @@
 ﻿using Purofessor.Helpers;
 using Purofessor.Models;
+using Purofessor.Views.Windows.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,7 @@ namespace Purofessor.Views.Pages.User
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Błąd pobierania championów: " + ex.Message);
+                CustomMessageBox.Show("Błąd pobierania championów: " + ex.Message);
             }
         }
 
@@ -46,7 +47,7 @@ namespace Purofessor.Views.Pages.User
 
             if (string.IsNullOrEmpty(myChampion) || string.IsNullOrEmpty(enemyChampion))
             {
-                MessageBox.Show("Wprowadź nazwę obu championów.");
+                CustomMessageBox.Show("Wprowadź nazwę obu championów.");
                 return;
             }
 
@@ -55,7 +56,7 @@ namespace Purofessor.Views.Pages.User
 
             if (myChamp == null || enemyChamp == null)
             {
-                MessageBox.Show("Nie znaleziono jednego z championów.");
+                CustomMessageBox.Show("Nie znaleziono jednego z championów.");
                 return;
             }
 
@@ -63,20 +64,26 @@ namespace Purofessor.Views.Pages.User
             {
                 var buildItems = await ApiService.Instance.GetBuildAsync(enemyChamp.Id.ToString(), myChamp.Id.ToString());
 
-                ResultBorder.Visibility = Visibility.Visible;
+                ResultScrollViewer.Visibility = Visibility.Visible;
 
                 if (buildItems == null || !buildItems.Any())
                 {
-                    ResultTextBlock.Text = "Brak rekomendowanych przedmiotów.";
+                    BuildResultsItemsControl.ItemsSource = null;
+                    CustomMessageBox.Show("Brak rekomendowanych przedmiotów.");
                     return;
                 }
 
-                var text = string.Join("\n", buildItems.Select(i => "• " + i));
-                ResultTextBlock.Text = $"Sugerowany build dla {myChampion} przeciwko {enemyChampion}:\n{text}";
+                var buildItemList = buildItems.Select(item => new
+                {
+                    Name = item,
+                    IconUrl = $"https://cdn.purofessor.com/items/icons/{item}.png" // dopasuj URL do realnej struktury
+                });
+
+                BuildResultsItemsControl.ItemsSource = buildItemList;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Błąd generowania builda: " + ex.Message);
+                CustomMessageBox.Show("Błąd generowania builda: " + ex.Message);
             }
         }
     }
