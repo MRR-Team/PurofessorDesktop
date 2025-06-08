@@ -75,15 +75,19 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Button Content="{DynamicResource EditButton}"
-                                                Click="EditUser_Click"
-                                                Padding="5,2"
-                                                Margin="0,0,5,0"
-                                                Tag="{Binding}" />
-                                        <Button Content="{DynamicResource DeleteButton}"
-                                                Click="DeleteUser_Click"
-                                                Padding="5,2"
-                                                Tag="{Binding}" />
+                                        <Button Style="{DynamicResource TopPanelButtonStyle}"
+                        Content="{DynamicResource EditButton}"
+                        Click="EditUser_Click"
+                        Margin="0,0,5,0"
+                        Padding="10,3"
+                        Tag="{Binding}" />
+
+                                        <Button Style="{DynamicResource TopPanelButtonStyle}"
+                        Content="{DynamicResource DeleteButton}"
+                        Margin="0,0,5,0"
+                        Click="DeleteUser_Click"
+                        Padding="10,3"
+                        Tag="{Binding}" />
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>

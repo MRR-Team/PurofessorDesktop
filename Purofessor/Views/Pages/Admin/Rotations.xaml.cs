@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Purofessor.Models;
 using Purofessor.Views.Windows.Dialogs;
+using Purofessor.Helpers;
 
 namespace Purofessor.Views.Pages.Admin
 {

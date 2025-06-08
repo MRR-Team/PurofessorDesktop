@@ -5,7 +5,9 @@ VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Purofessor", "Purofessor\Purofessor.csproj", "{2FAE3685-478E-4C36-B619-AD40E77245D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Purofessor.E2E", "Purofessor.E2E\Purofessor.E2E.csproj", "{BF8C0A88-929F-4329-8360-9871BC011486}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Purofessor.E2E", "Purofessor.E2E\Purofessor.E2E.csproj", "{BF8C0A88-929F-4329-8360-9871BC011486}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Purofessor.UnitTests", "Purofessor.UnitTests\Purofessor.UnitTests.csproj", "{8F80F820-4FD6-4169-A131-FFE8C662ADFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BF8C0A88-929F-4329-8360-9871BC011486}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF8C0A88-929F-4329-8360-9871BC011486}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF8C0A88-929F-4329-8360-9871BC011486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F80F820-4FD6-4169-A131-FFE8C662ADFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F80F820-4FD6-4169-A131-FFE8C662ADFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F80F820-4FD6-4169-A131-FFE8C662ADFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F80F820-4FD6-4169-A131-FFE8C662ADFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

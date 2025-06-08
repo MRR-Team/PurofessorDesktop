@@ -4,6 +4,7 @@ using Purofessor.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Purofessor.Views.Windows.Dialogs;
+using Purofessor.Helpers;
 
 namespace Purofessor.Views.Pages.User
 {

@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using Purofessor.Models;
 using Purofessor.Views.Windows.Admin;
 using Purofessor.Views.Windows.Dialogs;
+using Purofessor.Helpers;
 using UserModel = Purofessor.Models.User;
 
 namespace Purofessor.Views.Pages.Admin

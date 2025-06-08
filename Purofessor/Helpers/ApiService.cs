@@ -8,287 +8,298 @@ using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 using MyItem = Purofessor.Models.Item;
 using Purofessor.Helpers;
 using Purofessor.Properties;
-public class ApiService : ObservableObject
+
+namespace Purofessor.Helpers
 {
-    private static readonly ApiService _instance = new ApiService();
-public static ApiService Instance => _instance;
-    MyItem item = new MyItem();
-    private User _loggedUser;
-    public User LoggedUser
+    public class ApiService : ObservableObject
     {
-        get => _loggedUser;
-        set => SetField(ref _loggedUser, value);
-    }
-    private readonly HttpClient _client;
-    public string AuthToken { get; private set; }
-    private ApiService()
-    {
-        _client = new HttpClient();
-        _client.BaseAddress = new Uri(Settings.Default.ApiBaseUrl);
-        _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        // _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "TWÓJ_TOKEN"); jeśli chcemy "zapamiętaj mnie"
-    }
-
-    public async Task<User> GetUserAsync(int id)
-    {
-        var response = await _client.GetAsync($"users/{id}");
-        if (response.IsSuccessStatusCode)
+        private static readonly ApiService _instance = new ApiService();
+        public static ApiService Instance => _instance;
+        MyItem item = new MyItem();
+        private User _loggedUser;
+        public User LoggedUser
         {
-            var json = await response.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<User>(json, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });
+            get => _loggedUser;
+            set => SetField(ref _loggedUser, value);
+        }
+        private readonly HttpClient _client;
+        public string AuthToken { get; internal set; }
+        private ApiService()
+        {
+            _client = new HttpClient();
+            _client.BaseAddress = new Uri(Settings.Default.ApiBaseUrl);
+            _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            // _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "TWÓJ_TOKEN"); jeśli chcemy "zapamiętaj mnie"
+        }
+        internal ApiService(HttpClient client)
+        {
+            _client = client;
+            _client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        throw new HttpRequestException($"API zwróciło: {response.StatusCode}");
-    }
-    public async Task<string> LoginAsync(string email, string password)
-    {
-        var payload = new
+
+        public async Task<User> GetUserAsync(int id)
         {
-            email,
-            password
-        };
-
-        var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
-        var response = await _client.PostAsync("login", content);
-
-        var json = await response.Content.ReadAsStringAsync();
-
-        if (response.IsSuccessStatusCode)
-        {
-            using var doc = JsonDocument.Parse(json);
-            string token = doc.RootElement.GetProperty("token").GetString();
-            var userElement = doc.RootElement.GetProperty("user").GetRawText();
-
-            LoggedUser = JsonSerializer.Deserialize<User>(userElement, new JsonSerializerOptions
+            var response = await _client.GetAsync($"users/{id}");
+            if (response.IsSuccessStatusCode)
             {
-                PropertyNameCaseInsensitive = true
-            });
-
-            AuthToken = token;
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-            return token;
-        }
-
-        // Prosta próba odczytania message bez try-catch
-        string message = "Nie udało się zalogować.";
-        using var errorDoc = JsonDocument.Parse(json);
-        if (errorDoc.RootElement.TryGetProperty("message", out var msgProp))
-        {
-            message = msgProp.GetString() ?? message;
-        }
-
-        throw new Exception(message);
-    }
-    public async Task<bool> UpdateUserAsync(int id, string name = null, string email = null, string password = null)
-    {
-        var payload = new Dictionary<string, object>();
-
-        if (!string.IsNullOrWhiteSpace(name))
-            payload["name"] = name;
-
-        if (!string.IsNullOrWhiteSpace(email))
-            payload["email"] = email;
-
-        if (!string.IsNullOrWhiteSpace(password))
-        {
-            payload["password"] = password;
-            payload["password_confirmation"] = password; // Laravel validation
-        }
-
-        if (payload.Count == 0)
-            throw new Exception("Nie podano żadnych danych do aktualizacji.");
-
-        var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
-        var response = await _client.PutAsync($"users/{id}", content);
-
-        if (response.IsSuccessStatusCode)
-            return true;
-
-        var error = await response.Content.ReadAsStringAsync();
-        throw new Exception($"Nie udało się zaktualizować użytkownika: {response.StatusCode}\n{error}");
-    }
-
-    public async Task LogoutAsync()
-    {
-        if (string.IsNullOrEmpty(AuthToken))
-            throw new InvalidOperationException("Brak tokenu autoryzacyjnego.");
-
-        var request = new HttpRequestMessage(HttpMethod.Post, "logout");
-        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", AuthToken);
-
-        var response = await _client.SendAsync(request);
-        if (!response.IsSuccessStatusCode)
-        {
-            throw new Exception($"Wylogowanie nie powiodło się: {response.StatusCode}");
-        }
-
-        // Wyczyść stan klienta
-        AuthToken = null;
-        LoggedUser = null;
-        _client.DefaultRequestHeaders.Authorization = null;
-    }
-
-    public async Task<bool> RegisterAsync(string login, string password, string email)
-    {
-        var payload = new
-        {
-            name = login,
-            email = email,
-            password = password,
-            password_confirmation = password
-        };
-
-        var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
-
-        var response = await _client.PostAsync("register", content);
-        return response.IsSuccessStatusCode;
-    }
-    public async Task<List<string>> GetCounterAsync(string role, string enemyChampion)
-    {
-        var response = await _client.GetAsync($"counter/{role}/{enemyChampion}");
-
-        if (response.IsSuccessStatusCode)
-        {
-            var json = await response.Content.ReadAsStringAsync();
-
-            var champions = JsonSerializer.Deserialize<List<Champion>>(json, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });
-
-            return champions.Select(i => StringHelper.CapitalizeFirstLetter(i.Name)).ToList();
-        }
-
-        throw new Exception($"Nie udało się pobrać kontr: {response.StatusCode}");
-    }
-    public async Task<List<Champion>> GetChampionsAsync()
-    {
-        var response = await _client.GetAsync("champions");
-
-        if (response.IsSuccessStatusCode)
-        {
-            var json = await response.Content.ReadAsStringAsync();
-            var champions = JsonSerializer.Deserialize<List<Champion>>(json, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });
-
-            // Upewniamy się, że nazwy zaczynają się wielką literą
-            foreach (var champ in champions)
-            {
-                champ.Name = StringHelper.CapitalizeFirstLetter(champ.Name);
-            }
-
-            return champions;
-        }
-
-        throw new Exception($"Nie udało się pobrać championów: {response.StatusCode}");
-    }
-
-    public async Task<List<string>> GetBuildAsync(string enemyChampionId, string myChampionId)
-    {
-        var response = await _client.GetAsync($"build/{enemyChampionId}/against/{myChampionId}");
-
-        if (response.IsSuccessStatusCode)
-        {
-            var json = await response.Content.ReadAsStringAsync();
-            var items = JsonSerializer.Deserialize<List<MyItem>>(json, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });
-
-            return items.Select(i => StringHelper.CapitalizeFirstLetter(i.Name)).ToList();
-        }
-
-        throw new Exception($"Nie udało się pobrać builda: {response.StatusCode}");
-    }
-    public async Task<List<ChampionSearchStats>> GetChampionSearchStatsAsync()
-    {
-        var response = await _client.GetAsync("stats/counter-search");
-
-        if (response.IsSuccessStatusCode)
-        {
-            var json = await response.Content.ReadAsStringAsync();
-
-            var stats = JsonSerializer.Deserialize<List<ChampionSearchStats>>(json, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });
-
-            // Upewniamy się, że nazwy championów zaczynają się wielką literą
-            foreach (var stat in stats)
-            {
-                if (!string.IsNullOrWhiteSpace(stat.Champion?.Name))
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonSerializer.Deserialize<User>(json, new JsonSerializerOptions
                 {
-                    stat.Champion.Name = StringHelper.CapitalizeFirstLetter(stat.Champion.Name);
+                    PropertyNameCaseInsensitive = true
+                });
+            }
+
+            throw new HttpRequestException($"API zwróciło: {response.StatusCode}");
+        }
+        public async Task<string> LoginAsync(string email, string password)
+        {
+            var payload = new
+            {
+                email,
+                password
+            };
+
+            var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
+            var response = await _client.PostAsync("login", content);
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            if (response.IsSuccessStatusCode)
+            {
+                using var doc = JsonDocument.Parse(json);
+                string token = doc.RootElement.GetProperty("token").GetString();
+                var userElement = doc.RootElement.GetProperty("user").GetRawText();
+
+                LoggedUser = JsonSerializer.Deserialize<User>(userElement, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                AuthToken = token;
+                _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                return token;
+            }
+
+            // Prosta próba odczytania message bez try-catch
+            string message = "Nie udało się zalogować.";
+            using var errorDoc = JsonDocument.Parse(json);
+            if (errorDoc.RootElement.TryGetProperty("message", out var msgProp))
+            {
+                message = msgProp.GetString() ?? message;
+            }
+
+            throw new Exception(message);
+        }
+        public async Task<bool> UpdateUserAsync(int id, string name = null, string email = null, string password = null)
+        {
+            var payload = new Dictionary<string, object>();
+
+            if (!string.IsNullOrWhiteSpace(name))
+                payload["name"] = name;
+
+            if (!string.IsNullOrWhiteSpace(email))
+                payload["email"] = email;
+
+            if (!string.IsNullOrWhiteSpace(password))
+            {
+                payload["password"] = password;
+                payload["password_confirmation"] = password; // Laravel validation
+            }
+
+            if (payload.Count == 0)
+                throw new Exception("Nie podano żadnych danych do aktualizacji.");
+
+            var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
+            var response = await _client.PutAsync($"users/{id}", content);
+
+            if (response.IsSuccessStatusCode)
+                return true;
+
+            var error = await response.Content.ReadAsStringAsync();
+            throw new Exception($"Nie udało się zaktualizować użytkownika: {response.StatusCode}\n{error}");
+        }
+
+        public async Task LogoutAsync()
+        {
+            if (string.IsNullOrEmpty(AuthToken))
+                throw new InvalidOperationException("Brak tokenu autoryzacyjnego.");
+
+            var request = new HttpRequestMessage(HttpMethod.Post, "logout");
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", AuthToken);
+
+            var response = await _client.SendAsync(request);
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception($"Wylogowanie nie powiodło się: {response.StatusCode}");
+            }
+
+            // Wyczyść stan klienta
+            AuthToken = null;
+            LoggedUser = null;
+            _client.DefaultRequestHeaders.Authorization = null;
+        }
+
+        public async Task<bool> RegisterAsync(string login, string password, string email)
+        {
+            var payload = new
+            {
+                name = login,
+                email = email,
+                password = password,
+                password_confirmation = password
+            };
+
+            var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
+
+            var response = await _client.PostAsync("register", content);
+            return response.IsSuccessStatusCode;
+        }
+        public async Task<List<string>> GetCounterAsync(string role, string enemyChampion)
+        {
+            var response = await _client.GetAsync($"counter/{role}/{enemyChampion}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+
+                var champions = JsonSerializer.Deserialize<List<Champion>>(json, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                return champions.Select(i => StringHelper.CapitalizeFirstLetter(i.Name)).ToList();
+            }
+
+            throw new Exception($"Nie udało się pobrać kontr: {response.StatusCode}");
+        }
+        public async Task<List<Champion>> GetChampionsAsync()
+        {
+            var response = await _client.GetAsync("champions");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                var champions = JsonSerializer.Deserialize<List<Champion>>(json, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                // Upewniamy się, że nazwy zaczynają się wielką literą
+                foreach (var champ in champions)
+                {
+                    champ.Name = StringHelper.CapitalizeFirstLetter(champ.Name);
                 }
+
+                return champions;
             }
 
-            return stats;
+            throw new Exception($"Nie udało się pobrać championów: {response.StatusCode}");
         }
 
-        throw new Exception($"Nie udało się pobrać statystyk wyszukiwania championów: {response.StatusCode}");
-    }
-    public async Task<bool> ToggleChampionAvailabilityAsync(int championId)
-    {
-        var request = new HttpRequestMessage(HttpMethod.Patch, $"champions/{championId}/toggle-availability");
-        request.Content = new StringContent("", Encoding.UTF8, "application/json"); // pusty content
-
-        var response = await _client.SendAsync(request);
-        return response.IsSuccessStatusCode;
-    }
-    public async Task<List<Champion>> GetFreeRotationAsync()
-    {
-        var response = await _client.GetAsync("available-champions");
-
-        if (response.IsSuccessStatusCode)
+        public async Task<List<string>> GetBuildAsync(string enemyChampionId, string myChampionId)
         {
-            var json = await response.Content.ReadAsStringAsync();
-            var champions = JsonSerializer.Deserialize<List<Champion>>(json, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });
+            var response = await _client.GetAsync($"build/{enemyChampionId}/against/{myChampionId}");
 
-            foreach (var champ in champions)
+            if (response.IsSuccessStatusCode)
             {
-                champ.Name = StringHelper.CapitalizeFirstLetter(champ.Name);
+                var json = await response.Content.ReadAsStringAsync();
+                var items = JsonSerializer.Deserialize<List<MyItem>>(json, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                return items.Select(i => StringHelper.CapitalizeFirstLetter(i.Name)).ToList();
             }
 
-            return champions;
+            throw new Exception($"Nie udało się pobrać builda: {response.StatusCode}");
         }
-
-        throw new Exception($"Nie udało się pobrać rotacji: {response.StatusCode}");
-    }
-    public async Task<List<User>> GetUsersAsync()
-    {
-        var response = await _client.GetAsync("users");
-
-        if (response.IsSuccessStatusCode)
+        public async Task<List<ChampionSearchStats>> GetChampionSearchStatsAsync()
         {
-            var json = await response.Content.ReadAsStringAsync();
-            var users = JsonSerializer.Deserialize<List<User>>(json, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });
+            var response = await _client.GetAsync("stats/counter-search");
 
-            return users;
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+
+                var stats = JsonSerializer.Deserialize<List<ChampionSearchStats>>(json, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                // Upewniamy się, że nazwy championów zaczynają się wielką literą
+                foreach (var stat in stats)
+                {
+                    if (!string.IsNullOrWhiteSpace(stat.Champion?.Name))
+                    {
+                        stat.Champion.Name = StringHelper.CapitalizeFirstLetter(stat.Champion.Name);
+                    }
+                }
+
+                return stats;
+            }
+
+            throw new Exception($"Nie udało się pobrać statystyk wyszukiwania championów: {response.StatusCode}");
+        }
+        public async Task<bool> ToggleChampionAvailabilityAsync(int championId)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Patch, $"champions/{championId}/toggle-availability");
+            request.Content = new StringContent("", Encoding.UTF8, "application/json"); // pusty content
+
+            var response = await _client.SendAsync(request);
+            return response.IsSuccessStatusCode;
+        }
+        public async Task<List<Champion>> GetFreeRotationAsync()
+        {
+            var response = await _client.GetAsync("available-champions");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                var champions = JsonSerializer.Deserialize<List<Champion>>(json, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                foreach (var champ in champions)
+                {
+                    champ.Name = StringHelper.CapitalizeFirstLetter(champ.Name);
+                }
+
+                return champions;
+            }
+
+            throw new Exception($"Nie udało się pobrać rotacji: {response.StatusCode}");
+        }
+        public async Task<List<User>> GetUsersAsync()
+        {
+            var response = await _client.GetAsync("users");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                var users = JsonSerializer.Deserialize<List<User>>(json, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                return users;
+            }
+
+            throw new Exception($"Nie udało się pobrać użytkowników: {response.StatusCode}");
+        }
+        public async Task<bool> DeleteUserAsync(int userId)
+        {
+            var response = await _client.DeleteAsync($"users/{userId}");
+
+            if (response.IsSuccessStatusCode)
+                return true;
+
+            var error = await response.Content.ReadAsStringAsync();
+            throw new Exception($"Nie udało się usunąć użytkownika: {response.StatusCode}\n{error}");
         }
 
-        throw new Exception($"Nie udało się pobrać użytkowników: {response.StatusCode}");
     }
-    public async Task<bool> DeleteUserAsync(int userId)
-    {
-        var response = await _client.DeleteAsync($"users/{userId}");
-
-        if (response.IsSuccessStatusCode)
-            return true;
-
-        var error = await response.Content.ReadAsStringAsync();
-        throw new Exception($"Nie udało się usunąć użytkownika: {response.StatusCode}\n{error}");
-    }
-
 }
