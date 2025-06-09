@@ -38,6 +38,7 @@ namespace Purofessor.Models
         public int Is_Good_Against_Can_One_Shot { get; set; }
         public int Is_Good_Against_Late_Game { get; set; }
 
+        public string Photo { get; set; }
         public DateTime Created_At { get; set; }
         public DateTime Updated_At { get; set; }
         public bool IsAvailable { get; set; }
