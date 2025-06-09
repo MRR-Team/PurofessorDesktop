@@ -33,7 +33,7 @@ namespace Purofessor.UnitTests.Services
 
             var service = CreateTestApiService(handler);
 
-            var stats = await service.GetChampionSearchStatsAsync();
+            var stats = await service.Champions.GetChampionSearchStatsAsync();
 
             Assert.Single(stats);
             Assert.Equal("Ahri", stats[0].Champion.Name);

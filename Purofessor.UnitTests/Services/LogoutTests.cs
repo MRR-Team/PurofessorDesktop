@@ -26,16 +26,18 @@ namespace Purofessor.UnitTests.Services
 
             var client = new HttpClient(handler)
             {
-                BaseAddress = new Uri("https://fake.api") // <== KLUCZOWE
+                BaseAddress = new Uri("https://fake.api")
             };
 
+            // ✅ Konstrukcja ApiService z podserwisami
             var service = new ApiService(client)
             {
-                LoggedUser = new Purofessor.Models.User { Name = "Test" },
+                LoggedUser = new User { Name = "Test" },
                 AuthToken = "test-token"
             };
 
-            await service.LogoutAsync();
+            // ✅ Użycie Auth.LogoutAsync
+            await service.Auth.LogoutAsync();
 
             Assert.Null(service.LoggedUser);
             Assert.Null(service.AuthToken);

@@ -30,7 +30,7 @@ namespace Purofessor.UnitTests.Services
 
             var service = CreateTestApiService(handler);
 
-            var items = await service.GetBuildAsync("ahri", "zed");
+            var items = await service.Champions.GetBuildAsync("ahri", "zed");
 
             Assert.Equal(new[] { "Liandrys torment", "Void staff" }, items);
         }

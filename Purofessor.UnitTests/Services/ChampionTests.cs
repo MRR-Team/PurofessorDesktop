@@ -26,8 +26,10 @@ namespace Purofessor.UnitTests.Services
                     Content = new StringContent(json, Encoding.UTF8, "application/json")
                 });
 
-            var service = CreateTestApiService(handler); // <-- użycie helpera
-            var result = await service.GetChampionsAsync();
+            var service = CreateTestApiService(handler);
+
+            // ✅ Zmieniono na dostęp przez podserwis Champions
+            var result = await service.Champions.GetChampionsAsync();
 
             Assert.Equal(2, result.Count);
             Assert.Equal("Ahri", result[0].Name);
@@ -42,8 +44,10 @@ namespace Purofessor.UnitTests.Services
                 return new HttpResponseMessage(HttpStatusCode.OK);
             });
 
-            var service = CreateTestApiService(handler); // <-- użycie helpera
-            var result = await service.ToggleChampionAvailabilityAsync(123);
+            var service = CreateTestApiService(handler);
+
+            // ✅ Zmieniono na dostęp przez podserwis Champions
+            var result = await service.Champions.ToggleChampionAvailabilityAsync(123);
 
             Assert.True(result);
         }

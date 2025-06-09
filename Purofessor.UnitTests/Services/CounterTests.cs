@@ -29,7 +29,7 @@ namespace Purofessor.UnitTests.Services
 
             var service = CreateTestApiService(handler);
 
-            var result = await service.GetCounterAsync("mid", "yasuo");
+            var result = await service.Champions.GetCounterAsync("mid", "yasuo");
 
             Assert.Equal(new[] { "Ahri", "Zed" }, result);
         }

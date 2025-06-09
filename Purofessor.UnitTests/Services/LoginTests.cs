@@ -8,10 +8,8 @@ using Purofessor.Models;
 using Xunit;
 using System.Text;
 using System.Text.Json;
-using Purofessor;
 using Purofessor.Helpers;
 using Purofessor.UnitTests.Helpers;
-
 
 namespace Purofessor.UnitTests.Services
 {
@@ -50,8 +48,8 @@ namespace Purofessor.UnitTests.Services
 
             var service = new ApiService(client);
 
-            // Act
-            var token = await service.LoginAsync("test@example.com", "password");
+            // ✅ Zmiana tutaj:
+            var token = await service.Auth.LoginAsync("test@example.com", "password");
 
             // Assert
             Assert.Equal(expectedToken, token);
@@ -90,8 +88,8 @@ namespace Purofessor.UnitTests.Services
 
             var service = new ApiService(client);
 
-            // Act & Assert
-            var exception = await Assert.ThrowsAsync<Exception>(() => service.LoginAsync("wrong@example.com", "badpass"));
+            // ✅ Zmiana tutaj:
+            var exception = await Assert.ThrowsAsync<Exception>(() => service.Auth.LoginAsync("wrong@example.com", "badpass"));
             Assert.Contains(errorMessage, exception.Message);
         }
     }

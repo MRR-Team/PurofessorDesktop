@@ -17,9 +17,9 @@ namespace Purofessor.UnitTests.Services
         {
             var json = JsonSerializer.Serialize(new[]
             {
-            new Champion { Name = "annie" },
-            new Champion { Name = "garen" }
-        });
+                new Champion { Name = "annie" },
+                new Champion { Name = "garen" }
+            });
 
             var handler = new StubHttpMessageHandler(_ =>
                 new HttpResponseMessage(HttpStatusCode.OK)
@@ -29,7 +29,8 @@ namespace Purofessor.UnitTests.Services
 
             var service = CreateTestApiService(handler);
 
-            var rotation = await service.GetFreeRotationAsync();
+            // ✅ Zmieniamy dostęp do metody na przez podserwis Champions
+            var rotation = await service.Champions.GetFreeRotationAsync();
 
             Assert.Equal(2, rotation.Count);
             Assert.Equal("Annie", rotation[0].Name);

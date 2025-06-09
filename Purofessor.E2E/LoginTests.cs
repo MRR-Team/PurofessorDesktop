@@ -5,6 +5,7 @@ using FlaUI.Core;
 using FlaUI.UIA3;
 using FlaUI.Core.AutomationElements;
 using Xunit;
+using FlaUI.Core.Tools;
 
 namespace Purofessor.E2E
 {
@@ -51,6 +52,36 @@ namespace Purofessor.E2E
 
             Assert.NotNull(mainWindow);
         }
+        [Fact]
+        public void Login_WithInvalidCredentials_ShowsErrorMessageBox()
+        {
+            var window = _app.GetMainWindow(_automation);
+
+            var usernameBox = window.FindFirstDescendant(cf => cf.ByAutomationId("LoginTextBox"))?.AsTextBox();
+            var passwordBox = window.FindFirstDescendant(cf => cf.ByAutomationId("PasswordBox"))?.AsTextBox();
+            var loginButton = window.FindFirstDescendant(cf => cf.ByAutomationId("LoginButton"))?.AsButton();
+
+            Assert.NotNull(usernameBox);
+            Assert.NotNull(passwordBox);
+            Assert.NotNull(loginButton);
+
+            usernameBox.Enter("invalid_user");
+            passwordBox.Enter("wrong_password");
+            loginButton.Invoke();
+
+            var errorWindow = Retry.WhileNull(
+                () => _app.GetAllTopLevelWindows(_automation)
+                          .FirstOrDefault(w => w.Title.Contains("Błąd")),
+                TimeSpan.FromSeconds(3)
+            ).Result;
+
+            Assert.NotNull(errorWindow);
+
+            var closeButton = errorWindow.FindFirstDescendant(cf => cf.ByControlType(FlaUI.Core.Definitions.ControlType.Button))?.AsButton();
+            closeButton?.Invoke();
+        }
+
+
 
         public void Dispose()
         {

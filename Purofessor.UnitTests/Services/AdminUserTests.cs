@@ -28,7 +28,7 @@ namespace Purofessor.UnitTests.Services
 
             var service = CreateTestApiService(handler);
 
-            var users = await service.GetUsersAsync();
+            var users = await service.Users.GetUsersAsync();
 
             Assert.Single(users);
             Assert.Equal("Admin", users[0].Name);
@@ -42,7 +42,7 @@ namespace Purofessor.UnitTests.Services
 
             var service = CreateTestApiService(handler);
 
-            var result = await service.DeleteUserAsync(99);
+            var result = await service.Users.DeleteUserAsync(99);
 
             Assert.True(result);
         }

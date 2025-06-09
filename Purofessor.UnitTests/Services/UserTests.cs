@@ -25,7 +25,9 @@ namespace Purofessor.UnitTests.Services
                 });
 
             var service = CreateTestApiService(handler);
-            var result = await service.GetUserAsync(1);
+
+            // ✅ Przeniesione do podserwisu Users
+            var result = await service.Users.GetUserAsync(1);
 
             Assert.NotNull(result);
             Assert.Equal(expectedUser.Name, result.Name);
@@ -43,7 +45,9 @@ namespace Purofessor.UnitTests.Services
             });
 
             var service = CreateTestApiService(handler);
-            var result = await service.UpdateUserAsync(1, name: "new name");
+
+            // ✅ Przeniesione do podserwisu Users
+            var result = await service.Users.UpdateUserAsync(1, name: "new name");
 
             Assert.True(result);
         }
@@ -55,7 +59,9 @@ namespace Purofessor.UnitTests.Services
                 new HttpResponseMessage(HttpStatusCode.OK));
 
             var service = CreateTestApiService(handler);
-            var result = await service.RegisterAsync("Tester", "pass123", "email@test.com");
+
+            // ✅ Przeniesione do podserwisu Auth
+            var result = await service.Auth.RegisterAsync("Tester", "pass123", "email@test.com");
 
             Assert.True(result);
         }

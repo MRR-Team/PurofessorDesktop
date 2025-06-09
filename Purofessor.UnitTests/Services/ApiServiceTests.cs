@@ -6,9 +6,8 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Xunit;
 using Purofessor.Models;
-using Purofessor.UnitTests.Helpers;
 using Purofessor.Helpers;
-
+using Purofessor.UnitTests.Helpers;
 
 namespace Purofessor.UnitTests.Services
 {
@@ -21,7 +20,7 @@ namespace Purofessor.UnitTests.Services
             var expectedToken = "abc123";
             var fakeUser = new { id = 1, name = "Teemo", email = "teemo@lol.gg" };
 
-            var handler = new Helpers.StubHttpMessageHandler(req =>
+            var handler = new StubHttpMessageHandler(req =>
             {
                 var json = JsonSerializer.Serialize(new { token = expectedToken, user = fakeUser });
                 return new HttpResponseMessage(HttpStatusCode.OK)
@@ -37,7 +36,8 @@ namespace Purofessor.UnitTests.Services
 
             var api = new ApiService(client);
 
-            var token = await api.LoginAsync("teemo@lol.gg", "123");
+            // ✅ zmiana wywołania
+            var token = await api.Auth.LoginAsync("teemo@lol.gg", "123");
 
             // assert
             Assert.Equal(expectedToken, token);
