@@ -9,27 +9,51 @@
 
     <Grid>
         <Border Style="{StaticResource MainBorderStyle}">
-            <StackPanel Style="{StaticResource ContentStackPanelStyle}">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Style="{StaticResource ContentStackPanelStyle}">
 
-                <TextBlock Text="{DynamicResource CurrentRotation}" 
-                           FontSize="18" 
-                           FontWeight="Bold" 
-                           Foreground="{DynamicResource ForegroundBrush}" 
-                           Margin="0,0,0,10"/>
+                    <TextBlock Text="{DynamicResource CurrentRotation}" 
+                               FontSize="24" 
+                               FontWeight="Bold" 
+                               Foreground="{DynamicResource ForegroundBrush}" 
+                               TextAlignment="Center"
+                               Margin="0,0,0,20"/>
 
-                <ListBox x:Name="RotationListBox"
-                         Background="{DynamicResource PrimaryBrush}"
-                         Foreground="{DynamicResource ForegroundBrush}"
-                         BorderThickness="0"
-                         FontSize="16">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Name}" Padding="5"/>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                    <ItemsControl x:Name="RotationListBox">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel HorizontalAlignment="Center" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
 
-            </StackPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="{DynamicResource BackgroundBrush}"
+                                        BorderBrush="{StaticResource PrimaryBrush}"
+                                        BorderThickness="1"
+                                        CornerRadius="10"
+                                        Margin="8"
+                                        Padding="10"
+                                        Width="130"
+                                        Height="130">
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Image Source="{Binding Photo}" 
+                                               Width="60" Height="60" 
+                                               Margin="0,0,0,8" 
+                                               Stretch="UniformToFill"/>
+                                        <TextBlock Text="{Binding Name}"
+                                                   HorizontalAlignment="Center"
+                                                   TextAlignment="Center"
+                                                   Foreground="{DynamicResource ForegroundBrush}"
+                                                   FontWeight="SemiBold"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                </StackPanel>
+            </ScrollViewer>
         </Border>
     </Grid>
 </Page>

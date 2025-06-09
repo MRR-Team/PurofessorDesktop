@@ -1,11 +1,6 @@
 ﻿using Purofessor.Helpers;
 using Purofessor.Models;
 using Purofessor.Views.Windows.Dialogs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,8 +8,7 @@ namespace Purofessor.Views.Pages.User
 {
     public partial class BuildMaker : Page
     {
-        private List<Champion> _champions;
-        private readonly ApiService _apiService;
+        private List<Champion>? _champions;
         private readonly ChampionAutocompleteHelper _autocompleteHelper;
 
         public BuildMaker()

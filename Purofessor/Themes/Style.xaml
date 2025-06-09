@@ -72,7 +72,7 @@
         <Setter Property="Padding" Value="20"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Margin" Value="50"/>
+        <Setter Property="Margin" Value="40,100,40,40"/>
         <Setter Property="MaxWidth" Value="800"/>
         <Setter Property="Background">
             <Setter.Value>
@@ -88,7 +88,13 @@
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="Width" Value="Auto"/>
     </Style>
-    
+
+    <Style x:Key="ContentGridStyle" TargetType="Grid">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Width" Value="Auto"/>
+    </Style>
+
     <Style x:Key="LoginBorderStyle" TargetType="Border">
         <Setter Property="Background" Value="{DynamicResource BackgroundBrush}"/>
         <Setter Property="CornerRadius" Value="10"/>

@@ -10,7 +10,7 @@ namespace Purofessor.Views.Pages.Admin
 {
     public partial class Rotations : Page
     {
-        private List<Champion> _champions;
+        private List<Champion>? _champions;
 
         public Rotations()
         {

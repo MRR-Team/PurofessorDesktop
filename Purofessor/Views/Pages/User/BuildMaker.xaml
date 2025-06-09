@@ -8,97 +8,100 @@
 
     <Grid>
         <Border Style="{StaticResource MainBorderStyle}">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
 
-            <StackPanel Style="{StaticResource ContentStackPanelStyle}">
-                <TextBlock Text="{DynamicResource EnterChampionsPrompt}"
+                <StackPanel Style="{StaticResource ContentStackPanelStyle}">
+                    <TextBlock Text="{DynamicResource EnterChampionsPrompt}"
                            FontSize="24" FontWeight="Bold" Foreground="{DynamicResource ForegroundBrush}"
                            TextAlignment="Center" Margin="0,0,0,20"/>
 
-                <!-- Twój champion -->
-                <TextBlock Text="{DynamicResource YourChampion}" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
-                <Grid>
-                    <TextBox x:Name="MyChampionTextBox" Height="30" Margin="0,5,0,5"
+                    <!-- Twój champion -->
+                    <TextBlock Text="{DynamicResource YourChampion}" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
+                    <Grid>
+                        <TextBox x:Name="MyChampionTextBox" Height="30" Margin="0,5,0,5"
              Background="{DynamicResource BackgroundBrush}"
              Foreground="{DynamicResource ForegroundBrush}"
              VerticalContentAlignment="Center"/>
-                    <Popup Name="MyChampPopup" PlacementTarget="{Binding ElementName=MyChampionTextBox}" Placement="Bottom" StaysOpen="False">
-                        <Border Background="{DynamicResource BackgroundBrush}" BorderThickness="1" BorderBrush="Gray" CornerRadius="4" MaxHeight="150">
-                            <ListBox Name="MyChampSuggestions" Background="{DynamicResource BackgroundBrush}" 
+                        <Popup Name="MyChampPopup" PlacementTarget="{Binding ElementName=MyChampionTextBox}" Placement="Bottom" StaysOpen="False">
+                            <Border Background="{DynamicResource BackgroundBrush}" BorderThickness="1" BorderBrush="Gray" CornerRadius="4" MaxHeight="150">
+                                <ListBox Name="MyChampSuggestions" Background="{DynamicResource BackgroundBrush}" 
                      Foreground="{DynamicResource ForegroundBrush}"
                      BorderThickness="0"
                      MinWidth="{Binding ActualWidth, ElementName=MyChampionTextBox}"
                      ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-                        </Border>
-                    </Popup>
-                </Grid>
+                            </Border>
+                        </Popup>
+                    </Grid>
 
-                <!-- Przeciwnik -->
-                <TextBlock Text="{DynamicResource EnemyChampion}" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
-                <Grid>
-                    <TextBox x:Name="EnemyChampionTextBox" Height="30" Margin="0,5,0,5"
+                    <!-- Przeciwnik -->
+                    <TextBlock Text="{DynamicResource EnemyChampion}" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
+                    <Grid>
+                        <TextBox x:Name="EnemyChampionTextBox" Height="30" Margin="0,5,0,5"
              Background="{DynamicResource BackgroundBrush}"
              Foreground="{DynamicResource ForegroundBrush}"
              VerticalContentAlignment="Center"/>
-                    <Popup Name="EnemyChampPopup" PlacementTarget="{Binding ElementName=EnemyChampionTextBox}" Placement="Bottom" StaysOpen="False">
-                        <Border Background="{DynamicResource BackgroundBrush}" BorderThickness="1" BorderBrush="Gray" CornerRadius="4" MaxHeight="150">
-                            <ListBox Name="EnemyChampSuggestions" Background="{DynamicResource BackgroundBrush}"
+                        <Popup Name="EnemyChampPopup" PlacementTarget="{Binding ElementName=EnemyChampionTextBox}" Placement="Bottom" StaysOpen="False">
+                            <Border Background="{DynamicResource BackgroundBrush}" BorderThickness="1" BorderBrush="Gray" CornerRadius="4" MaxHeight="150">
+                                <ListBox Name="EnemyChampSuggestions" Background="{DynamicResource BackgroundBrush}"
                      Foreground="{DynamicResource ForegroundBrush}"
                      BorderThickness="0"
                      MinWidth="{Binding ActualWidth, ElementName=EnemyChampionTextBox}"
                      ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-                        </Border>
-                    </Popup>
-                </Grid>
+                            </Border>
+                        </Popup>
+                    </Grid>
 
-                <!-- Przycisk -->
-                <Button Content="{DynamicResource GenerateBuildButton}"
+                    <!-- Przycisk -->
+                    <Button Content="{DynamicResource GenerateBuildButton}"
                         Height="35"
                         Background="{DynamicResource GradientStartBrush}"
                         Foreground="{DynamicResource ForegroundBrush}"
                         FontWeight="Bold"
                         Click="GenerateBuild_Click"/>
 
-                <!-- Wynik -->
-                <ScrollViewer x:Name="ResultScrollViewer"
+                    <!-- Wynik -->
+                    <ScrollViewer x:Name="ResultScrollViewer"
               Margin="0,15,0,0"
               Visibility="Collapsed"
               VerticalScrollBarVisibility="Auto"
               HorizontalScrollBarVisibility="Disabled"
               Height="Auto">
-                    <ItemsControl x:Name="BuildResultsItemsControl">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel HorizontalAlignment="Center"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Border Background="{DynamicResource BackgroundBrush}"
+                        <ItemsControl x:Name="BuildResultsItemsControl">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel HorizontalAlignment="Center"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="{DynamicResource BackgroundBrush}"
                         BorderBrush="{StaticResource PrimaryBrush}"
                         BorderThickness="1"
                         CornerRadius="10"
                         Margin="8"
                         Padding="10"
-                        Width="150"
-                        Height="150">
-                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        <Image Source="{Binding IconUrl}"
+                        Width="130"
+                        Height="130">
+                                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <Image Source="{Binding Photo}"
                                Width="60"
                                Height="60"
                                Margin="0,0,0,8"
                                Stretch="UniformToFill"/>
-                                        <TextBlock Text="{Binding Name}"
+                                            <TextBlock Text="{Binding Name}"
+                                                       FontSize="11"
                                    HorizontalAlignment="Center"
                                    TextAlignment="Center"
                                    Foreground="{DynamicResource ForegroundBrush}"
                                    FontWeight="SemiBold"/>
-                                    </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
-            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </StackPanel>
+            </ScrollViewer>
         </Border>
     </Grid>
 </Page>

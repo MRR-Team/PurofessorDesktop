@@ -8,9 +8,16 @@
 
     <Grid>
         <Border Style="{StaticResource MainBorderStyle}">
-            <StackPanel Style="{StaticResource ContentStackPanelStyle}">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+                <Grid Style="{StaticResource ContentGridStyle}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
                 <TextBlock Text="{DynamicResource EditRotation}"
+                           Grid.Row="0"
                            FontSize="24"
                            FontWeight="Bold"
                            Foreground="{DynamicResource ForegroundBrush}"
@@ -18,7 +25,7 @@
                            HorizontalAlignment="Center"
                            Margin="0,0,0,20" />
 
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                     <ItemsControl Name="ChampionListBox">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -36,21 +43,27 @@
                                         Padding="10"
                                         Width="150"
                                         Height="50">
-                                    <CheckBox Content="{Binding Name}"
-                                              IsChecked="{Binding IsAvailable, Mode=TwoWay}"
-                                              Checked="OnCheckboxToggled"
-                                              Unchecked="OnCheckboxToggled"
-                                              Tag="{Binding Id}"
-                                              VerticalAlignment="Center"
-                                              Foreground="{DynamicResource ForegroundBrush}"
-                                              FontWeight="SemiBold" />
-                                </Border>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                            <Image Source="{Binding Photo}" 
+                   Width="30" Height="30" 
+                   Margin="0,0,8,0" 
+                   Stretch="UniformToFill"/>
+                                            <CheckBox Content="{Binding Name}"
+                      IsChecked="{Binding IsAvailable, Mode=TwoWay}"
+                      Checked="OnCheckboxToggled"
+                      Unchecked="OnCheckboxToggled"
+                      Tag="{Binding Id}"
+                      VerticalAlignment="Center"
+                      Foreground="{DynamicResource ForegroundBrush}"
+                      FontWeight="SemiBold" />
+                                        </StackPanel>
+                                    </Border>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
-
-            </StackPanel>
+            </Grid>
+                </ScrollViewer>
         </Border>
     </Grid>
 </Page>

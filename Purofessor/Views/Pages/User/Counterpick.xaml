@@ -10,21 +10,22 @@
 
     <Grid>
         <Border Style="{DynamicResource MainBorderStyle}">
-            <StackPanel Style="{DynamicResource ContentStackPanelStyle}">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Style="{DynamicResource ContentStackPanelStyle}">
 
-                <TextBlock Text="{DynamicResource ChooseChamp}"
+                    <TextBlock Text="{DynamicResource ChooseChamp}"
                            FontSize="24"
                            FontWeight="Bold"
                            Foreground="{DynamicResource ForegroundBrush}"
                            TextAlignment="Center"
                            Margin="0,0,0,20"/>
 
-                <TextBlock Text="{DynamicResource ChampionName}"
+                    <TextBlock Text="{DynamicResource ChampionName}"
                            FontWeight="SemiBold"
                            Foreground="{DynamicResource ForegroundBrush}"/>
 
-                <Grid>
-                    <TextBox Name="EnemyChampTextBox"
+                    <Grid>
+                        <TextBox Name="EnemyChampTextBox"
                              AutomationProperties.AutomationId="EnemyChampTextBox"
                              Height="30"
                              Margin="0,5,0,5"
@@ -32,52 +33,52 @@
                              Foreground="{DynamicResource ForegroundBrush}"
                              VerticalContentAlignment="Center"/>
 
-                    <Popup Name="SuggestionsPopup"
+                        <Popup Name="SuggestionsPopup"
                            PlacementTarget="{Binding ElementName=EnemyChampTextBox}"
                            Placement="Bottom"
                            StaysOpen="False">
-                        <Border Background="{DynamicResource BackgroundBrush}"
+                            <Border Background="{DynamicResource BackgroundBrush}"
                                 BorderThickness="1"
                                 BorderBrush="Gray"
                                 CornerRadius="4"
                                 MaxHeight="150">
-                            <ListBox Name="SuggestionsListBox"
+                                <ListBox Name="SuggestionsListBox"
                                      Background="{DynamicResource BackgroundBrush}"
                                      Foreground="{DynamicResource ForegroundBrush}"
                                      BorderThickness="0"
                                      MinWidth="{Binding ActualWidth, ElementName=EnemyChampTextBox}"
                                      ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-                        </Border>
-                    </Popup>
-                </Grid>
+                            </Border>
+                        </Popup>
+                    </Grid>
 
-                <TextBlock Text="{DynamicResource ChoosePos}"
+                    <TextBlock Text="{DynamicResource ChoosePos}"
                            FontWeight="SemiBold"
                            Foreground="{DynamicResource ForegroundBrush}"
                            Margin="0,10,0,5"/>
 
-                <StackPanel Orientation="Horizontal"
+                    <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Center"
                             Margin="0,0,0,15"
                             Name="PositionStackPanel">
-                    <RadioButton Name="RadioSupp"
+                        <RadioButton Name="RadioSupp"
              AutomationProperties.AutomationId="RadioSupp"
              Content="{DynamicResource Supp}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
-                    <RadioButton Name="RadioBottom"
+                        <RadioButton Name="RadioBottom"
              AutomationProperties.AutomationId="RadioBottom"
              Content="{DynamicResource Bottom}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
-                    <RadioButton Name="RadioMid"
+                        <RadioButton Name="RadioMid"
              AutomationProperties.AutomationId="RadioMid"
              Content="{DynamicResource Mid}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
-                    <RadioButton Name="RadioJungle"
+                        <RadioButton Name="RadioJungle"
              AutomationProperties.AutomationId="RadioJungle"
              Content="{DynamicResource Jungle}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
-                    <RadioButton Name="RadioTop"
+                        <RadioButton Name="RadioTop"
              AutomationProperties.AutomationId="RadioTop"
              Content="{DynamicResource Top}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
-                </StackPanel>
+                    </StackPanel>
 
-                <Button Content="{DynamicResource GenCounter}"
+                    <Button Content="{DynamicResource GenCounter}"
                         AutomationProperties.AutomationId="GenerateCounterButton"
                         Height="35"
                         Background="{DynamicResource GradientStartBrush}"
@@ -85,23 +86,23 @@
                         FontWeight="Bold"
                         Click="OnGenerateCounterClick"/>
 
-                <ScrollViewer Name="ResultScrollViewer"
+                    <ScrollViewer Name="ResultScrollViewer"
                               Margin="0,15,0,0"
                               Visibility="Collapsed"
                               VerticalScrollBarVisibility="Auto"
                               HorizontalScrollBarVisibility="Disabled"
                               Height="Auto">
-                    <ItemsControl Name="CounterResultsItemsControl"
+                        <ItemsControl Name="CounterResultsItemsControl"
                                   AutomationProperties.AutomationId="CounterResultsItemsControl">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel HorizontalAlignment="Center"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel HorizontalAlignment="Center"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
 
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Border Background="{DynamicResource BackgroundBrush}"
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="{DynamicResource BackgroundBrush}"
                                         BorderBrush="{StaticResource PrimaryBrush}"
                                         BorderThickness="1"
                                         CornerRadius="10"
@@ -109,25 +110,26 @@
                                         Padding="10"
                                         Width="150"
                                         Height="150">
-                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        <Image Source="{Binding IconUrl}"
+                                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <Image Source="{Binding Photo}"
                                                Width="60"
                                                Height="60"
                                                Margin="0,0,0,8"
                                                Stretch="UniformToFill" />
-                                        <TextBlock Text="{Binding Name}"
+                                            <TextBlock Text="{Binding Name}"
                                                    HorizontalAlignment="Center"
                                                    TextAlignment="Center"
                                                    Foreground="{DynamicResource ForegroundBrush}"
                                                    FontWeight="SemiBold" />
-                                    </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
 
-            </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
         </Border>
     </Grid>
 </Page>
