@@ -28,7 +28,7 @@ namespace Purofessor.Views.Pages.User
         {
             try
             {
-                _champions = await ApiService.Instance.GetChampionsAsync();
+                _champions = await ApiService.Instance.Champions.GetChampionsAsync();
 
                 _autocompleteHelper.SetChampionList(_champions);
                 _autocompleteHelper.Attach(MyChampionTextBox, MyChampPopup, MyChampSuggestions);
@@ -62,7 +62,7 @@ namespace Purofessor.Views.Pages.User
 
             try
             {
-                var buildItems = await ApiService.Instance.GetBuildAsync(enemyChamp.Id.ToString(), myChamp.Id.ToString());
+                var buildItems = await ApiService.Instance.Champions.GetBuildAsync(enemyChamp.Id.ToString(), myChamp.Id.ToString());
 
                 ResultScrollViewer.Visibility = Visibility.Visible;
 

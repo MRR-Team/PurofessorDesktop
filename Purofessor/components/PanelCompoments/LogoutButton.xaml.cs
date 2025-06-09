@@ -18,7 +18,7 @@ namespace Purofessor.components.PanelComponents
         {
             try
             {
-                await App.ApiService.LogoutAsync();
+                await App.ApiService.Auth.LogoutAsync();
 
                 var loginWindow = new LoginWindow();
                 loginWindow.Show();

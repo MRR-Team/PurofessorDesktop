@@ -48,7 +48,7 @@ namespace Purofessor.Views.Pages.User
             try
             {
 
-                bool success = await _apiService.UpdateUserAsync(_apiService.LoggedUser.Id, username, email, password);
+                bool success = await _apiService.Users.UpdateUserAsync(_apiService.LoggedUser.Id, username, email, password);
 
                 if (success)
                 {

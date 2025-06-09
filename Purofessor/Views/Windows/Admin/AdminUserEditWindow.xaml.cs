@@ -29,7 +29,7 @@ namespace Purofessor.Views.Windows.Admin
                 string email = EmailTextBox.Text.Trim();
                 string password = PasswordBox.Password.Trim();
 
-                bool updated = await _apiService.UpdateUserAsync(_user.Id, name, email, password);
+                bool updated = await _apiService.Users.UpdateUserAsync(_user.Id, name, email, password);
 
                 if (updated)
                 {

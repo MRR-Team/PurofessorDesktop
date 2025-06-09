@@ -22,7 +22,7 @@ namespace Purofessor.Views.Pages.Admin
         {
             try
             {
-                _champions = await ApiService.Instance.GetChampionsAsync();
+                _champions = await ApiService.Instance.Champions.GetChampionsAsync();
                 ChampionListBox.ItemsSource = _champions.OrderBy(c => c.Name).ToList();
             }
             catch
@@ -37,7 +37,7 @@ namespace Purofessor.Views.Pages.Admin
             {
                 try
                 {
-                    bool success = await ApiService.Instance.ToggleChampionAvailabilityAsync(id);
+                    bool success = await ApiService.Instance.Champions.ToggleChampionAvailabilityAsync(id);
                     if (!success)
                     {
                         CustomMessageBox.Show("Nie udało się zaktualizować rotacji.");

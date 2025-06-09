@@ -60,7 +60,7 @@ namespace Purofessor.Views.Pages.Guest
 
             try
             {
-                bool success = await ApiService.Instance.RegisterAsync(login, password, email);
+                bool success = await ApiService.Instance.Auth.RegisterAsync(login, password, email);
                 if (success)
                 {
                     CustomMessageBox.Show("Rejestracja zakończona sukcesem! Wysłaliśmy do ciebie maila w celu weryfikacji");

@@ -25,6 +25,7 @@
 
                 <Grid>
                     <TextBox Name="EnemyChampTextBox"
+                             AutomationProperties.AutomationId="EnemyChampTextBox"
                              Height="30"
                              Margin="0,5,0,5"
                              Background="{DynamicResource BackgroundBrush}"
@@ -59,14 +60,25 @@
                             HorizontalAlignment="Center"
                             Margin="0,0,0,15"
                             Name="PositionStackPanel">
-                    <RadioButton Content="{DynamicResource Supp}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" Name="RadioSupp"/>
-                    <RadioButton Content="{DynamicResource Bottom}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" Name="RadioBottom"/>
-                    <RadioButton Content="{DynamicResource Mid}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" Name="RadioMid"/>
-                    <RadioButton Content="{DynamicResource Jungle}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" Name="RadioJungle"/>
-                    <RadioButton Content="{DynamicResource Top}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" Name="RadioTop"/>
+                    <RadioButton Name="RadioSupp"
+             AutomationProperties.AutomationId="RadioSupp"
+             Content="{DynamicResource Supp}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
+                    <RadioButton Name="RadioBottom"
+             AutomationProperties.AutomationId="RadioBottom"
+             Content="{DynamicResource Bottom}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
+                    <RadioButton Name="RadioMid"
+             AutomationProperties.AutomationId="RadioMid"
+             Content="{DynamicResource Mid}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
+                    <RadioButton Name="RadioJungle"
+             AutomationProperties.AutomationId="RadioJungle"
+             Content="{DynamicResource Jungle}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
+                    <RadioButton Name="RadioTop"
+             AutomationProperties.AutomationId="RadioTop"
+             Content="{DynamicResource Top}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
                 </StackPanel>
 
                 <Button Content="{DynamicResource GenCounter}"
+                        AutomationProperties.AutomationId="GenerateCounterButton"
                         Height="35"
                         Background="{DynamicResource GradientStartBrush}"
                         Foreground="{DynamicResource ForegroundBrush}"
@@ -79,7 +91,8 @@
                               VerticalScrollBarVisibility="Auto"
                               HorizontalScrollBarVisibility="Disabled"
                               Height="Auto">
-                    <ItemsControl Name="CounterResultsItemsControl">
+                    <ItemsControl Name="CounterResultsItemsControl"
+                                  AutomationProperties.AutomationId="CounterResultsItemsControl">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel HorizontalAlignment="Center"/>

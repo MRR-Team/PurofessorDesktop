@@ -82,7 +82,7 @@ namespace Purofessor.components
         {
             try
             {
-                await App.ApiService.LogoutAsync(); // jeśli masz ApiService jako singleton/globalnie dostępny
+                await App.ApiService.Auth.LogoutAsync(); // jeśli masz ApiService jako singleton/globalnie dostępny
 
                 // Przekieruj użytkownika na stronę logowania lub zamknij okno
                 var loginWindow = new LoginWindow();

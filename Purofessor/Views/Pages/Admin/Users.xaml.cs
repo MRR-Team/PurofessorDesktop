@@ -24,7 +24,7 @@ namespace Purofessor.Views.Pages.Admin
         {
             try
             {
-                _allUsers = await ApiService.Instance.GetUsersAsync();
+                _allUsers = await ApiService.Instance.Users.GetUsersAsync();
                 UsersDataGrid.ItemsSource = _allUsers;
             }
             catch (Exception ex)
@@ -44,7 +44,7 @@ namespace Purofessor.Views.Pages.Admin
                 {
                     try
                     {
-                        _allUsers = await ApiService.Instance.GetUsersAsync();
+                        _allUsers = await ApiService.Instance.Users.GetUsersAsync();
                         UsersDataGrid.ItemsSource = null;
                         UsersDataGrid.ItemsSource = _allUsers;
                     }
@@ -70,8 +70,8 @@ namespace Purofessor.Views.Pages.Admin
                 {
                     try
                     {
-                        await ApiService.Instance.DeleteUserAsync(selectedUser.Id);
-                        _allUsers = await ApiService.Instance.GetUsersAsync();
+                        await ApiService.Instance.Users.DeleteUserAsync(selectedUser.Id);
+                        _allUsers = await ApiService.Instance.Users.GetUsersAsync();
                         UsersDataGrid.ItemsSource = null;
                         UsersDataGrid.ItemsSource = _allUsers;
                     }

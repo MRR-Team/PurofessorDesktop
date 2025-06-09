@@ -36,7 +36,7 @@ namespace Purofessor.Views.Pages.Guest
             try
             {
                 // używamy globalnego ApiService
-                string token = await App.ApiService.LoginAsync(login, password);
+                string token = await App.ApiService.Auth.LoginAsync(login, password);
 
                 /// CHYBA NIE POTRZEBNE
                 /// var user = App.ApiService.LoggedUser;

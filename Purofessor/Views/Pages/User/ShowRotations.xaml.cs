@@ -22,7 +22,7 @@ namespace Purofessor.Views.Pages.User
         {
             try
             {
-                var champions = await _apiService.GetFreeRotationAsync();
+                var champions = await _apiService.Champions.GetFreeRotationAsync();
                 RotationListBox.ItemsSource = champions;
             }
             catch (System.Exception ex)

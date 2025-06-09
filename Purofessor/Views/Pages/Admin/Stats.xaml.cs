@@ -35,7 +35,7 @@ namespace Purofessor.Views.Pages.Admin
         {
             try
             {
-                var stats = await ApiService.Instance.GetChampionSearchStatsAsync();
+                var stats = await ApiService.Instance.Champions.GetChampionSearchStatsAsync();
 
                 foreach (var stat in stats)
                 {

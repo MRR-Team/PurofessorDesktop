@@ -23,7 +23,7 @@ namespace Purofessor.Views.Pages.User
         {
             try
             {
-                _allChampions = await ApiService.Instance.GetChampionsAsync();
+                _allChampions = await ApiService.Instance.Champions.GetChampionsAsync();
                 _autocompleteHelper.SetChampionList(_allChampions);
                 _autocompleteHelper.Attach(EnemyChampTextBox, SuggestionsPopup, SuggestionsListBox);
             }
@@ -55,7 +55,7 @@ namespace Purofessor.Views.Pages.User
 
             try
             {
-                var result = await ApiService.Instance.GetCounterAsync(position, champion.Id.ToString());
+                var result = await ApiService.Instance.Champions.GetCounterAsync(position, champion.Id.ToString());
                 DisplayCounterResults(result, championName, position);
             }
             catch (Exception ex)
