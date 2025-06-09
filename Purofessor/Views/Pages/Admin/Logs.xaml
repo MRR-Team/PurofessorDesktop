@@ -9,16 +9,76 @@
 
     <Grid>
         <Border Style="{StaticResource MainBorderStyle}">
-            <StackPanel Style="{StaticResource ContentStackPanelStyle}">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
                 <TextBlock Text="{DynamicResource AdminLogsTitle}"
-                           FontSize="24"
+                           FontSize="20"
                            FontWeight="Bold"
                            Foreground="{DynamicResource ForegroundBrush}"
-                           TextAlignment="Center"
-                           Margin="0,0,0,20"/>
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20" />
 
-            </StackPanel>
+                <DataGrid Name="LogsDataGrid"
+          IsReadOnly="True"
+          Grid.Row="1"
+          AutoGenerateColumns="False"
+          ColumnWidth="*"  
+          Background="{DynamicResource BackgroundBrush}"
+          Foreground="{DynamicResource ForegroundBrush}"
+          BorderBrush="{StaticResource PrimaryBrush}"
+          BorderThickness="1"
+          HeadersVisibility="Column"
+          GridLinesVisibility="None"
+          RowBackground="{DynamicResource BackgroundBrush}"
+          AlternatingRowBackground="{DynamicResource BackgroundBrush}"
+          FontSize="14"
+          FontWeight="SemiBold"
+          RowHeight="35"
+          ColumnHeaderHeight="30"
+          ScrollViewer.VerticalScrollBarVisibility="Disabled"
+          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+          Margin="0,0,0,10">
+
+                    <DataGrid.Resources>
+                        <!-- styl jak w Stats -->
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="{StaticResource GradientStartBrush}" />
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}" />
+                            <Setter Property="BorderThickness" Value="0,0,0,1" />
+                            <Setter Property="Padding" Value="5,3"/>
+                        </Style>
+
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+                            <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}" />
+                            <Setter Property="BorderThickness" Value="0,0,0,1" />
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource GradientEndBrush}" />
+                                    <Setter Property="Foreground" Value="White" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.Resources>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50" />
+                        <DataGridTextColumn Header="Opis" Binding="{Binding Description}" Width="*" />
+                        <DataGridTextColumn Header="Obiekt" Binding="{Binding SubjectType}" Width="150" />
+                        <DataGridTextColumn Header="Użytkownik" Binding="{Binding CauserId}" Width="100" />
+                        <DataGridTextColumn Header="Data" Binding="{Binding CreatedAt}" Width="200" />
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </Grid>
         </Border>
     </Grid>
 </Page>
