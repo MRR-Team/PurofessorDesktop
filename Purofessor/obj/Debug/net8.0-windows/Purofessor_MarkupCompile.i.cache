@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\
+C:\Users\buchc\Source\Repos\PurofessorDesktop\Purofessor\obj\Debug\net8.0-windows\
 Purofessor
 none
 false
-TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor\App.xaml
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+C:\Users\buchc\Source\Repos\PurofessorDesktop\Purofessor\App.xaml
 30-646530212
 
-44-1424244572
-203-194955277
+471095080157
+203-1140911118
 components\PanelCompoments\LogoutButton.xaml;components\SettingsCompoments\LangSelector.xaml;components\SettingsCompoments\ThemeSelector.xaml;components\TopPanel.xaml;components\TopPanel_Admin.xaml;components\TopPanel_Guest.xaml;Languages\Dictionary-en.xaml;Languages\Dictionary-pl.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;Themes\Style.xaml;Views\Pages\Admin\Logs.xaml;Views\Pages\Admin\Notification.xaml;Views\Pages\Admin\Rotations.xaml;Views\Pages\Admin\Stats.xaml;Views\Pages\Admin\Users.xaml;Views\Pages\Guest\Login.xaml;Views\Pages\Guest\Register.xaml;Views\Pages\User\BuildMaker.xaml;Views\Pages\User\Counterpick.xaml;Views\Pages\User\Profile.xaml;Views\Pages\User\ServerStatus.xaml;Views\Pages\User\ShowRotations.xaml;Views\Windows\Admin\AdminUserEditWindow.xaml;Views\Windows\Admin\AdminWindow.xaml;Views\Windows\Dialogs\CustomMessageBox.xaml;Views\Windows\Guest\GuestWindow.xaml;Views\Windows\Guest\LoginWindow.xaml;Views\Windows\User\MainWindow.xaml;Views\Windows\User\SettingsWindow.xaml;
 
 False
