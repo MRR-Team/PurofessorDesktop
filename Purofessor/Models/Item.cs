@@ -35,5 +35,7 @@ namespace Purofessor.Models
         public bool IsGoodAgainstPoke { get; set; }
         public bool IsGoodAgainstCanOneShot { get; set; }
         public bool IsGoodAgainstLateGame { get; set; }
+        public string Photo { get; set; }
+
     }
 }
