@@ -4,6 +4,8 @@ using System.Globalization;
 using System.Windows;
 using Purofessor.Helpers;
 using Purofessor.Properties;
+using Purofessor.Views.Windows.Guest;
+using Purofessor.Views.Windows.Dialogs;
 
 namespace Purofessor
 {
@@ -21,6 +23,25 @@ namespace Purofessor
 
             ApiService = ApiService.Instance;
             base.OnStartup(e);
+            InternetCheckHelper.InternetUnavailable += OnInternetUnavailable;
+        }
+        private void OnInternetUnavailable()
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                CustomMessageBox.Show("Utracono połączenie z internetem.\nZostaniesz przeniesiony do logowania.",
+                                "Brak Internetu", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+                var loginWindow = new LoginWindow();
+                loginWindow.Show();
+
+                // Zamknij wszystkie inne okna
+                foreach (var window in Current.Windows)
+                {
+                    if (window is Window w && w is not LoginWindow)
+                        w.Close();
+                }
+            });
         }
     }
 }
