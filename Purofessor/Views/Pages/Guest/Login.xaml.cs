@@ -64,5 +64,24 @@ namespace Purofessor.Views.Pages.Guest
 
             Window.GetWindow(this)?.Close();
         }
+        private async void GoogleLoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string token = await App.ApiService.Auth.LoginWithGoogleAsync();
+
+                if (!string.IsNullOrEmpty(token))
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Window.GetWindow(this)?.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                CustomMessageBox.Show($"Błąd logowania przez Google:\n{ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
     }
 }
