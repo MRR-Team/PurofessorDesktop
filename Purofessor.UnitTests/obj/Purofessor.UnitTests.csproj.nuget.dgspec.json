@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor.UnitTests\\Purofessor.UnitTests.csproj": {}
+    "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor.UnitTests\\Purofessor.UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor.UnitTests\\Purofessor.UnitTests.csproj": {
+    "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor.UnitTests\\Purofessor.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor.UnitTests\\Purofessor.UnitTests.csproj",
+        "projectUniqueName": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor.UnitTests\\Purofessor.UnitTests.csproj",
         "projectName": "Purofessor.UnitTests",
-        "projectPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor.UnitTests\\Purofessor.UnitTests.csproj",
+        "projectPath": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor.UnitTests\\Purofessor.UnitTests.csproj",
         "packagesPath": "C:\\Users\\buchc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor.UnitTests\\obj\\",
+        "outputPath": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor.UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj": {
-                "projectPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj"
+              "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj": {
+                "projectPath": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj"
               }
             }
           }
@@ -48,8 +48,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -98,18 +97,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj": {
+    "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj",
+        "projectUniqueName": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj",
         "projectName": "Purofessor",
-        "projectPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj",
+        "projectPath": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj",
         "packagesPath": "C:\\Users\\buchc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor\\obj\\",
+        "outputPath": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -142,8 +141,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -173,7 +171,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

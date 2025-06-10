@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Purofessor.UnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c7514dc7999810a2c3698fce741abe033ae9a1f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e793c5724b42d85adb18ca020df29e97cb2ed957")]
 [assembly: System.Reflection.AssemblyProductAttribute("Purofessor.UnitTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Purofessor.UnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

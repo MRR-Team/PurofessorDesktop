@@ -2,19 +2,25 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="components\PanelComponents\SettingsButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="components\SuggestionPopup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Windows\Admin\AdminUserEditWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Windows\Admin\AdminWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="components\SettingsCompoments\LangSelector.xaml.cs">
+    <Compile Update="components\SettingsComponents\LangSelector.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="components\PanelCompoments\LogoutButton.xaml.cs">
+    <Compile Update="components\PanelComponents\LogoutButton.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="components\SettingsCompoments\ThemeSelector.xaml.cs">
+    <Compile Update="components\SettingsComponents\ThemeSelector.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="components\TopPanel.xaml.cs">
@@ -73,6 +79,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="components\PanelComponents\SettingsButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="components\SuggestionPopup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="components\TopPanel_Guest.xaml">
       <SubType>Designer</SubType>
     </Page>

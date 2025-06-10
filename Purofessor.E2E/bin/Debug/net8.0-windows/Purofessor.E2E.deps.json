@@ -550,10 +550,7 @@
           "Extended.Wpf.Toolkit": "4.7.25104.5739"
         },
         "runtime": {
-          "Purofessor.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Purofessor.dll": {}
         }
       }
     }
