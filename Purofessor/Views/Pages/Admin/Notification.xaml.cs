@@ -1,28 +1,50 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Purofessor.Helpers;
 
 namespace Purofessor.Views.Pages.Admin
 {
-    /// <summary>
-    /// Interaction logic for Notification.xaml
-    /// </summary>
     public partial class Notification : Page
     {
+        private readonly UserApi _userApi;
+
         public Notification()
         {
             InitializeComponent();
+
+            // Załaduj ApiService z kontenera lub singletona jak masz
+            _userApi = new UserApi(App.ApiService);
+        }
+
+        private async void SendNotification_Click(object sender, RoutedEventArgs e)
+        {
+            string title = TitleTextBox.Text.Trim();
+            string body = BodyTextBox.Text.Trim();
+            string type = (TypeComboBox.SelectedItem as ComboBoxItem)?.Content.ToString().ToLower();
+
+            if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(body) || string.IsNullOrWhiteSpace(type))
+            {
+                MessageBox.Show("Wypełnij wszystkie pola.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            try
+            {
+                var success = await _userApi.SendNotificationAsync(title, body, type);
+
+                if (success)
+                {
+                    MessageBox.Show("Powiadomienie zostało wysłane!", "Sukces", MessageBoxButton.OK, MessageBoxImage.Information);
+                    TitleTextBox.Clear();
+                    BodyTextBox.Clear();
+                    TypeComboBox.SelectedIndex = -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Błąd podczas wysyłania: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

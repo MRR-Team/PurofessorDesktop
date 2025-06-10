@@ -8,9 +8,42 @@
       Title="Notification">
 
     <Grid>
-        <Border Style="{StaticResource MainBorderStyle}">
+        <Border Style="{DynamicResource MainBorderStyle}">
+            <StackPanel Style="{DynamicResource ContentStackPanelStyle}" Margin="20">
 
-            <StackPanel Style="{StaticResource ContentStackPanelStyle}">
+                <TextBlock Text="Tytuł" FontWeight="Bold" Foreground="{DynamicResource ForegroundBrush}" />
+                <TextBox x:Name="TitleTextBox"
+                         Margin="0,5,0,10"
+                         Height="30"
+                         Background="{DynamicResource BackgroundBrush}"
+                         Foreground="{DynamicResource ForegroundBrush}"
+                         VerticalContentAlignment="Center"/>
+
+                <TextBlock Text="Treść" FontWeight="Bold" Foreground="{DynamicResource ForegroundBrush}" />
+                <TextBox x:Name="BodyTextBox"
+                         AcceptsReturn="True"
+                         Height="100"
+                         TextWrapping="Wrap"
+                         Margin="0,5,0,10"
+                         Background="{DynamicResource BackgroundBrush}"
+                         Foreground="{DynamicResource ForegroundBrush}"/>
+
+                <TextBlock Text="Typ powiadomienia" FontWeight="Bold" Foreground="{DynamicResource ForegroundBrush}" />
+                <ComboBox x:Name="TypeComboBox"
+                          Margin="0,5,0,20"
+                          Background="{DynamicResource BackgroundBrush}"
+                          Foreground="{DynamicResource BackgroundBrush}">
+                    <ComboBoxItem Content="Patch" />
+                    <ComboBoxItem Content="Rotation" />
+                    <ComboBoxItem Content="Different" />
+                </ComboBox>
+
+                <Button Content="Wyślij powiadomienie"
+                        Height="35"
+                        Background="{DynamicResource GradientStartBrush}"
+                        Foreground="{DynamicResource ForegroundBrush}"
+                        FontWeight="Bold"
+                        Click="SendNotification_Click"/>
             </StackPanel>
         </Border>
     </Grid>

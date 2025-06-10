@@ -121,6 +121,28 @@ namespace Purofessor.Helpers
                 throw new Exception($"Nie udało się pobrać logów: {response.StatusCode}");
             });
         }
+        public async Task<bool> SendNotificationAsync(string title, string body, string type)
+        {
+            return await InternetCheckHelper.ExecuteIfOnlineAsync(async () =>
+            {
+                var payload = new
+                {
+                    title,
+                    body,
+                    type
+                };
+
+                var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
+                var response = await _api.Client.PostAsync("notifications/send", content);
+
+                if (response.IsSuccessStatusCode)
+                    return true;
+
+                var error = await response.Content.ReadAsStringAsync();
+                throw new Exception($"Nie udało się wysłać powiadomienia: {response.StatusCode}\n{error}");
+            });
+        }
+
     }
 
 }

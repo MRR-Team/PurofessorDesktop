@@ -39,7 +39,7 @@
           FontWeight="SemiBold"
           RowHeight="35"
           ColumnHeaderHeight="30"
-          ScrollViewer.VerticalScrollBarVisibility="Disabled"
+          ScrollViewer.VerticalScrollBarVisibility="Visible"
           ScrollViewer.HorizontalScrollBarVisibility="Disabled"
           Margin="0,0,0,10">
 
@@ -70,11 +70,11 @@
                     </DataGrid.Resources>
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50" />
-                        <DataGridTextColumn Header="Opis" Binding="{Binding Description}" Width="*" />
-                        <DataGridTextColumn Header="Obiekt" Binding="{Binding SubjectType}" Width="150" />
-                        <DataGridTextColumn Header="Użytkownik" Binding="{Binding CauserId}" Width="100" />
-                        <DataGridTextColumn Header="Data" Binding="{Binding CreatedAt}" Width="200" />
+                        <DataGridTextColumn Header="{DynamicResource ColumnId}" Binding="{Binding Id}" Width="50" />
+                        <DataGridTextColumn Header="{DynamicResource ColumnDescription}" Binding="{Binding Description}" Width="*" />
+                        <DataGridTextColumn Header="{DynamicResource ColumnSubject}" Binding="{Binding SubjectType}" Width="150" />
+                        <DataGridTextColumn Header="{DynamicResource ColumnUser}" Binding="{Binding CauserId}" Width="100" />
+                        <DataGridTextColumn Header="{DynamicResource ColumnDate}" Binding="{Binding CreatedAt}" Width="200" />
                     </DataGrid.Columns>
                 </DataGrid>
 
