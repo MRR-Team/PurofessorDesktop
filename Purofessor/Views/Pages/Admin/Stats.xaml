@@ -33,39 +33,16 @@
                           HeadersVisibility="Column"
                           GridLinesVisibility="None"
                           RowBackground="{DynamicResource BackgroundBrush}"
-                          AlternatingRowBackground="{DynamicResource BackgroundBrush}"
                           FontSize="14"
                           FontWeight="SemiBold"
                           RowHeight="35"
                           ColumnHeaderHeight="30"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          ColumnHeaderStyle="{StaticResource AdminDataGridColumnHeaderStyle}"
+          RowStyle="{StaticResource AdminDataGridRowStyle}"
                           Margin="0,0,0,10">
 
-                    <DataGrid.Resources>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="Background" Value="{StaticResource GradientStartBrush}" />
-                            <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
-                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                            <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}" />
-                            <Setter Property="BorderThickness" Value="0,0,0,1" />
-                            <Setter Property="Padding" Value="5,3"/>
-                        </Style>
-
-                        <Style TargetType="DataGridRow">
-                            <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
-                            <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}" />
-                            <Setter Property="BorderThickness" Value="0,0,0,1" />
-                            <Style.Triggers>
-                                <Trigger Property="IsSelected" Value="True">
-                                    <Setter Property="Background" Value="{StaticResource GradientEndBrush}" />
-                                    <Setter Property="Foreground" Value="White" />
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </DataGrid.Resources>
-
+                    
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{DynamicResource ChampionColumn}" Binding="{Binding Champion.Name}" Width="*" />
                         <DataGridTextColumn Header="{DynamicResource SearchCountColumn}" Binding="{Binding Total}" Width="200"
