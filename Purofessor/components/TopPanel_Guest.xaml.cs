@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Purofessor.Views.Windows.Guest;
 using Purofessor.Views.Pages.User;
+using Purofessor.Helpers;
+using Purofessor.Views.Windows.Dialogs;
 
 namespace Purofessor.components
 {
@@ -23,21 +25,30 @@ namespace Purofessor.components
     /// </summary>
     public partial class TopPanel_Guest : UserControl
     {
+        private Button? _previousTabButton;
+
         public TopPanel_Guest()
         {
             InitializeComponent();
+            _previousTabButton = KontraButton;
         }
 
         private void Kontra_Click(object sender, RoutedEventArgs e)
         {
-            var parentWindow = Window.GetWindow(this) as MainWindow;
-            parentWindow?.MainFrame.Navigate(new Counterpick());
+            ActiveButtonHelper.SetActiveTab(KontraButton, ref _previousTabButton);
+            (Window.GetWindow(this) as GuestWindow)?.GuestFrame.Navigate(new Counterpick());
         }
 
         private void Status_Click(object sender, RoutedEventArgs e)
         {
-            var parentWindow = Window.GetWindow(this) as MainWindow;
-            parentWindow?.MainFrame.Navigate(new ServerStatus());
+            ActiveButtonHelper.SetActiveTab(StatusButton, ref _previousTabButton);
+            (Window.GetWindow(this) as GuestWindow)?.GuestFrame.Navigate(new ServerStatus());
+        }
+
+        private void ShowRotations_Click(object sender, RoutedEventArgs e)
+        {
+            ActiveButtonHelper.SetActiveTab(ShowRotationsButton, ref _previousTabButton);
+            (Window.GetWindow(this) as GuestWindow)?.GuestFrame.Navigate(new ShowRotations());
         }
 
         private void LoginLink_Click(object sender, RoutedEventArgs e)
