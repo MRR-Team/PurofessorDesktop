@@ -1,26 +1,13 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Purofessor.Views.Windows.Guest;
 using Purofessor.Views.Windows.Dialogs;
+using Purofessor.Helpers.Modules.Strategies; // dodaj to
 
 namespace Purofessor.Views.Pages.Guest
 {
-    /// <summary>
-    /// Logika interakcji dla klasy Login.xaml
-    /// </summary>
     public partial class Login : Page
     {
         public Login()
@@ -35,15 +22,15 @@ namespace Purofessor.Views.Pages.Guest
 
             try
             {
-                // używamy globalnego ApiService
-                string token = await App.ApiService.Auth.LoginAsync(login, password);
+                var strategy = new EmailPasswordLoginStrategy(App.ApiService, login, password);
+                string? token = await App.ApiService.Auth.LoginAsync(strategy);
 
-                /// CHYBA NIE POTRZEBNE
-                /// var user = App.ApiService.LoggedUser;
-                
+                if (!string.IsNullOrEmpty(token))
+                {
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
-                Window.GetWindow(this)?.Close();
+                    Window.GetWindow(this)?.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -53,22 +40,22 @@ namespace Purofessor.Views.Pages.Guest
 
         private void RegisterLink_Click(object sender, RoutedEventArgs e)
         {
-            // Załaduj stronę rejestracji
             this.NavigationService?.Navigate(new Register());
         }
+
         private void GuestLink_Click(object sender, RoutedEventArgs e)
         {
-            // Załaduj stronę gościa
-            GuestWindow GuestWindow = new GuestWindow();
-            GuestWindow.Show();
-
+            GuestWindow guestWindow = new GuestWindow();
+            guestWindow.Show();
             Window.GetWindow(this)?.Close();
         }
+
         private async void GoogleLoginButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                string token = await App.ApiService.Auth.LoginWithGoogleAsync();
+                var strategy = new GoogleLoginStrategy(App.ApiService);
+                string? token = await App.ApiService.Auth.LoginAsync(strategy);
 
                 if (!string.IsNullOrEmpty(token))
                 {
@@ -82,6 +69,9 @@ namespace Purofessor.Views.Pages.Guest
                 CustomMessageBox.Show($"Błąd logowania przez Google:\n{ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
+        private void ForgotPasswordLink_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new ForgotPassword());
+        }
     }
 }

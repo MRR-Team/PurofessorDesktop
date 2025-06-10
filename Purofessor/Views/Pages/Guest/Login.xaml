@@ -62,6 +62,11 @@
                         <Run Text="{StaticResource ContinueAsQuestLink}" />
                     </Hyperlink>
                 </TextBlock>
+                <TextBlock TextAlignment="Center" Margin="0,5,0,0" Foreground="{DynamicResource ForegroundBrush}">
+    <Hyperlink Click="ForgotPasswordLink_Click">
+        <Run Text="Zapomniałeś hasła?" />
+    </Hyperlink>
+                </TextBlock>
             </StackPanel>
         </Border>
     </Grid>
