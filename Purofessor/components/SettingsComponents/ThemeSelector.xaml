@@ -3,16 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Height="Auto" Width="Auto">
     <Grid>
-        <ComboBox x:Name="ThemeComboBox"
-                  Width="120"
-                  Height="26"
-                  Padding="10,2"
-                  FontWeight="Bold"
-                  FontSize="13"
-                  Background="White"
-                  Foreground="Black"
-                  BorderBrush="#9370DB"
-                  BorderThickness="1"
+        <ComboBox Style="{StaticResource AdminComboBoxStyle}"
+                  x:Name="ThemeComboBox"
                   SelectionChanged="ThemeComboBox_SelectionChanged">
             <ComboBoxItem Content="{DynamicResource DarkTheme}" Tag="DarkTheme.xaml"/>
             <ComboBoxItem Content="{DynamicResource LightTheme}" Tag="LightTheme.xaml"/>

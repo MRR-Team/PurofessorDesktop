@@ -4,16 +4,8 @@
              Height="Auto" Width="Auto">
     <Grid>
         <ComboBox x:Name="LanguageComboBox"
-                  Width="120"
-                  Height="26"
-                  Padding="10,2"
-                  FontWeight="Bold"
-                  FontSize="13"
-                  Background="White"
-                  Foreground="Black"
-                  BorderBrush="#9370DB"
-                  BorderThickness="1"
-                  SelectionChanged="LanguageComboBox_SelectionChanged">
+          Style="{StaticResource AdminComboBoxStyle}"
+          SelectionChanged="LanguageComboBox_SelectionChanged">
             <ComboBoxItem Content="Polski" Tag="pl"/>
             <ComboBoxItem Content="English" Tag="en"/>
         </ComboBox>
