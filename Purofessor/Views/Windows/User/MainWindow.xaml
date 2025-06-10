@@ -5,9 +5,14 @@
         Title="Purofessor"
         Height="650" Width="800"
         MinWidth="800" MinHeight="650"
-        Background="{DynamicResource BackgroundBrush}"
+        Background="{DynamicResource MainBackgroundGradient}"
         >
-
+    <Window.Resources>
+        <LinearGradientBrush x:Key="MainBackgroundGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="{DynamicResource WindowGradientStartColor}" Offset="0" />
+            <GradientStop Color="{DynamicResource WindowGradientStartColor}" Offset="1" />
+        </LinearGradientBrush>
+    </Window.Resources>
 
 
     <Grid>
