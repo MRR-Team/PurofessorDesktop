@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Purofessor.components.SuggestionPopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Height="0" Width="0" IsHitTestVisible="False">
+    <Popup x:Name="Popup"
+           Placement="Bottom"
+           PlacementTarget="{Binding PlacementTarget, RelativeSource={RelativeSource AncestorType=UserControl}}"
+           IsOpen="{Binding IsOpen, RelativeSource={RelativeSource AncestorType=UserControl}}"
+           StaysOpen="False">
+        <Border Background="{DynamicResource BackgroundBrush}"
+                BorderThickness="1"
+                BorderBrush="Gray"
+                CornerRadius="4"
+                MaxHeight="150">
+            <ListBox x:Name="ListBox"
+                     Background="{DynamicResource BackgroundBrush}"
+                     Foreground="{DynamicResource ForegroundBrush}"
+                     BorderThickness="0"
+                     ItemsSource="{Binding ItemsSource, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                     MinWidth="{Binding PlacementTarget.ActualWidth, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     SelectionChanged="ListBox_SelectionChanged"/>
+        </Border>
+    </Popup>
+</UserControl>
