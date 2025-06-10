@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
@@ -6,8 +7,8 @@ using System.Threading.Tasks;
 using Purofessor.Models;
 using Purofessor.Properties;
 using Purofessor.Helpers;
-using System.Windows;
 using Purofessor.Views.Windows.Dialogs;
+using Purofessor.Helpers.Modules.Strategies; // Dodane
 
 namespace Purofessor.Helpers
 {
@@ -20,46 +21,10 @@ namespace Purofessor.Helpers
             _api = api;
         }
 
-        public async Task<string> LoginAsync(string email, string password)
+        public async Task<string?> LoginAsync(ILoginStrategy strategy)
         {
-            return await InternetCheckHelper.ExecuteIfOnlineAsync(async () =>
-            {
-                var payload = new { email, password };
-                var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
-
-                var response = await _api.Client.PostAsync("login", content);
-                var json = await response.Content.ReadAsStringAsync();
-
-                if (response.IsSuccessStatusCode)
-                {
-                    using var doc = JsonDocument.Parse(json);
-                    string? token = doc.RootElement.GetProperty("token").GetString();
-                    if (string.IsNullOrWhiteSpace(token))
-                        throw new Exception("Nieprawidłowa odpowiedź serwera: token jest pusty.");
-
-                    var userElement = doc.RootElement.GetProperty("user").GetRawText();
-
-                    _api.LoggedUser = JsonSerializer.Deserialize<User>(userElement, new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
-
-                    _api.AuthToken = token;
-                    _api.Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-                    return token;
-                }
-
-                string message = "Nie udało się zalogować.";
-                using var errorDoc = JsonDocument.Parse(json);
-                if (errorDoc.RootElement.TryGetProperty("message", out var msgProp))
-                    message = msgProp.GetString() ?? message;
-
-                throw new Exception(message);
-            });
+            return await InternetCheckHelper.ExecuteIfOnlineAsync(() => strategy.LoginAsync());
         }
-
-
 
         public async Task<bool> RegisterAsync(string login, string password, string email)
         {
@@ -99,43 +64,20 @@ namespace Purofessor.Helpers
                 _api.Client.DefaultRequestHeaders.Authorization = null;
             });
         }
-
-        public async Task<string?> LoginWithGoogleAsync()
+        public async Task SendResetLinkAsync(string email)
         {
-            return await InternetCheckHelper.ExecuteIfOnlineAsync(async () =>
+            await InternetCheckHelper.ExecuteIfOnlineAsync(async () =>
             {
-                var listener = new GoogleAuthListener(Settings.Default.ApiBaseUrl);
-                string token = await listener.StartLoginFlowAsync();
-
-                if (string.IsNullOrEmpty(token))
-                    throw new Exception("Nie udało się uzyskać tokenu Google.");
-
-                _api.AuthToken = token;
-                _api.Client.DefaultRequestHeaders.Authorization =
-                    new AuthenticationHeaderValue("Bearer", token);
-
-                var response = await _api.Client.GetAsync("users/me");
-                var json = await response.Content.ReadAsStringAsync();
+                var payload = new { email };
+                var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
+                var response = await _api.Client.PostAsync("forgot-password", content);
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    string message = "Nie udało się pobrać danych użytkownika.";
-                    using var errorDoc = JsonDocument.Parse(json);
-                    if (errorDoc.RootElement.TryGetProperty("message", out var msgProp))
-                        message = msgProp.GetString() ?? message;
-
-                    throw new Exception(message);
+                    var error = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"Błąd wysyłania linku resetującego: {response.StatusCode}\n{error}");
                 }
-
-                _api.LoggedUser = JsonSerializer.Deserialize<User>(
-                    json,
-                    new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-                return token;
             });
         }
-
-
-
     }
 }
