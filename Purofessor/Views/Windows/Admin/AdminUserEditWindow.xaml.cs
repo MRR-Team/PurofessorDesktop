@@ -28,6 +28,16 @@ namespace Purofessor.Views.Windows.Admin
                 string name = NameTextBox.Text.Trim();
                 string email = EmailTextBox.Text.Trim();
                 string password = PasswordBox.Password.Trim();
+                string confirmPassword = ConfirmPasswordBox.Password.Trim();
+
+                if (!string.IsNullOrEmpty(password) || !string.IsNullOrEmpty(confirmPassword))
+                {
+                    if (password != confirmPassword)
+                    {
+                        CustomMessageBox.Show("Hasła nie są takie same!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
+                }
 
                 bool updated = await _apiService.Users.UpdateUserAsync(_user.Id, name, email, password);
 
@@ -47,6 +57,7 @@ namespace Purofessor.Views.Windows.Admin
                 CustomMessageBox.Show($"Błąd podczas aktualizacji: {ex.Message}");
             }
         }
+
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {

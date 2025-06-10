@@ -44,10 +44,16 @@ namespace Purofessor.Views.Pages.User
             string username = UsernameTextBox.Text;
             string email = EmailTextBox.Text;
             string password = PasswordBox.Password;
+            string confirmPassword = ConfirmPasswordBox.Password;
+
+            if (password != confirmPassword)
+            {
+                CustomMessageBox.Show("Hasła nie są takie same!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
             try
             {
-
                 bool success = await _apiService.Users.UpdateUserAsync(_apiService.LoggedUser.Id, username, email, password);
 
                 if (success)

@@ -51,6 +51,13 @@
                              Background="{DynamicResource BackgroundBrush}"
                              Foreground="{DynamicResource ForegroundBrush}"
                              VerticalContentAlignment="Center"/>
+                <TextBlock Text="{DynamicResource ConfirmPasswordLabel}" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
+                <PasswordBox x:Name="ConfirmPasswordBox"
+             Margin="0,5,0,20"
+             Height="30"
+             Background="{DynamicResource BackgroundBrush}"
+             Foreground="{DynamicResource ForegroundBrush}"
+             VerticalContentAlignment="Center"/>
 
                 <Button Content="{DynamicResource SaveButton}"
                         Height="35"
