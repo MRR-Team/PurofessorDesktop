@@ -45,6 +45,10 @@
     <System:String x:Key="ColumnEmail">Email</System:String>
     <System:String x:Key="ColumnAdmin">Admin</System:String>
     <System:String x:Key="ColumnActions">Actions</System:String>
+    <System:String x:Key="ColumnDescription">Description</System:String>
+    <System:String x:Key="ColumnSubject">Subject</System:String>
+    <System:String x:Key="ColumnUser">User</System:String>
+    <System:String x:Key="ColumnDate">Date</System:String>
     <System:String x:Key="EditButton">Edit</System:String>
     <System:String x:Key="DeleteButton">Delete</System:String>
     <System:String x:Key="DarkTheme">Dark</System:String>
@@ -64,5 +68,8 @@
     <System:String x:Key="LanguageLabel">Language</System:String>
     <System:String x:Key="ThemeLabel">Theme</System:String>
     <System:String x:Key="AdminPanelButton">Admin Panel</System:String>
+    <System:String x:Key="ConfirmPasswordLabel">Confirm password</System:String>
+
+
 
 </ResourceDictionary>
