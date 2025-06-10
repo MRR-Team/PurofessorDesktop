@@ -101,29 +101,7 @@
                             </ItemsControl.ItemsPanel>
 
                             <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Border Background="{DynamicResource BackgroundBrush}"
-                                        BorderBrush="{StaticResource PrimaryBrush}"
-                                        BorderThickness="1"
-                                        CornerRadius="10"
-                                        Margin="8"
-                                        Padding="10"
-                                        Width="150"
-                                        Height="150">
-                                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                            <Image Source="{Binding Photo}"
-                                               Width="60"
-                                               Height="60"
-                                               Margin="0,0,0,8"
-                                               Stretch="UniformToFill" />
-                                            <TextBlock Text="{Binding Name}"
-                                                   HorizontalAlignment="Center"
-                                                   TextAlignment="Center"
-                                                   Foreground="{DynamicResource ForegroundBrush}"
-                                                   FontWeight="SemiBold" />
-                                        </StackPanel>
-                                    </Border>
-                                </DataTemplate>
+                                <StaticResource ResourceKey="ResultTileTemplate"/>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
                     </ScrollViewer>

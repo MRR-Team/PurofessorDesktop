@@ -9,11 +9,7 @@
       Title="Profil">
 
     <Grid>
-        <Border
-                CornerRadius="10"
-                Padding="20"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
+        <Border Style ="{StaticResource LoginBorderStyle}">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="{DynamicResource GradientStartColor}" Offset="0"/>
