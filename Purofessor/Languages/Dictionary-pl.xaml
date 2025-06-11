@@ -69,6 +69,50 @@
     <System:String x:Key="ThemeLabel">Motyw</System:String>
     <System:String x:Key="AdminPanelButton">Panel Admina</System:String>
     <System:String x:Key="ConfirmPasswordLabel">Potwierdź hasło</System:String>
+   
+    
+    
+    <System:String x:Key="LogoutFailed">Nie udało się wylogować</System:String>
+    <System:String x:Key="LoginFailed">Nie udało się zalogować. Sprawdź dane</System:String>
+    <System:String x:Key="LoginFailedGoogle">Nie udało się zalogować przez Google.</System:String>
+    <System:String x:Key="DownloadChampionsError">Nie udało się pobrać championów.</System:String>
+    <System:String x:Key="UpdateRotationError">Nie udało się zaktualizować rotacji.</System:String>
+    <System:String x:Key="DownloadStatsError">Błąd podczas pobierania statystyk.</System:String>
+    <System:String x:Key="FailedLoadingUsers">Błąd podczas ładowania użytkowników.</System:String>
+    <System:String x:Key="FailedRefreshingList">Błąd odświeżania listy.</System:String>
+    <System:String x:Key="DeleteUserWarning">Czy na pewno chcesz usunąć użytkownika?</System:String>
+    <System:String x:Key="DeleteUserError">Błąd podczas usuwania użytkownika</System:String>
+    <System:String x:Key="ConnectionLost" xml:space="preserve">"Utracono połączenie z internetem.
+        Zostaniesz przeniesiony do logowania."</System:String>
+    <System:String x:Key="FillAllError">Wypełnij wszystkie pola.</System:String>
+    <System:String x:Key="PasswordMismatchError">Hasła nie są takie same.</System:String>
+    <System:String x:Key="RegisterComplete">Rejestracja zakończona sukcesem! Wysłaliśmy do ciebie maila w celu weryfikacji</System:String>
+    <System:String x:Key="RegisterFailed">Rejestracja nie powiodła się. Sprawdź dane</System:String>
+    <System:String x:Key="RegisterError">Błąd podczas rejestracji</System:String>
+    <System:String x:Key="ChampionDoesntExist">Jeden z championów nie istnieje!</System:String>
+    <System:String x:Key="NoRecommendedItems">Brak rekomendowanych przedmiotów</System:String>
+    <System:String x:Key="BuildError">Błąd generowania builda.</System:String>
+    <System:String x:Key="YoureNotloggedin">Nie jesteś zalogowany!</System:String>
+    <System:String x:Key="DataUpdated">Dane zostały zaktualizowane!</System:String>
+    <System:String x:Key="DataUpdatedFailed">Nie udało się zaktualizować danych.</System:String>
+    <System:String x:Key="DataUpdatedError">Bład aktualizowania danych.</System:String>
+    <System:String x:Key="RotationShowError">Błąd łądowania rotacji.</System:String>
+    <System:String x:Key="LoadingLogsError">Błąd wczytywania logów.</System:String>
+    <System:String x:Key="EnterVaildEmail">Podaj poprawny adres e-mail.</System:String>
+    <System:String x:Key="PasswordResetMail">Sprawdź skrzynkę – wysłaliśmy ci link do resetu hasła.</System:String>
+    <System:String x:Key="PasswordResetMailError">Błąd w wysyłaniu linku</System:String>
+    <System:String x:Key="EnterChampionAndPosition">Wpisz nazwę championa i wybierz pozycję.</System:String>
+    <System:String x:Key="ChampionNotFound">Nie znaleziono championa </System:String>
+    <System:String x:Key="CounterGetError">Błąd pobierania kontry</System:String>
+
+    <System:String x:Key="NotificationSent">Powiadomienie zostało wysłane!</System:String>
+    <System:String x:Key="NotificationError">Błąd podczas wysyłania powiadomienia.</System:String>
+
+
+    <System:String x:Key="Error">Błąd</System:String>
+    <System:String x:Key="Warning">Ostrzeżenie</System:String>
+    <System:String x:Key="NoConnection">Brak połączenia internetowego</System:String>
+    <System:String x:Key="Success">Sukces</System:String>
 
 
 </ResourceDictionary>

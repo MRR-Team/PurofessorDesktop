@@ -69,7 +69,50 @@
     <System:String x:Key="ThemeLabel">Theme</System:String>
     <System:String x:Key="AdminPanelButton">Admin Panel</System:String>
     <System:String x:Key="ConfirmPasswordLabel">Confirm password</System:String>
+    
+    
+    
+    
+    
+    <System:String x:Key="LogoutFailed">Failed to log out</System:String>
+    <System:String x:Key="LoginFailed">Failed to log in. Check cridentials</System:String>
+    <System:String x:Key="LoginFailedGoogle">Failed to login using Google.</System:String>
+    <System:String x:Key="DownloadChampionsError">Failed to download champions</System:String>
+    <System:String x:Key="UpdateRotationError">Failed to change rotation.</System:String>
+    <System:String x:Key="DownloadStatsError">Failed to download Champion stats.</System:String>
+    <System:String x:Key="FailedLoadingUsers">Failed to load users.</System:String>
+    <System:String x:Key="FailedRefreshingList">Failed to refresh the list.</System:String>
+    <System:String x:Key="DeleteUserWarning">Are you sure you want to delete that user?</System:String>
+    <System:String x:Key="ConnectionLost" xml:space="preserve">"Lost internet connection.
+    You will be redirected back to Login."</System:String>
+    <System:String x:Key="FillAllError">Fill all fields.</System:String>
+    <System:String x:Key="PasswordMismatchError">Passwords aren't the same.</System:String>
+    <System:String x:Key="RegisterComplete">Rejestration complete! We send you a verification e-mail.</System:String>
+    <System:String x:Key="RegisterFailed">Rejestration failed. Check cridentials</System:String>
+    <System:String x:Key="RegisterError">Rejestration Error</System:String>
+    <System:String x:Key="ChampionDoesntExist">One of the champions doesn't exist!</System:String>
+    <System:String x:Key="NoRecommendedItems">No Recommended Items</System:String>
+    <System:String x:Key="YoureNotloggedin">You're not logged in!</System:String>
+    <System:String x:Key="DataUpdated">User data updated!</System:String>
+    <System:String x:Key="DataUpdatedFailed">Failed to update user data.</System:String>
+    <System:String x:Key="DataUpdatedError">Error updating data.</System:String>
+    <System:String x:Key="RotationShowError">Error showing rotation.</System:String>
+    <System:String x:Key="LoadingLogsError">Errpr loading logs.</System:String>
+    <System:String x:Key="NotificationSent">Notificatoin sent!.</System:String>
+    <System:String x:Key="NotificationError">Error sending notification.</System:String>
 
+    <System:String x:Key="EnterVaildEmail">Enter a valid e-mail address.</System:String>
+    <System:String x:Key="PasswordResetMail">Check your inbox - we just sent you your password reset link.</System:String>
+    <System:String x:Key="PasswordResetMailError">Error sending password reset link</System:String>
+    <System:String x:Key="EnterChampionAndPosition">Enter champion name and select position.</System:String>
+    <System:String x:Key="ChampionNotFound">Champion not found: </System:String>
+    <System:String x:Key="CounterGetError">Error getting counter</System:String>
+
+
+    <System:String x:Key="Error">Error</System:String>
+    <System:String x:Key="Warning">Warning</System:String>
+    <System:String x:Key="NoConnection">No internet connection</System:String>
+    <System:String x:Key="Success">Success</System:String>
 
 
 </ResourceDictionary>
