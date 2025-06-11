@@ -63,7 +63,7 @@
                            VerticalAlignment="Center"
                            IsHitTestVisible="False"/>
 
-                <pc:SettingsButton/>
+                <pc:SettingsButton x:Name="settingsButton"/>
 
                 <Button x:Name="ProfileButton"
                         Width="30"

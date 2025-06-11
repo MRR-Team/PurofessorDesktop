@@ -49,6 +49,7 @@
                 <Button Style="{DynamicResource TopPanelButtonStyle}" 
                         Content="{DynamicResource NotificationsButton}" 
                         x:Name="NotifyButton"
+                        AutomationProperties.AutomationId="NotificationButton"
                         Click="Notify_Click"/>
             </WrapPanel>
 
