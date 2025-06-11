@@ -15,13 +15,18 @@ namespace Purofessor.Views.Pages.User
         {
             if (RegionComboBox.SelectedItem is ComboBoxItem selectedItem)
             {
-                string region = selectedItem.Content.ToString();
+                string? region = selectedItem.Content?.ToString();
+                if (string.IsNullOrWhiteSpace(region))
+                {
+                    StatusTextBlock.Text = "Nie wybrano regionu.";
+                    return;
+                }
 
                 try
                 {
                     var status = await App.ApiService.Champions.GetServerStatusAsync(region);
                     StatusTextBlock.Text = $"Region: {status.Name} ({status.Id})\n" +
-                                           $"Lokalizacje: {string.Join(", ", status.Locales)}\n" +
+                                           $"Lokalizacje: {string.Join(", ", status.Locales ?? Enumerable.Empty<string>())}\n" +
                                            $"Maintenance: {status.Maintenances?.Count ?? 0}, Incidents: {status.Incidents?.Count ?? 0}";
                 }
                 catch (Exception ex)

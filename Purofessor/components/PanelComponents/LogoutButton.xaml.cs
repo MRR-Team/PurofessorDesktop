@@ -26,7 +26,7 @@ namespace Purofessor.components.PanelComponents
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.LogoutFailed, Messages.Error, MessageBoxButton.OK);
             }

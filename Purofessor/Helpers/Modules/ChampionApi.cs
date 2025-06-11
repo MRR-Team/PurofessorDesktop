@@ -30,7 +30,7 @@ namespace Purofessor.Helpers
                     var champions = JsonSerializer.Deserialize<List<Champion>>(json, new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
-                    });
+                    }) ?? new List<Champion>();
 
                     foreach (var champ in champions)
                     {
@@ -56,7 +56,7 @@ namespace Purofessor.Helpers
                     var champions = JsonSerializer.Deserialize<List<Champion>>(json, new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
-                    });
+                    }) ?? new List<Champion>();
 
                     return champions.Select(i => StringHelper.CapitalizeFirstLetter(i.Name)).ToList();
                 }
@@ -77,7 +77,7 @@ namespace Purofessor.Helpers
                     var items = JsonSerializer.Deserialize<List<Item>>(json, new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
-                    });
+                    }) ?? new List<Item>();
 
                     return items.Select(i => StringHelper.CapitalizeFirstLetter(i.Name)).ToList();
                 }
@@ -98,7 +98,7 @@ namespace Purofessor.Helpers
                     var champions = JsonSerializer.Deserialize<List<Champion>>(json, new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
-                    });
+                    }) ?? new List<Champion>();
 
                     foreach (var champ in champions)
                     {
@@ -138,7 +138,7 @@ namespace Purofessor.Helpers
                     var stats = JsonSerializer.Deserialize<List<ChampionSearchStats>>(json, new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
-                    });
+                    }) ?? new List<ChampionSearchStats>();
 
                     foreach (var stat in stats)
                     {

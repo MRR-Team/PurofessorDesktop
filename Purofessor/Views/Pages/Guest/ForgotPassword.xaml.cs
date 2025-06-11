@@ -32,7 +32,7 @@ namespace Purofessor.Views.Pages.Guest
                 CustomMessageBox.Show(Messages.PasswordResetMail, Messages.Success,MessageBoxButton.OK);
                 NavigationService?.Navigate(new Login());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.PasswordResetMailError, Messages.Error, MessageBoxButton.OK);
             }

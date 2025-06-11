@@ -45,7 +45,7 @@ namespace Purofessor.Views.Pages.Admin
 
                 StatsDataGrid.ItemsSource = stats.OrderByDescending(s => s.Total).ToList();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.DownloadStatsError, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }

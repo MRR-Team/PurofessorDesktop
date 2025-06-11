@@ -13,7 +13,7 @@ namespace Purofessor.Views.Pages.Admin
 {
     public partial class Users : Page
     {
-        private List<UserModel> _allUsers = new();
+        private List<UserModel?> _allUsers = new();
 
         public Users()
         {
@@ -28,7 +28,7 @@ namespace Purofessor.Views.Pages.Admin
                 _allUsers = await ApiService.Instance.Users.GetUsersAsync();
                 UsersDataGrid.ItemsSource = _allUsers;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.FailedLoadingUsers, Messages.Error, MessageBoxButton.OK);
             }
@@ -49,7 +49,7 @@ namespace Purofessor.Views.Pages.Admin
                         UsersDataGrid.ItemsSource = null;
                         UsersDataGrid.ItemsSource = _allUsers;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         CustomMessageBox.Show(Messages.FailedRefreshingList, Messages.Error, MessageBoxButton.OK);
                     }
@@ -75,7 +75,7 @@ namespace Purofessor.Views.Pages.Admin
                         UsersDataGrid.ItemsSource = null;
                         UsersDataGrid.ItemsSource = _allUsers;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         CustomMessageBox.Show(Messages.DeleteUserError, Messages.Error, MessageBoxButton.OK);
                     }

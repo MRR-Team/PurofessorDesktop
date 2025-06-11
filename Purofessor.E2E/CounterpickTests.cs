@@ -26,6 +26,7 @@ namespace Purofessor.E2E
         public void GenerateCounter_ForValidChampion_ShowsResults()
         {
             var window = _app.GetMainWindow(_automation);
+            Assert.NotNull(window);
 
             // ------ logowanie ------
             var loginBox = window.FindFirstDescendant(cf => cf.ByAutomationId("LoginTextBox"))?.AsTextBox();

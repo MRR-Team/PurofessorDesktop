@@ -62,7 +62,7 @@
                         Background="{DynamicResource SettingsBrush}"
                         ToolTip="{DynamicResource ExitTooltip}"
                         Click="ExitButton_Click">
-                    <TextBlock Text="⎋" FontSize="16" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Text="⎋" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Button>
 
                 <pc:LogoutButton VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,0,0,0"/>

@@ -53,7 +53,7 @@ namespace Purofessor.Views.Windows.Admin
                     CustomMessageBox.Show(Messages.DataUpdatedFailed);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.DataUpdatedError, Messages.Error, MessageBoxButton.OK);
             }

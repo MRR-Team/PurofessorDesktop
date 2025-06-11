@@ -136,22 +136,24 @@ namespace Purofessor.E2E
         {
             var loginWindow = _app.GetMainWindow(_automation);
 
-            loginWindow.FindFirstDescendant(cf => cf.ByAutomationId("LoginTextBox"))?.AsTextBox()
+            loginWindow?.FindFirstDescendant(cf => cf.ByAutomationId("LoginTextBox"))?.AsTextBox()
                        ?.Enter("admin@example.com");
-            loginWindow.FindFirstDescendant(cf => cf.ByAutomationId("PasswordBox"))?.AsTextBox()
+            loginWindow?.FindFirstDescendant(cf => cf.ByAutomationId("PasswordBox"))?.AsTextBox()
                        ?.Enter("password");
-            loginWindow.FindFirstDescendant(cf => cf.ByAutomationId("LoginButton"))?.AsButton()
+            loginWindow?.FindFirstDescendant(cf => cf.ByAutomationId("LoginButton"))?.AsButton()
                        ?.Invoke();
 
             var mainWindow = Retry.WhileNull(
                 () =>
                 {
                     var w = _app.GetMainWindow(_automation);
+                    if (w == null) return null;
+
                     return w.FindFirstDescendant(cf => cf.ByAutomationId("SettingsButton")) != null ? w : null;
                 },
                 TimeSpan.FromSeconds(10)
             ).Result;
-
+            Assert.NotNull(mainWindow);
             var settingsButton = mainWindow.FindFirstDescendant(cf => cf.ByAutomationId("SettingsButton"))?.AsButton();
             Assert.NotNull(settingsButton);
             settingsButton.Focus();
@@ -169,12 +171,14 @@ namespace Purofessor.E2E
             Assert.NotNull(adminButton);
             adminButton.Invoke();
 
-            adminWindow = Retry.WhileNull(
+            var result = Retry.WhileNull(
                 () => _app.GetAllTopLevelWindows(_automation)
                           .FirstOrDefault(w => w.Title.Contains("Admin")),
                 TimeSpan.FromSeconds(5)
             ).Result;
-            Assert.NotNull(adminWindow);
+
+            Assert.NotNull(result); // XUnit sprawdza, czy nie null
+            adminWindow = result!;
         }
 
     }

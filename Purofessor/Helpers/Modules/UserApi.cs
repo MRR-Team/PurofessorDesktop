@@ -17,7 +17,7 @@ namespace Purofessor.Helpers
             _api = api;
         }
 
-        public async Task<List<User>> GetUsersAsync()
+        public async Task<List<User?>> GetUsersAsync()
         {
             return await InternetCheckHelper.ExecuteIfOnlineAsync(async () =>
             {
@@ -30,17 +30,19 @@ namespace Purofessor.Helpers
 
                     var usersElement = doc.RootElement.GetProperty("data").GetRawText();
 
-                    return JsonSerializer.Deserialize<List<User>>(usersElement, new JsonSerializerOptions
+                    var users = JsonSerializer.Deserialize<List<User?>>(usersElement, new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
                     });
+
+                    return users ?? new List<User?>();
                 }
 
                 throw new Exception($"Nie udało się pobrać użytkowników: {response.StatusCode}");
             });
         }
 
-        public async Task<User> GetUserAsync(int id)
+        public async Task<User?> GetUserAsync(int id)
         {
             return await InternetCheckHelper.ExecuteIfOnlineAsync(async () =>
             {
@@ -49,7 +51,7 @@ namespace Purofessor.Helpers
                 if (response.IsSuccessStatusCode)
                 {
                     var json = await response.Content.ReadAsStringAsync();
-                    return JsonSerializer.Deserialize<User>(json, new JsonSerializerOptions
+                    return JsonSerializer.Deserialize<User?>(json, new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
                     });
@@ -59,7 +61,7 @@ namespace Purofessor.Helpers
             });
         }
 
-        public async Task<bool> UpdateUserAsync(int id, string name = null, string email = null, string password = null)
+        public async Task<bool> UpdateUserAsync(int id, string? name = null, string? email = null, string? password = null)
         {
             return await InternetCheckHelper.ExecuteIfOnlineAsync(async () =>
             {
@@ -112,15 +114,18 @@ namespace Purofessor.Helpers
                     using var doc = JsonDocument.Parse(json);
                     var logsJson = doc.RootElement.GetProperty("data").GetRawText();
 
-                    return JsonSerializer.Deserialize<List<ActivityLog>>(logsJson, new JsonSerializerOptions
+                    var logs = JsonSerializer.Deserialize<List<ActivityLog>>(logsJson, new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
                     });
+
+                    return logs ?? new List<ActivityLog>();
                 }
 
                 throw new Exception($"Nie udało się pobrać logów: {response.StatusCode}");
             });
         }
+
         public async Task<bool> SendNotificationAsync(string title, string body, string type)
         {
             return await InternetCheckHelper.ExecuteIfOnlineAsync(async () =>

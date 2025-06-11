@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using Purofessor.components;
 using Purofessor.Views.Pages.User;
-using Purofessor.components;
 
 namespace Purofessor
 {

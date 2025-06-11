@@ -8,10 +8,10 @@ namespace Purofessor.Models
 {
     public class ServerStatusResponse
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public List<string> Locales { get; set; }
-        public List<object> Maintenances { get; set; }
-        public List<object> Incidents { get; set; }
+        public string? Id { get; set; }
+        public string? Name { get; set; }
+        public List<string>? Locales { get; set; }
+        public List<object>? Maintenances { get; set; }
+        public List<object>? Incidents { get; set; }
     }
 }

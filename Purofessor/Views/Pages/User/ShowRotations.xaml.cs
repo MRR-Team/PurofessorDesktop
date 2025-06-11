@@ -26,7 +26,7 @@ namespace Purofessor.Views.Pages.User
                 var champions = await _apiService.Champions.GetFreeRotationAsync();
                 RotationListBox.ItemsSource = champions;
             }
-            catch (System.Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.RotationShowError, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }

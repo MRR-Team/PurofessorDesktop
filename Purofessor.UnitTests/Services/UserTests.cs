@@ -38,7 +38,7 @@ namespace Purofessor.UnitTests.Services
         {
             var handler = new StubHttpMessageHandler(async req =>
             {
-                var body = await req.Content.ReadAsStringAsync();
+                var body = await req.Content!.ReadAsStringAsync();
                 Assert.Contains("name", body);
                 Assert.Contains("new name", body);
                 return new HttpResponseMessage(HttpStatusCode.OK);

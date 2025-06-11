@@ -33,8 +33,10 @@ namespace Purofessor.UnitTests.Services
 
             var users = await service.Users.GetUsersAsync();
 
+            Assert.NotNull(users);
             Assert.Single(users);
-            Assert.Equal("Admin", users[0].Name);
+            Assert.NotNull(users[0]);
+            Assert.Equal("Admin", users![0]!.Name);
         }
 
 

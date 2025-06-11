@@ -28,7 +28,7 @@ namespace Purofessor.Views.Pages.Admin
                 var logs = await ApiService.Instance.Users.GetLogsAsync();
                 LogsDataGrid.ItemsSource = logs; // <- Zmienione z LogsListView na LogsDataGrid
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.LoadingLogsError , Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }

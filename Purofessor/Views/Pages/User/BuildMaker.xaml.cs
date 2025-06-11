@@ -9,7 +9,7 @@ namespace Purofessor.Views.Pages.User
 {
     public partial class BuildMaker : Page
     {
-        private List<Champion>? _champions;
+        private List<Champion> _champions = new();
         private readonly ChampionAutocompleteHelper _autocompleteHelper;
 
         public BuildMaker()
@@ -24,12 +24,11 @@ namespace Purofessor.Views.Pages.User
             try
             {
                 _champions = await ApiService.Instance.Champions.GetChampionsAsync();
-
                 _autocompleteHelper.SetChampionList(_champions);
                 _autocompleteHelper.Attach(MyChampionTextBox, MyChampPopup, MyChampSuggestions);
                 _autocompleteHelper.Attach(EnemyChampionTextBox, EnemyChampPopup, EnemyChampSuggestions);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.DownloadChampionsError, Messages.Error, MessageBoxButton.OK);
             }
@@ -78,7 +77,7 @@ namespace Purofessor.Views.Pages.User
                 ResultScrollViewer.Visibility = Visibility.Visible;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.BuildError,Messages.Error, MessageBoxButton.OK);
             }

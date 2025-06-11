@@ -19,6 +19,7 @@ namespace Purofessor.UnitTests.Services
             var handler = new StubHttpMessageHandler(req =>
             {
                 Assert.Equal(HttpMethod.Post, req.Method);
+                Assert.NotNull(req.Headers.Authorization);
                 Assert.Equal("Bearer test-token", req.Headers.Authorization.ToString());
 
                 return new HttpResponseMessage(HttpStatusCode.OK);

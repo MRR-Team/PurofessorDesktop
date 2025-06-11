@@ -36,6 +36,7 @@ namespace Purofessor.UnitTests.Languages
             Messages.ResourceLookup = key => null;
 
             var method = typeof(Messages).GetMethod("Get", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+            Assert.NotNull(method);
             var result = method.Invoke(null, new object[] { "MissingKey" }) as string;
 
             Assert.Equal("[MissingKey]", result);

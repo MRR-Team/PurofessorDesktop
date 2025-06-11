@@ -20,7 +20,7 @@ namespace Purofessor.components
     /// </summary>
     public partial class ToastContainer : UserControl
     {
-        public static ToastContainer Instance { get;  set; }
+        public static ToastContainer? Instance { get;  set; }
 
         public ToastContainer()
         {

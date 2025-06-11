@@ -73,7 +73,7 @@ namespace Purofessor.Views.Pages.Guest
                     CustomMessageBox.Show(Messages.RegisterFailed, Messages.Error, MessageBoxButton.OK  );
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.RegisterError, Messages.Error, MessageBoxButton.OK);
             }

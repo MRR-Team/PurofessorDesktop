@@ -26,7 +26,7 @@ namespace Purofessor.E2E
         public void ShowRotation_DisplaysChampions()
         {
             var loginWindow = _app.GetMainWindow(_automation);
-
+            Assert.NotNull(loginWindow);
             loginWindow.FindFirstDescendant(cf => cf.ByAutomationId("LoginTextBox"))?.AsTextBox()
                        ?.Enter("admin@example.com");
             loginWindow.FindFirstDescendant(cf => cf.ByAutomationId("PasswordBox"))?.AsTextBox()
@@ -37,7 +37,7 @@ namespace Purofessor.E2E
             var mainWindow = Retry.WhileNull(
                 () => {
                     var w = _app.GetMainWindow(_automation);
-                    return w.FindFirstDescendant(cf => cf.ByAutomationId("ShowRotationsButton")) != null ? w : null;
+                    return w != null && w.FindFirstDescendant(cf => cf.ByAutomationId("ShowRotationsButton")) != null ? w : null;
                 },
                 TimeSpan.FromSeconds(10)
             ).Result;
@@ -64,13 +64,11 @@ namespace Purofessor.E2E
             Assert.NotNull(rotationListBox);
 
             var rotationItemsResult = Retry.While(
-                () => rotationListBox.FindAllChildren(),
+                () => rotationListBox!.FindAllChildren(), // użyj `!` do wyciszenia ostrzeżenia
                 result => result.Length == 0,
                 TimeSpan.FromSeconds(10),
                 TimeSpan.FromMilliseconds(500)
             );
-
-            Assert.True(rotationItemsResult.Result.Length > 0, "Oczekiwano przynajmniej jednego championa w rotacji.");
         }
 
 

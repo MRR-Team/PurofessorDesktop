@@ -26,7 +26,7 @@ namespace Purofessor.E2E
         public void GenerateBuild_ForTestChampion_ShowsResults()
         {
             var loginWindow = _app.GetMainWindow(_automation);
-
+            Assert.NotNull(loginWindow);
             loginWindow.FindFirstDescendant(cf => cf.ByAutomationId("LoginTextBox"))?.AsTextBox()
                        ?.Enter("admin@example.com");
             loginWindow.FindFirstDescendant(cf => cf.ByAutomationId("PasswordBox"))?.AsTextBox()
@@ -37,7 +37,7 @@ namespace Purofessor.E2E
             var mainWindow = Retry.WhileNull(
                 () => {
                     var w = _app.GetMainWindow(_automation);
-                    return w.FindFirstDescendant(cf => cf.ByAutomationId("BuildMakerButton")) != null ? w : null;
+                    return w != null && w.FindFirstDescendant(cf => cf.ByAutomationId("BuildMakerButton")) != null ? w : null;
                 },
                 TimeSpan.FromSeconds(10)
             ).Result;

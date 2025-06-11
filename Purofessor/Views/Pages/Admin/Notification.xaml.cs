@@ -23,7 +23,7 @@ namespace Purofessor.Views.Pages.Admin
         {
             string title = TitleTextBox.Text.Trim();
             string body = BodyTextBox.Text.Trim();
-            string type = (TypeComboBox.SelectedItem as ComboBoxItem)?.Content.ToString().ToLower();
+            string? type = (TypeComboBox.SelectedItem as ComboBoxItem)?.Content?.ToString()?.ToLower();
 
             if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(body) || string.IsNullOrWhiteSpace(type))
             {
@@ -43,7 +43,7 @@ namespace Purofessor.Views.Pages.Admin
                     TypeComboBox.SelectedIndex = -1;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.NotificationError, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }

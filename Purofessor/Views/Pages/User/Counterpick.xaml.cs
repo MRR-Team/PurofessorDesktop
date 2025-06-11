@@ -29,7 +29,7 @@ namespace Purofessor.Views.Pages.User
                 _autocompleteHelper.SetChampionList(_allChampions);
                 _autocompleteHelper.Attach(EnemyChampTextBox, SuggestionsPopup, SuggestionsListBox);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.DownloadChampionsError);
             }
@@ -38,7 +38,7 @@ namespace Purofessor.Views.Pages.User
         private async void OnGenerateCounterClick(object sender, RoutedEventArgs e)
         {
             string championName = EnemyChampTextBox.Text.Trim();
-            string position = GetSelectedPosition();
+            string? position = GetSelectedPosition();
 
             if (string.IsNullOrWhiteSpace(championName) || string.IsNullOrWhiteSpace(position))
             {
@@ -60,7 +60,7 @@ namespace Purofessor.Views.Pages.User
                 var result = await ApiService.Instance.Champions.GetCounterAsync(position, champion.Id.ToString());
                 DisplayCounterResults(result, championName, position);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.CounterGetError, Messages.Error, MessageBoxButton.OK);
             }
@@ -79,7 +79,7 @@ namespace Purofessor.Views.Pages.User
             CounterResultsItemsControl.ItemsSource = championItems;
         }
 
-        private string GetSelectedPosition()
+        private string? GetSelectedPosition()
         {
             if (RadioSupp.IsChecked == true) return "support";
             if (RadioBottom.IsChecked == true) return "bottom";

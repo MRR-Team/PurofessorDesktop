@@ -6,6 +6,7 @@ using FlaUI.UIA3;
 using FlaUI.Core.AutomationElements;
 using Xunit;
 using FlaUI.Core.Tools;
+using Purofessor.Views.Windows.Admin;
 
 namespace Purofessor.E2E
 {
@@ -27,6 +28,7 @@ namespace Purofessor.E2E
         public void Login_WithValidCredentials_OpensMainWindow()
         {
             var window = _app.GetMainWindow(_automation);
+            Assert.NotNull(window);
 
             // znajdź pola
             var loginBox = window.FindFirstDescendant(cf => cf.ByAutomationId("LoginTextBox"))?.AsTextBox();
@@ -56,6 +58,7 @@ namespace Purofessor.E2E
         public void Login_WithInvalidCredentials_ShowsErrorMessageBox()
         {
             var window = _app.GetMainWindow(_automation);
+            Assert.NotNull(window);
 
             var usernameBox = window.FindFirstDescendant(cf => cf.ByAutomationId("LoginTextBox"))?.AsTextBox();
             var passwordBox = window.FindFirstDescendant(cf => cf.ByAutomationId("PasswordBox"))?.AsTextBox();

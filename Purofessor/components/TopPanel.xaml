@@ -65,15 +65,17 @@
 
                 <pc:SettingsButton x:Name="settingsButton"/>
 
-                <Button x:Name="ProfileButton"
+                <Button x:Name="ProfileButton" Content="👤"
+                        Foreground="White"
+                        FontSize="20"
                         Width="30"
                         Height="30"
                         Margin="0,0,10,0"
                         BorderThickness="0"
-                        Background="Transparent"
+                        Background="{DynamicResource SettingsBrush}"
                         ToolTip="Profil"
                         Click="ProfileButton_Click">
-                    <Image Source="pack://application:,,,/Images/UserIcon.png" Width="30" Height="30"/>
+                    
                 </Button>
 
                 <pc:LogoutButton VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,0,0,0"/>

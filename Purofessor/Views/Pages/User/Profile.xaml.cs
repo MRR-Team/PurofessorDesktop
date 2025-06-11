@@ -56,15 +56,23 @@ namespace Purofessor.Views.Pages.User
                 CustomMessageBox.Show(Messages.PasswordMismatchError, Messages.Warning, MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-
+            var user = _apiService.LoggedUser;
+            if (user is null)
+            {
+                CustomMessageBox.Show(Messages.YoureNotloggedin,
+                                      Messages.Warning,
+                                      MessageBoxButton.OK,
+                                      MessageBoxImage.Warning);
+                return;
+            }
             try
             {
-                bool success = await _apiService.Users.UpdateUserAsync(_apiService.LoggedUser.Id, username, email, password);
+                bool success = await _apiService.Users.UpdateUserAsync(user.Id, username, email, password);
 
                 if (success)
                 {
-                    _apiService.LoggedUser.Name = username;
-                    _apiService.LoggedUser.Email = email;
+                    user.Name = username;
+                    user.Email = email;
                     CustomMessageBox.Show(Messages.DataUpdated, Messages.Success, MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
@@ -72,7 +80,7 @@ namespace Purofessor.Views.Pages.User
                     CustomMessageBox.Show(Messages.DataUpdatedFailed, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.DataUpdatedError, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }

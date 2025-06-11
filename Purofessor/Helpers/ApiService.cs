@@ -16,10 +16,10 @@ namespace Purofessor.Helpers
         internal UserApi Users { get; }
 
         internal HttpClient Client { get; }
-        public string AuthToken { get; internal set; }
+        public string? AuthToken { get; internal set; } = string.Empty;
 
-        private User _loggedUser;
-        public User LoggedUser
+        private User? _loggedUser;
+        public User? LoggedUser
         {
             get => _loggedUser;
             set => SetField(ref _loggedUser, value);

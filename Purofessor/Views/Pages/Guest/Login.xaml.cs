@@ -34,7 +34,7 @@ namespace Purofessor.Views.Pages.Guest
                     Window.GetWindow(this)?.Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 CustomMessageBox.Show(Messages.LoginFailed, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
