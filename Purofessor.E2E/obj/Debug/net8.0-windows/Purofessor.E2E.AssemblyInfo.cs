@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Purofessor.E2E")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1aadea6c40e561cd8cd073bafbfc34dd7e7e3cd1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08af8e2e17be4caad85f485d7f4d02f36895c3b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Purofessor.E2E")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Purofessor.E2E")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

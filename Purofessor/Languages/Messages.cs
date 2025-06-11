@@ -8,6 +8,16 @@ namespace Purofessor.Localization
 {
     public static class Messages
     {
+        public static Func<string, string?> ResourceLookup { get; set; } = key =>
+        {
+            return Application.Current?.TryFindResource(key) as string;
+        };
+        private static string? DefaultResourceLookup(string key)
+        {
+            return (ResourceLookup ?? DefaultResourceLookup)(key) ?? $"[{key}]";
+        }
+
+
         public static string Error => Get("Error");
         public static string Warning => Get("Warning");
         public static string Success => Get("Success");
@@ -56,7 +66,7 @@ namespace Purofessor.Localization
 
         private static string Get(string key)
         {
-            return Application.Current.TryFindResource(key) as string ?? $"[{key}]";
+            return ResourceLookup?.Invoke(key) ?? $"[{key}]";
         }
     }
 }

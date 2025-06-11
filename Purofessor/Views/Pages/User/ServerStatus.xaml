@@ -9,11 +9,33 @@
       Title="ServerStatus">
 
     <Grid>
+            
+            <Border Style="{DynamicResource MainBorderStyle}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Style="{DynamicResource ContentStackPanelStyle}">
+                    <TextBlock Text="{DynamicResource ServerStatus}"
+        FontSize="24"
+        FontWeight="Bold"
+        Foreground="{DynamicResource ForegroundBrush}"
+        TextAlignment="Center"
+        Margin="0,0,0,20"/>
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <ComboBox x:Name="RegionComboBox" Width="200" Margin="0,0,0,10" SelectionChanged="RegionComboBox_SelectionChanged">
+                        <ComboBoxItem Content="EUW1"/>
+                        <ComboBoxItem Content="NA1"/>
+                        <ComboBoxItem Content="EUN1"/>
+                        <ComboBoxItem Content="KR"/>
+                        <ComboBoxItem Content="BR1"/>
+                        <ComboBoxItem Content="JP1"/>
+                        <ComboBoxItem Content="OC1"/>
+                        <ComboBoxItem Content="RU"/>
+                        <ComboBoxItem Content="TRI"/>
+                    </ComboBox>
 
-            <TextBlock Text="{DynamicResource ServerStatus}" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"><Run Language="pl-pl" /></TextBlock>
-
-        </StackPanel>
+                    <TextBlock x:Name="StatusTextBlock" FontSize="14" TextAlignment="Center" TextWrapping="Wrap" Width="300"
+Foreground="{DynamicResource ForegroundBrush}"/>
+                </StackPanel>
+                </ScrollViewer>
+            </Border>
     </Grid>
 </Page>

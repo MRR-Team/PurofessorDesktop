@@ -14,7 +14,7 @@
     <System:String x:Key="Top">Top</System:String>
     <System:String x:Key="CounterButton">Counterpick tool</System:String>
     <System:String x:Key="ServerStatusButton">Server status</System:String>
-    <System:String x:Key="ServerStatus">Server Status: Running!</System:String>
+    <System:String x:Key="ServerStatus">Server Status</System:String>
     <System:String x:Key="GenCounter">Generate counterpick</System:String>
     <System:String x:Key="Password">Password</System:String>
     <System:String x:Key="LogIn">Log In</System:String>

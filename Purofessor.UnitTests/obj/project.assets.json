@@ -1293,7 +1293,7 @@
       "projectName": "Purofessor.UnitTests",
       "projectPath": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor.UnitTests\\Purofessor.UnitTests.csproj",
       "packagesPath": "C:\\Users\\buchc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor.UnitTests\\obj\\",
+      "outputPath": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

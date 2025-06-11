@@ -152,5 +152,25 @@ namespace Purofessor.Helpers
                 throw new Exception($"Nie udało się pobrać statystyk wyszukiwania championów: {response.StatusCode}");
             });
         }
+        public async Task<ServerStatusResponse> GetServerStatusAsync(string region)
+        {
+            return await InternetCheckHelper.ExecuteIfOnlineAsync(async () =>
+            {
+                var response = await _api.Client.GetAsync($"riot/status/{region}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    var status = JsonSerializer.Deserialize<ServerStatusResponse>(json, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                    return status!;
+                }
+
+                throw new Exception($"Nie udało się pobrać statusu serwera: {response.StatusCode}");
+            });
+        }
     }
 }

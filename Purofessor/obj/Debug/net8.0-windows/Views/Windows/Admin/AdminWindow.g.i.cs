@@ -62,7 +62,7 @@ namespace Purofessor.Views.Windows.Admin {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Purofessor;component/views/windows/admin/adminwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Purofessor;V1.0.0.0;component/views/windows/admin/adminwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Views\Windows\Admin\AdminWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

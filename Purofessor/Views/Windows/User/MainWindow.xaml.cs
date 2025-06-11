@@ -1,5 +1,7 @@
 ﻿using System.Windows;
+using Purofessor.components;
 using Purofessor.Views.Pages.User;
+using Purofessor.components;
 
 namespace Purofessor
 {
@@ -8,7 +10,9 @@ namespace Purofessor
         public MainWindow()
         {
             InitializeComponent();
+            ToastContainer.Instance = ToastOverlay; // <-- to musi być
             MainFrame.Navigate(new Counterpick());
+
         }
 
 
