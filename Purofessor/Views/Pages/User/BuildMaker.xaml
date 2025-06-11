@@ -2,72 +2,99 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="BuildMaker"
-            Width="Auto"
-      HorizontalAlignment="Stretch"
-      >
+      Width="Auto"
+      HorizontalAlignment="Stretch">
 
     <Grid>
         <Border Style="{StaticResource MainBorderStyle}">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
-
                 <StackPanel Style="{StaticResource ContentStackPanelStyle}">
+
+                    <!-- Nagłówek -->
                     <TextBlock Text="{DynamicResource EnterChampionsPrompt}"
-                           FontSize="24" FontWeight="Bold" Foreground="{DynamicResource ForegroundBrush}"
-                           TextAlignment="Center" Margin="0,0,0,20"/>
+                               FontSize="24"
+                               FontWeight="Bold"
+                               Foreground="{DynamicResource ForegroundBrush}"
+                               TextAlignment="Center"
+                               Margin="0,0,0,20"/>
 
                     <!-- Twój champion -->
-                    <TextBlock Text="{DynamicResource YourChampion}" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
+                    <TextBlock Text="{DynamicResource YourChampion}"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ForegroundBrush}"/>
                     <Grid>
-                        <TextBox x:Name="MyChampionTextBox" Height="30" Margin="0,5,0,5"
-             Background="{DynamicResource BackgroundBrush}"
-             Foreground="{DynamicResource ForegroundBrush}"
-             VerticalContentAlignment="Center"/>
-                        <Popup Name="MyChampPopup" PlacementTarget="{Binding ElementName=MyChampionTextBox}" Placement="Bottom" StaysOpen="False">
-                            <Border Background="{DynamicResource BackgroundBrush}" BorderThickness="1" BorderBrush="Gray" CornerRadius="4" MaxHeight="150">
-                                <ListBox Name="MyChampSuggestions" Background="{DynamicResource BackgroundBrush}" 
-                     Foreground="{DynamicResource ForegroundBrush}"
-                     BorderThickness="0"
-                     MinWidth="{Binding ActualWidth, ElementName=MyChampionTextBox}"
-                     ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                        <TextBox x:Name="MyChampionTextBox"
+                                 Height="30"
+                                 Margin="0,5,0,5"
+                                 Background="{DynamicResource BackgroundBrush}"
+                                 Foreground="{DynamicResource ForegroundBrush}"
+                                 VerticalContentAlignment="Center"/>
+                        <Popup Name="MyChampPopup"
+                               PlacementTarget="{Binding ElementName=MyChampionTextBox}"
+                               Placement="Bottom"
+                               StaysOpen="False">
+                            <Border Background="{DynamicResource BackgroundBrush}"
+                                    BorderThickness="1"
+                                    BorderBrush="Gray"
+                                    CornerRadius="4"
+                                    MaxHeight="150">
+                                <ListBox Name="MyChampSuggestions"
+                                         Background="{DynamicResource BackgroundBrush}"
+                                         Foreground="{DynamicResource ForegroundBrush}"
+                                         BorderThickness="0"
+                                         MinWidth="{Binding ActualWidth, ElementName=MyChampionTextBox}"
+                                         ScrollViewer.VerticalScrollBarVisibility="Auto"/>
                             </Border>
                         </Popup>
                     </Grid>
 
                     <!-- Przeciwnik -->
-                    <TextBlock Text="{DynamicResource EnemyChampion}" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
+                    <TextBlock Text="{DynamicResource EnemyChampion}"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ForegroundBrush}"/>
                     <Grid>
-                        <TextBox x:Name="EnemyChampionTextBox" Height="30" Margin="0,5,0,5"
-             Background="{DynamicResource BackgroundBrush}"
-             Foreground="{DynamicResource ForegroundBrush}"
-             VerticalContentAlignment="Center"/>
-                        <Popup Name="EnemyChampPopup" PlacementTarget="{Binding ElementName=EnemyChampionTextBox}" Placement="Bottom" StaysOpen="False">
-                            <Border Background="{DynamicResource BackgroundBrush}" BorderThickness="1" BorderBrush="Gray" CornerRadius="4" MaxHeight="150">
-                                <ListBox Name="EnemyChampSuggestions" Background="{DynamicResource BackgroundBrush}"
-                     Foreground="{DynamicResource ForegroundBrush}"
-                     BorderThickness="0"
-                     MinWidth="{Binding ActualWidth, ElementName=EnemyChampionTextBox}"
-                     ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                        <TextBox x:Name="EnemyChampionTextBox"
+                                 Height="30"
+                                 Margin="0,5,0,5"
+                                 Background="{DynamicResource BackgroundBrush}"
+                                 Foreground="{DynamicResource ForegroundBrush}"
+                                 VerticalContentAlignment="Center"/>
+                        <Popup Name="EnemyChampPopup"
+                               PlacementTarget="{Binding ElementName=EnemyChampionTextBox}"
+                               Placement="Bottom"
+                               StaysOpen="False">
+                            <Border Background="{DynamicResource BackgroundBrush}"
+                                    BorderThickness="1"
+                                    BorderBrush="Gray"
+                                    CornerRadius="4"
+                                    MaxHeight="150">
+                                <ListBox Name="EnemyChampSuggestions"
+                                         Background="{DynamicResource BackgroundBrush}"
+                                         Foreground="{DynamicResource ForegroundBrush}"
+                                         BorderThickness="0"
+                                         MinWidth="{Binding ActualWidth, ElementName=EnemyChampionTextBox}"
+                                         ScrollViewer.VerticalScrollBarVisibility="Auto"/>
                             </Border>
                         </Popup>
                     </Grid>
 
-                    <!-- Przycisk -->
-                    <Button Content="{DynamicResource GenerateBuildButton}"
-                        Height="35"
-                        Background="{DynamicResource GradientStartBrush}"
-                        Foreground="{DynamicResource ForegroundBrush}"
-                        FontWeight="Bold"
-                                AutomationProperties.AutomationId="GenerateBuildButton"
-                            x:Name="GenerateCounterButton"
-                        Click="GenerateBuild_Click"/>
+                    <!-- Przycisk generowania -->
+                    <Button x:Name="GenerateCounterButton"
+                            Content="{DynamicResource GenerateBuildButton}"
+                            Height="35"
+                            Background="{DynamicResource GradientStartBrush}"
+                            Foreground="{DynamicResource ForegroundBrush}"
+                            FontWeight="Bold"
+                            AutomationProperties.AutomationId="GenerateBuildButton"
+                            Click="GenerateBuild_Click"/>
 
-                    <!-- Wynik -->
+                    <!-- Wyniki -->
                     <ScrollViewer x:Name="ResultScrollViewer"
-              Margin="0,15,0,0"
-              Visibility="Collapsed"
-              VerticalScrollBarVisibility="Auto"
-              HorizontalScrollBarVisibility="Disabled"
-              Height="Auto">
+                                  Margin="0,15,0,0"
+                                  Visibility="Collapsed"
+                                  VerticalScrollBarVisibility="Auto"
+                                  HorizontalScrollBarVisibility="Disabled"
+                                  Height="Auto">
                         <ItemsControl x:Name="BuildResultsItemsControl">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
@@ -79,6 +106,7 @@
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
                     </ScrollViewer>
+
                 </StackPanel>
             </ScrollViewer>
         </Border>

@@ -29,8 +29,10 @@
                          Foreground="{DynamicResource ForegroundBrush}"/>
 
                 <TextBlock Text="Typ powiadomienia" FontWeight="Bold" Foreground="{DynamicResource ForegroundBrush}" Margin="0,0,0,10" />
-                <ComboBox x:Name="TypeComboBox" HorizontalAlignment="Left"
-          Style="{StaticResource AdminComboBoxStyle}" Margin="0,0,0,10">
+                <ComboBox x:Name="TypeComboBox"
+                          HorizontalAlignment="Left"
+                          Style="{StaticResource AdminComboBoxStyle}"
+                          Margin="0,0,0,10">
                     <ComboBoxItem Content="Patch" />
                     <ComboBoxItem Content="Rotation" />
                     <ComboBoxItem Content="Different" />

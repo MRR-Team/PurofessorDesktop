@@ -23,27 +23,26 @@
                            Margin="0,0,0,20" />
 
                 <DataGrid Name="LogsDataGrid"
-          IsReadOnly="True"
-          Grid.Row="1"
-          AutoGenerateColumns="False"
-          ColumnWidth="*"  
-          Background="{DynamicResource BackgroundBrush}"
-          Foreground="{DynamicResource ForegroundBrush}"
-          BorderBrush="{StaticResource PrimaryBrush}"
-          BorderThickness="1"
-          HeadersVisibility="Column"
-          GridLinesVisibility="None"
-          RowBackground="{DynamicResource BackgroundBrush}"
-          FontSize="14"
-          FontWeight="SemiBold"
-          RowHeight="35"
-          ColumnHeaderHeight="30"
-          ColumnHeaderStyle="{StaticResource AdminDataGridColumnHeaderStyle}"
-          RowStyle="{StaticResource AdminDataGridRowStyle}"
-          ScrollViewer.VerticalScrollBarVisibility="Visible"
-          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-          Margin="0,0,0,10">
-
+                          IsReadOnly="True"
+                          Grid.Row="1"
+                          AutoGenerateColumns="False"
+                          ColumnWidth="*"  
+                          Background="{DynamicResource BackgroundBrush}"
+                          Foreground="{DynamicResource ForegroundBrush}"
+                          BorderBrush="{StaticResource PrimaryBrush}"
+                          BorderThickness="1"
+                          HeadersVisibility="Column"
+                          GridLinesVisibility="None"
+                          RowBackground="{DynamicResource BackgroundBrush}"
+                          FontSize="14"
+                          FontWeight="SemiBold"
+                          RowHeight="35"
+                          ColumnHeaderHeight="30"
+                          ColumnHeaderStyle="{StaticResource AdminDataGridColumnHeaderStyle}"
+                          RowStyle="{StaticResource AdminDataGridRowStyle}"
+                          ScrollViewer.VerticalScrollBarVisibility="Visible"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          Margin="0,0,0,10">
 
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{DynamicResource ColumnId}" Binding="{Binding Id}" Width="50" />

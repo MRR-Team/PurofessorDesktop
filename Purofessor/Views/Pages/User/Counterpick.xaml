@@ -14,86 +14,101 @@
                 <StackPanel Style="{DynamicResource ContentStackPanelStyle}">
 
                     <TextBlock Text="{DynamicResource ChooseChamp}"
-                           FontSize="24"
-                           FontWeight="Bold"
-                           Foreground="{DynamicResource ForegroundBrush}"
-                           TextAlignment="Center"
-                           Margin="0,0,0,20"/>
+                               FontSize="24"
+                               FontWeight="Bold"
+                               Foreground="{DynamicResource ForegroundBrush}"
+                               TextAlignment="Center"
+                               Margin="0,0,0,20"/>
 
                     <TextBlock Text="{DynamicResource ChampionName}"
-                           FontWeight="SemiBold"
-                           Foreground="{DynamicResource ForegroundBrush}"/>
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ForegroundBrush}"/>
 
                     <Grid>
                         <TextBox Name="EnemyChampTextBox"
-                             AutomationProperties.AutomationId="EnemyChampTextBox"
-                             Height="30"
-                             Margin="0,5,0,5"
-                             Background="{DynamicResource BackgroundBrush}"
-                             Foreground="{DynamicResource ForegroundBrush}"
-                             VerticalContentAlignment="Center"/>
+                                 AutomationProperties.AutomationId="EnemyChampTextBox"
+                                 Height="30"
+                                 Margin="0,5,0,5"
+                                 Background="{DynamicResource BackgroundBrush}"
+                                 Foreground="{DynamicResource ForegroundBrush}"
+                                 VerticalContentAlignment="Center"/>
 
                         <Popup Name="SuggestionsPopup"
-                           PlacementTarget="{Binding ElementName=EnemyChampTextBox}"
-                           Placement="Bottom"
-                           StaysOpen="False">
+                               PlacementTarget="{Binding ElementName=EnemyChampTextBox}"
+                               Placement="Bottom"
+                               StaysOpen="False">
                             <Border Background="{DynamicResource BackgroundBrush}"
-                                BorderThickness="1"
-                                BorderBrush="Gray"
-                                CornerRadius="4"
-                                MaxHeight="150">
+                                    BorderThickness="1"
+                                    BorderBrush="Gray"
+                                    CornerRadius="4"
+                                    MaxHeight="150">
                                 <ListBox Name="SuggestionsListBox"
-                                     Background="{DynamicResource BackgroundBrush}"
-                                     Foreground="{DynamicResource ForegroundBrush}"
-                                     BorderThickness="0"
-                                     MinWidth="{Binding ActualWidth, ElementName=EnemyChampTextBox}"
-                                     ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                                         Background="{DynamicResource BackgroundBrush}"
+                                         Foreground="{DynamicResource ForegroundBrush}"
+                                         BorderThickness="0"
+                                         MinWidth="{Binding ActualWidth, ElementName=EnemyChampTextBox}"
+                                         ScrollViewer.VerticalScrollBarVisibility="Auto"/>
                             </Border>
                         </Popup>
                     </Grid>
 
                     <TextBlock Text="{DynamicResource ChoosePos}"
-                           FontWeight="SemiBold"
-                           Foreground="{DynamicResource ForegroundBrush}"
-                           Margin="0,10,0,5"/>
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ForegroundBrush}"
+                               Margin="0,10,0,5"/>
 
                     <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            Margin="0,0,0,15"
-                            Name="PositionStackPanel">
+                                HorizontalAlignment="Center"
+                                Margin="0,0,0,15"
+                                Name="PositionStackPanel">
+
                         <RadioButton Name="RadioSupp"
-             AutomationProperties.AutomationId="RadioSupp"
-             Content="{DynamicResource Supp}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
+                                     AutomationProperties.AutomationId="RadioSupp"
+                                     Content="{DynamicResource Supp}"
+                                     GroupName="Pozycje"
+                                     Style="{DynamicResource ButtonRadioStyle}"/>
+
                         <RadioButton Name="RadioBottom"
-             AutomationProperties.AutomationId="RadioBottom"
-             Content="{DynamicResource Bottom}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
+                                     AutomationProperties.AutomationId="RadioBottom"
+                                     Content="{DynamicResource Bottom}"
+                                     GroupName="Pozycje"
+                                     Style="{DynamicResource ButtonRadioStyle}"/>
+
                         <RadioButton Name="RadioMid"
-             AutomationProperties.AutomationId="RadioMid"
-             Content="{DynamicResource Mid}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
+                                     AutomationProperties.AutomationId="RadioMid"
+                                     Content="{DynamicResource Mid}"
+                                     GroupName="Pozycje"
+                                     Style="{DynamicResource ButtonRadioStyle}"/>
+
                         <RadioButton Name="RadioJungle"
-             AutomationProperties.AutomationId="RadioJungle"
-             Content="{DynamicResource Jungle}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
+                                     AutomationProperties.AutomationId="RadioJungle"
+                                     Content="{DynamicResource Jungle}"
+                                     GroupName="Pozycje"
+                                     Style="{DynamicResource ButtonRadioStyle}"/>
+
                         <RadioButton Name="RadioTop"
-             AutomationProperties.AutomationId="RadioTop"
-             Content="{DynamicResource Top}" GroupName="Pozycje" Style="{DynamicResource ButtonRadioStyle}" />
+                                     AutomationProperties.AutomationId="RadioTop"
+                                     Content="{DynamicResource Top}"
+                                     GroupName="Pozycje"
+                                     Style="{DynamicResource ButtonRadioStyle}"/>
                     </StackPanel>
 
                     <Button Content="{DynamicResource GenCounter}"
-                        AutomationProperties.AutomationId="GenerateCounterButton"
-                        Height="35"
-                        Background="{DynamicResource GradientStartBrush}"
-                        Foreground="{DynamicResource ForegroundBrush}"
-                        FontWeight="Bold"
-                        Click="OnGenerateCounterClick"/>
+                            AutomationProperties.AutomationId="GenerateCounterButton"
+                            Height="35"
+                            Background="{DynamicResource GradientStartBrush}"
+                            Foreground="{DynamicResource ForegroundBrush}"
+                            FontWeight="Bold"
+                            Click="OnGenerateCounterClick"/>
 
                     <ScrollViewer Name="ResultScrollViewer"
-                              Margin="0,15,0,0"
-                              Visibility="Collapsed"
-                              VerticalScrollBarVisibility="Auto"
-                              HorizontalScrollBarVisibility="Disabled"
-                              Height="Auto">
+                                  Margin="0,15,0,0"
+                                  Visibility="Collapsed"
+                                  VerticalScrollBarVisibility="Auto"
+                                  HorizontalScrollBarVisibility="Disabled"
+                                  Height="Auto">
                         <ItemsControl Name="CounterResultsItemsControl"
-                                  AutomationProperties.AutomationId="CounterResultsItemsControl">
+                                      AutomationProperties.AutomationId="CounterResultsItemsControl">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <WrapPanel HorizontalAlignment="Center"/>

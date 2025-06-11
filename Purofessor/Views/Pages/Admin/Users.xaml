@@ -40,10 +40,9 @@
                           ColumnHeaderHeight="30"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           Margin="0,0,0,10"
-                                    RowStyle="{StaticResource AdminDataGridRowStyle}"
-                                    ColumnHeaderStyle="{StaticResource AdminDataGridColumnHeaderStyle}">
+                          RowStyle="{StaticResource AdminDataGridRowStyle}"
+                          ColumnHeaderStyle="{StaticResource AdminDataGridColumnHeaderStyle}">
 
-                    
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{DynamicResource ColumnId}" Binding="{Binding Id}" Width="Auto"/>
                         <DataGridTextColumn Header="{DynamicResource ColumnNick}" Binding="{Binding Name}" Width="*" />
@@ -53,18 +52,18 @@
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                         <Button Style="{DynamicResource TopPanelButtonStyle}"
-                        Content="{DynamicResource EditButton}"
-                        Click="EditUser_Click"
-                        Margin="0,0,5,0"
-                        Padding="10,3"
-                        Tag="{Binding}" />
+                                                Content="{DynamicResource EditButton}"
+                                                Click="EditUser_Click"
+                                                Margin="0,0,5,0"
+                                                Padding="10,3"
+                                                Tag="{Binding}" />
 
                                         <Button Style="{DynamicResource TopPanelButtonStyle}"
-                        Content="{DynamicResource DeleteButton}"
-                        Margin="0,0,5,0"
-                        Click="DeleteUser_Click"
-                        Padding="10,3"
-                        Tag="{Binding}" />
+                                                Content="{DynamicResource DeleteButton}"
+                                                Margin="0,0,5,0"
+                                                Click="DeleteUser_Click"
+                                                Padding="10,3"
+                                                Tag="{Binding}" />
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>

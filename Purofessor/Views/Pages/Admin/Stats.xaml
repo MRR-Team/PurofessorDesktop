@@ -39,10 +39,9 @@
                           ColumnHeaderHeight="30"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ColumnHeaderStyle="{StaticResource AdminDataGridColumnHeaderStyle}"
-          RowStyle="{StaticResource AdminDataGridRowStyle}"
+                          RowStyle="{StaticResource AdminDataGridRowStyle}"
                           Margin="0,0,0,10">
 
-                    
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{DynamicResource ChampionColumn}" Binding="{Binding Champion.Name}" Width="*" />
                         <DataGridTextColumn Header="{DynamicResource SearchCountColumn}" Binding="{Binding Total}" Width="200"

@@ -22,6 +22,8 @@ namespace Purofessor.Views.Pages.User
                     return;
                 }
 
+                region = region.ToLowerInvariant(); // 🔻 Zamiana na małe litery
+
                 try
                 {
                     var status = await App.ApiService.Champions.GetServerStatusAsync(region);
@@ -35,5 +37,6 @@ namespace Purofessor.Views.Pages.User
                 }
             }
         }
+
     }
 }
