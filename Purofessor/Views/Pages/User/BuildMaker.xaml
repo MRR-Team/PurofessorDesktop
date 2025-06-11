@@ -57,6 +57,8 @@
                         Background="{DynamicResource GradientStartBrush}"
                         Foreground="{DynamicResource ForegroundBrush}"
                         FontWeight="Bold"
+                                AutomationProperties.AutomationId="GenerateBuildButton"
+                            x:Name="GenerateCounterButton"
                         Click="GenerateBuild_Click"/>
 
                     <!-- Wynik -->

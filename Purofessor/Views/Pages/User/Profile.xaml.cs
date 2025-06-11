@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Purofessor.Helpers;
+using Purofessor.Views.Windows.Guest;
+using Purofessor.Localization;
 
 namespace Purofessor.Views.Pages.User
 {
@@ -35,9 +37,12 @@ namespace Purofessor.Views.Pages.User
             }
             else
             {
-                CustomMessageBox.Show("Nie jesteś zalogowany!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
-
+                CustomMessageBox.Show(Messages.YoureNotloggedin,Messages.Error, MessageBoxButton.OK, MessageBoxImage.Warning);
+                Window parentWindow = Window.GetWindow(this);
+                var loginWindow = new LoginWindow();
+                loginWindow.Show();
             }
+
         }
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
@@ -48,7 +53,7 @@ namespace Purofessor.Views.Pages.User
 
             if (password != confirmPassword)
             {
-                CustomMessageBox.Show("Hasła nie są takie same!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
+                CustomMessageBox.Show(Messages.PasswordMismatchError, Messages.Warning, MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -60,16 +65,16 @@ namespace Purofessor.Views.Pages.User
                 {
                     _apiService.LoggedUser.Name = username;
                     _apiService.LoggedUser.Email = email;
-                    CustomMessageBox.Show("Dane zostały zaktualizowane!", "Sukces", MessageBoxButton.OK, MessageBoxImage.Information);
+                    CustomMessageBox.Show(Messages.DataUpdated, Messages.Success, MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    CustomMessageBox.Show("Nie udało się zaktualizować danych.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                    CustomMessageBox.Show(Messages.DataUpdatedFailed, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show($"Błąd: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                CustomMessageBox.Show(Messages.DataUpdatedError, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

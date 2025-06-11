@@ -20,26 +20,16 @@
                 <TextBlock Text="E-mail" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
                 <TextBox x:Name="LoginTextBox"
                          AutomationProperties.AutomationId="LoginTextBox" 
-                         Margin="0,5,0,15"
-                         Height="30"
-                         Background="{DynamicResource PrimaryBrush}"
-                         Foreground="{DynamicResource ForegroundBrush}"
-                         VerticalContentAlignment="Center"/>
+                                 Style="{StaticResource InputLoginTextStyle}"/>
 
                 <TextBlock Text="{DynamicResource Password}" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
                 <PasswordBox x:Name="PasswordBox"
                               AutomationProperties.AutomationId="PasswordBox"
-                             Margin="0,5,0,20"
-                             Height="30"
-                             Background="{DynamicResource PrimaryBrush}"
-                             Foreground="{DynamicResource ForegroundBrush}"
-                             VerticalContentAlignment="Center"/>
+                                          Style="{StaticResource InputLoginPasswordStyle}"/>
 
                 <Button Content="{DynamicResource LogIn}"
                         AutomationProperties.AutomationId="LoginButton"
-                        Height="35"
-                        Background="{DynamicResource GradientStartBrush}"
-                        Foreground="{DynamicResource ForegroundBrush}"
+                               Style="{StaticResource LoginButtonStyle}"
                         Click="LoginButton_Click"/>
                 <Button Content="Zaloguj się przez Google"
         AutomationProperties.AutomationId="GoogleLoginButton"

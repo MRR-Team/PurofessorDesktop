@@ -4,12 +4,14 @@ using System.Windows;
 using System.Windows.Controls;
 using Purofessor.Views.Windows.Guest;
 using Purofessor.Views.Windows.Dialogs;
-using Purofessor.Helpers.Modules.Strategies; // dodaj to
+using Purofessor.Helpers.Modules.Strategies;
+using Purofessor.Localization; // dodaj to
 
 namespace Purofessor.Views.Pages.Guest
 {
     public partial class Login : Page
     {
+        string? token = null;                // ← deklaracja przeniesiona wyżej
         public Login()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace Purofessor.Views.Pages.Guest
             try
             {
                 var strategy = new EmailPasswordLoginStrategy(App.ApiService, login, password);
-                string? token = await App.ApiService.Auth.LoginAsync(strategy);
+                token = await App.ApiService.Auth.LoginAsync(strategy); // ← to było brakujące
 
                 if (!string.IsNullOrEmpty(token))
                 {
@@ -34,9 +36,10 @@ namespace Purofessor.Views.Pages.Guest
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show($"Błąd logowania:\n{ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                CustomMessageBox.Show(Messages.LoginFailed, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
 
         private void RegisterLink_Click(object sender, RoutedEventArgs e)
         {
@@ -66,7 +69,7 @@ namespace Purofessor.Views.Pages.Guest
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show($"Błąd logowania przez Google:\n{ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                CustomMessageBox.Show($"{ ex.Message}", Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         private void ForgotPasswordLink_Click(object sender, RoutedEventArgs e)

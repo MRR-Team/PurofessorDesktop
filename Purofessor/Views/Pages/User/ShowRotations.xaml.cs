@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Purofessor.Views.Windows.Dialogs;
 using Purofessor.Helpers;
+using Purofessor.Localization;
 
 namespace Purofessor.Views.Pages.User
 {
@@ -27,7 +28,7 @@ namespace Purofessor.Views.Pages.User
             }
             catch (System.Exception ex)
             {
-                CustomMessageBox.Show($"Błąd ładowania rotacji: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                CustomMessageBox.Show(Messages.RotationShowError, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

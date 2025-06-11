@@ -10,7 +10,7 @@
             Background="Transparent"
             BorderBrush="Gray"
             BorderThickness="0"
-            Foreground="White"
+            Foreground="{DynamicResource ForegroundBrush}"
             FontWeight="Normal"
             HorizontalAlignment="Right"
             VerticalAlignment="Center"

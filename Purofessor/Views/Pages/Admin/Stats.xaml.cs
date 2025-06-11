@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Purofessor.Helpers;
+using Purofessor.Localization;
 
 
 namespace Purofessor.Views.Pages.Admin
@@ -46,7 +47,7 @@ namespace Purofessor.Views.Pages.Admin
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show($"Błąd podczas pobierania statystyk: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                CustomMessageBox.Show(Messages.DownloadStatsError, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

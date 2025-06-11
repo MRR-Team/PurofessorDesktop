@@ -1,4 +1,5 @@
 ﻿using Purofessor.Helpers;
+using Purofessor.Localization;
 using Purofessor.Models;
 using Purofessor.Views.Windows.Dialogs;
 using System.Windows;
@@ -30,7 +31,7 @@ namespace Purofessor.Views.Pages.User
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Błąd pobierania championów: " + ex.Message);
+                CustomMessageBox.Show(Messages.DownloadChampionsError, Messages.Error, MessageBoxButton.OK);
             }
         }
 
@@ -41,7 +42,7 @@ namespace Purofessor.Views.Pages.User
 
             if (string.IsNullOrEmpty(myChampion) || string.IsNullOrEmpty(enemyChampion))
             {
-                CustomMessageBox.Show("Wprowadź nazwę obu championów.");
+                CustomMessageBox.Show(Messages.FillAllError,Messages.Warning,MessageBoxButton.OK);
                 return;
             }
 
@@ -50,7 +51,7 @@ namespace Purofessor.Views.Pages.User
 
             if (myChamp == null || enemyChamp == null)
             {
-                CustomMessageBox.Show("Nie znaleziono jednego z championów.");
+                CustomMessageBox.Show(Messages.ChampionDoesntExist, Messages.Warning, MessageBoxButton.OK);
                 return;
             }
 
@@ -63,7 +64,7 @@ namespace Purofessor.Views.Pages.User
                 if (buildItems == null || !buildItems.Any())
                 {
                     BuildResultsItemsControl.ItemsSource = null;
-                    CustomMessageBox.Show("Brak rekomendowanych przedmiotów.");
+                    CustomMessageBox.Show(Messages.NoRecommendedItems, Messages.Warning, MessageBoxButton.OK);
                     return;
                 }
 
@@ -74,10 +75,12 @@ namespace Purofessor.Views.Pages.User
                 });
 
                 BuildResultsItemsControl.ItemsSource = buildItemList;
+                ResultScrollViewer.Visibility = Visibility.Visible;
+
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Błąd generowania builda: " + ex.Message);
+                CustomMessageBox.Show(Messages.BuildError,Messages.Error, MessageBoxButton.OK);
             }
         }
     }

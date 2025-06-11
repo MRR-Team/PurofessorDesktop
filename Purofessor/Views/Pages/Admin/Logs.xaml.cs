@@ -5,6 +5,8 @@ using System.Windows;
 using System.Windows.Controls;
 using Purofessor.Models;
 using Purofessor.Helpers;
+using Purofessor.Views.Windows.Dialogs;
+using Purofessor.Localization;
 
 namespace Purofessor.Views.Pages.Admin
 {
@@ -28,7 +30,7 @@ namespace Purofessor.Views.Pages.Admin
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd wczytywania logów:\n{ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                CustomMessageBox.Show(Messages.LoadingLogsError , Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

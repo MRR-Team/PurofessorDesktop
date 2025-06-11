@@ -6,6 +6,7 @@ using Purofessor.Helpers;
 using Purofessor.Properties;
 using Purofessor.Views.Windows.Guest;
 using Purofessor.Views.Windows.Dialogs;
+using Purofessor.Localization;
 
 namespace Purofessor
 {
@@ -29,8 +30,8 @@ namespace Purofessor
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                CustomMessageBox.Show("Utracono połączenie z internetem.\nZostaniesz przeniesiony do logowania.",
-                                "Brak Internetu", MessageBoxButton.OK, MessageBoxImage.Warning);
+                CustomMessageBox.Show(Messages.ConnectionLost,
+                                Messages.NoConnection, MessageBoxButton.OK, MessageBoxImage.Warning);
 
                 var loginWindow = new LoginWindow();
                 loginWindow.Show();

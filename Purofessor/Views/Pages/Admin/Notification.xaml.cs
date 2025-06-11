@@ -2,6 +2,8 @@
 using System.Windows;
 using System.Windows.Controls;
 using Purofessor.Helpers;
+using Purofessor.Localization;
+using Purofessor.Views.Windows.Dialogs;
 
 namespace Purofessor.Views.Pages.Admin
 {
@@ -25,7 +27,7 @@ namespace Purofessor.Views.Pages.Admin
 
             if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(body) || string.IsNullOrWhiteSpace(type))
             {
-                MessageBox.Show("Wypełnij wszystkie pola.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
+                CustomMessageBox.Show(Messages.FillAllError, Messages.Warning, MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -35,7 +37,7 @@ namespace Purofessor.Views.Pages.Admin
 
                 if (success)
                 {
-                    MessageBox.Show("Powiadomienie zostało wysłane!", "Sukces", MessageBoxButton.OK, MessageBoxImage.Information);
+                    CustomMessageBox.Show(Messages.NotificationSent, Messages.Success, MessageBoxButton.OK, MessageBoxImage.Information);
                     TitleTextBox.Clear();
                     BodyTextBox.Clear();
                     TypeComboBox.SelectedIndex = -1;
@@ -43,7 +45,7 @@ namespace Purofessor.Views.Pages.Admin
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd podczas wysyłania: {ex.Message}", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                CustomMessageBox.Show(Messages.NotificationError, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

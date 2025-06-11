@@ -3,15 +3,27 @@
 
     <!-- Kolory bazowe -->
     <Color x:Key="PrimaryColor">#9370DB</Color>
-    <Color x:Key="SecondaryColor">#4B0082</Color>
-    <Color x:Key="GradientStartColor">#7C4DFF</Color>
-    <Color x:Key="GradientEndColor">#673AB7</Color>
-    <Color x:Key="HoverBackgroundColor">#1A0D26</Color>
-    <Color x:Key="BackgroundColor">#FF1E1E1E</Color>
-    <Color x:Key="ForegroundColor">#FFFFFFFF</Color>
-    <Color x:Key="WindowGradientStartColor">#F8F9FA</Color>
-    <Color x:Key="WindowGradientEndColor">#E2E6EA</Color>
-    
+    <!-- Stały -->
+    <Color x:Key="SecondaryColor">#9370DB</Color>
+    <!-- Jaśniejszy odcien -->
+    <Color x:Key="GradientStartColor">#F4F1FF</Color>
+    <!-- Jasny fioletowy -->
+    <Color x:Key="GradientEndColor">#E2E6EA</Color>
+    <!-- Zgaszony lawendowy -->
+    <Color x:Key="HoverBackgroundColor">#EFEFEF</Color>
+    <!-- Szaro-biały hover -->
+    <Color x:Key="BackgroundColor">#FFFFFFFF</Color>
+    <!-- Biały -->
+    <Color x:Key="ForegroundColor">#1E1E1E</Color>
+
+    <!-- Gradient tła głównego okna -->
+    <Color x:Key="WindowGradientStartColor">#7C4DFF</Color>
+    <!-- Pastelowy fiolet -->
+    <Color x:Key="WindowGradientEndColor">#673AB7</Color>
+    <!-- Jasny szary -->
+    <Color x:Key="SettingsColor">#7C4DFF</Color>
+
+    <!-- Pędzle -->
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}" />
     <SolidColorBrush x:Key="GradientStartBrush" Color="{StaticResource GradientStartColor}" />
@@ -19,7 +31,8 @@
     <SolidColorBrush x:Key="HoverBackgroundBrush" Color="{StaticResource HoverBackgroundColor}" />
     <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
     <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource ForegroundColor}" />
-    <SolidColorBrush x:Key="WindowGradientStartColorBrush" Color ="{StaticResource WindowGradientStartColor}" />
-    <SolidColorBrush x:Key="WindowGradientEndColorBrush" Color ="{StaticResource WindowGradientEndColor}" />
+    <SolidColorBrush x:Key="WindowGradientStartColorBrush" Color="{StaticResource WindowGradientStartColor}" />
+    <SolidColorBrush x:Key="WindowGradientEndColorBrush" Color="{StaticResource WindowGradientEndColor}" />
+    <SolidColorBrush x:Key="SettingsBrush" Color="{StaticResource SettingsColor}"/>
 
 </ResourceDictionary>

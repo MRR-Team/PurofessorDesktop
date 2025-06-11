@@ -5,6 +5,8 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using Purofessor.Helpers;
+using Purofessor.Views.Windows.Dialogs;
+using Purofessor.Localization;
 
 namespace Purofessor.Views.Pages.User
 {
@@ -29,7 +31,7 @@ namespace Purofessor.Views.Pages.User
             }
             catch (Exception ex)
             {
-                ShowError("Błąd pobierania championów", ex);
+                CustomMessageBox.Show(Messages.DownloadChampionsError);
             }
         }
 
@@ -40,7 +42,7 @@ namespace Purofessor.Views.Pages.User
 
             if (string.IsNullOrWhiteSpace(championName) || string.IsNullOrWhiteSpace(position))
             {
-                ShowMessage("Wpisz nazwę championa i wybierz pozycję.");
+                CustomMessageBox.Show(Messages.EnterChampionAndPosition, Messages.Warning, MessageBoxButton.OK);
                 return;
             }
 
@@ -49,7 +51,7 @@ namespace Purofessor.Views.Pages.User
 
             if (champion == null)
             {
-                ShowMessage($"Nie znaleziono championa o nazwie: {championName}");
+                CustomMessageBox.Show(Messages.ChampionNotFound + $"{championName}", Messages.Warning, MessageBoxButton.OK);
                 return;
             }
 
@@ -60,20 +62,13 @@ namespace Purofessor.Views.Pages.User
             }
             catch (Exception ex)
             {
-                ShowError("Błąd pobierania danych", ex);
+                CustomMessageBox.Show(Messages.CounterGetError, Messages.Error, MessageBoxButton.OK);
             }
         }
 
         private void DisplayCounterResults(IEnumerable<string> results, string name, string pos)
         {
             ResultScrollViewer.Visibility = Visibility.Visible;
-
-            if (results == null || !results.Any())
-            {
-                CounterResultsItemsControl.ItemsSource = null;
-                ShowMessage($"Brak kontr dla {name} ({pos}).");
-                return;
-            }
 
             var championItems = results.Select(r => new
             {
@@ -94,7 +89,6 @@ namespace Purofessor.Views.Pages.User
             return null;
         }
 
-        private void ShowMessage(string message) => MessageBox.Show(message);
-        private void ShowError(string title, Exception ex) => MessageBox.Show($"{title}: {ex.Message}");
+
     }
 }

@@ -58,7 +58,7 @@
                         Width="30" Height="30" Margin="10,0,0,0"
                         
                         BorderThickness="0"
-                        Background="{DynamicResource GradientStartBrush}"
+                        Background="{DynamicResource SettingsBrush}"
                         ToolTip="{DynamicResource ExitTooltip}"
                         Click="ExitButton_Click">
                     <TextBlock Text="⎋" FontSize="16" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>

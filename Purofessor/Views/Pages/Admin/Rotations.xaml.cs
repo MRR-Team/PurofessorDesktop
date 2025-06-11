@@ -5,13 +5,14 @@ using System.Windows.Controls;
 using Purofessor.Models;
 using Purofessor.Views.Windows.Dialogs;
 using Purofessor.Helpers;
+using Purofessor.Localization;
 
 namespace Purofessor.Views.Pages.Admin
 {
     public partial class Rotations : Page
     {
         private List<Champion>? _champions;
-
+        
         public Rotations()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace Purofessor.Views.Pages.Admin
             }
             catch
             {
-                CustomMessageBox.Show("Nie udało się pobrać championów.");
+                CustomMessageBox.Show(Messages.ShowChampionsError, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -40,8 +41,8 @@ namespace Purofessor.Views.Pages.Admin
                     bool success = await ApiService.Instance.Champions.ToggleChampionAvailabilityAsync(id);
                     if (!success)
                     {
-                        CustomMessageBox.Show("Nie udało się zaktualizować rotacji.");
-                        // cofnij zmianę checkboxa
+                        CustomMessageBox.Show(Messages.UpdateRotationError , Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                        
                         var champ = _champions.FirstOrDefault(c => c.Id == id);
                         if (champ != null) champ.IsAvailable = !champ.IsAvailable;
                         ChampionListBox.Items.Refresh();
@@ -49,7 +50,8 @@ namespace Purofessor.Views.Pages.Admin
                 }
                 catch
                 {
-                    CustomMessageBox.Show("Wystąpił błąd przy aktualizacji rotacji.");
+                    CustomMessageBox.Show(Messages.UpdateRotationError, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+                    ChampionListBox.Items.Refresh();
                 }
             }
         }

@@ -7,6 +7,7 @@ using Purofessor.Views.Windows.Admin;
 using Purofessor.Views.Windows.Dialogs;
 using Purofessor.Helpers;
 using UserModel = Purofessor.Models.User;
+using Purofessor.Localization;
 
 namespace Purofessor.Views.Pages.Admin
 {
@@ -29,7 +30,7 @@ namespace Purofessor.Views.Pages.Admin
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show($"Błąd ładowania użytkowników: {ex.Message}");
+                CustomMessageBox.Show(Messages.FailedLoadingUsers, Messages.Error, MessageBoxButton.OK);
             }
         }
 
@@ -50,7 +51,7 @@ namespace Purofessor.Views.Pages.Admin
                     }
                     catch (Exception ex)
                     {
-                        CustomMessageBox.Show($"Błąd odświeżania listy: {ex.Message}");
+                        CustomMessageBox.Show(Messages.FailedRefreshingList, Messages.Error, MessageBoxButton.OK);
                     }
                 }
             }
@@ -61,8 +62,7 @@ namespace Purofessor.Views.Pages.Admin
             if (sender is Button button && button.Tag is UserModel selectedUser)
             {
                 var confirm = CustomMessageBox.Show(
-                    $"Czy na pewno chcesz usunąć użytkownika '{selectedUser.Name}'?",
-                    "Potwierdzenie",
+                    Messages.DeleteUserWarning, Messages.Warning,
                     MessageBoxButton.YesNo,
                     MessageBoxImage.Warning);
 
@@ -77,7 +77,7 @@ namespace Purofessor.Views.Pages.Admin
                     }
                     catch (Exception ex)
                     {
-                        CustomMessageBox.Show($"Błąd podczas usuwania użytkownika: {ex.Message}");
+                        CustomMessageBox.Show(Messages.DeleteUserError, Messages.Error, MessageBoxButton.OK);
                     }
                 }
             }

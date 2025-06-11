@@ -3,6 +3,7 @@ using System.Windows;
 using Purofessor.Models;
 using Purofessor.Helpers;
 using Purofessor.Views.Windows.Dialogs;
+using Purofessor.Localization;
 
 namespace Purofessor.Views.Windows.Admin
 {
@@ -34,7 +35,7 @@ namespace Purofessor.Views.Windows.Admin
                 {
                     if (password != confirmPassword)
                     {
-                        CustomMessageBox.Show("Hasła nie są takie same!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        CustomMessageBox.Show(Messages.PasswordMismatchError, Messages.Error, MessageBoxButton.OK, MessageBoxImage.Warning);
                         return;
                     }
                 }
@@ -43,18 +44,18 @@ namespace Purofessor.Views.Windows.Admin
 
                 if (updated)
                 {
-                    CustomMessageBox.Show("Użytkownik zaktualizowany.");
+                    CustomMessageBox.Show(Messages.DataUpdated, Messages.Success, MessageBoxButton.OK);
                     DialogResult = true;
                     Close();
                 }
                 else
                 {
-                    CustomMessageBox.Show("Nie udało się zaktualizować użytkownika.");
+                    CustomMessageBox.Show(Messages.DataUpdatedFailed);
                 }
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show($"Błąd podczas aktualizacji: {ex.Message}");
+                CustomMessageBox.Show(Messages.DataUpdatedError, Messages.Error, MessageBoxButton.OK);
             }
         }
 

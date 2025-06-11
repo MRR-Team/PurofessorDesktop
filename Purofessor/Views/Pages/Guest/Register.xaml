@@ -16,29 +16,15 @@
 
                 <TextBlock Text="Login:" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
                 <TextBox x:Name="LoginTextBox"
-                         Margin="0,5,0,15"
-                         Height="30"
-                         Background="{DynamicResource PrimaryBrush}"
-                         Foreground="{DynamicResource ForegroundBrush}"
-                         VerticalContentAlignment="Center"/>
+                                  Style="{StaticResource InputLoginTextStyle}"/>
 
                 <TextBlock Text="Email:" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
                 <TextBox x:Name="EmailTextBox"
-                         Margin="0,5,0,15"
-                         Height="30"
-                         Background="{DynamicResource PrimaryBrush}"
-                         Foreground="{DynamicResource ForegroundBrush}"
-                         VerticalContentAlignment="Center"/>
+                                  Style="{StaticResource InputLoginTextStyle}"/>
 
                 <TextBlock Text="Hasło:" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
                 <PasswordBox x:Name="PasswordBox"
-                             Margin="0,5,0,5"
-                             Height="30"
-                             Background="{DynamicResource PrimaryBrush}"
-                             Foreground="{DynamicResource ForegroundBrush}"
-                             VerticalContentAlignment="Center"
-                             GotFocus="PasswordBox_GotFocus"
-                             LostFocus="PasswordBox_LostFocus"/>
+                                         Style="{StaticResource InputLoginPasswordStyle}"/>
 
                 <TextBlock x:Name="PasswordHintText"
                            Text="Hasło musi mieć co najmniej 8 znaków."
@@ -49,17 +35,11 @@
 
                 <TextBlock Text="Powtórz hasło:" FontWeight="SemiBold" Foreground="{DynamicResource ForegroundBrush}"/>
                 <PasswordBox x:Name="ConfirmPasswordBox"
-                             Margin="0,5,0,20"
-                             Height="30"
-                             Background="{DynamicResource PrimaryBrush}"
-                             Foreground="{DynamicResource ForegroundBrush}"
-                             VerticalContentAlignment="Center"/>
+                                          Style="{StaticResource InputLoginPasswordStyle}"/>
 
                 <Button Content="Zarejestruj"
                         Click="RegisterButton_Click"
-                        Height="35"
-                        Background="{DynamicResource GradientStartBrush}"
-                        Foreground="{DynamicResource ForegroundBrush}"/>
+                               Style="{StaticResource LoginButtonStyle}"/>
 
                 <TextBlock TextAlignment="Center" Margin="0,8,0,0" Foreground="{DynamicResource ForegroundBrush}">
                     Masz konto?

@@ -14,4 +14,21 @@
         <Setter Property="Background" Value="{DynamicResource SecondaryBrush}"/>
         <Setter Property="Cursor" Value="Arrow"/>
     </Style>
+
+    <Style x:Key="InputLoginTextStyle" TargetType="TextBox">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="0,5,0,15"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="{DynamicResource GradientStartBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+    </Style>
+
+    <!-- Styl PasswordBox do logowania -->
+    <Style x:Key="InputLoginPasswordStyle" TargetType="PasswordBox">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="0,5,0,15"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="{DynamicResource GradientStartBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+    </Style>
 </ResourceDictionary>

@@ -8,8 +8,13 @@
         Title="{DynamicResource SettingsTitle}"
         Height="350" Width="400"
         ResizeMode="NoResize"
-        Background="{DynamicResource BackgroundBrush}">
-
+        Background="{DynamicResource MainBackgroundGradient}">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="MainBackgroundGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="{DynamicResource WindowGradientStartColor}" Offset="0" />
+            <GradientStop Color="{DynamicResource WindowGradientStartColor}" Offset="1" />
+        </LinearGradientBrush>
+    </Window.Resources>
     <Grid>
         <Border
             CornerRadius="10"
