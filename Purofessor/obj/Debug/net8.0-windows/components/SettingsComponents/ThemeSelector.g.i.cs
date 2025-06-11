@@ -60,7 +60,7 @@ namespace Purofessor.components.SettingsComponents {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Purofessor;V1.0.0.0;component/components/settingscomponents/themeselector.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Purofessor;component/components/settingscomponents/themeselector.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\components\SettingsComponents\ThemeSelector.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

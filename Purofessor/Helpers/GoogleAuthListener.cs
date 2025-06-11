@@ -47,7 +47,46 @@ namespace Purofessor.Helpers
 
                 if (!string.IsNullOrEmpty(token))
                 {
-                    responseHtml = "<html><body><h2>Logowanie zakonczone. Możesz zamknac te strone.</h2></body></html>";
+                    responseHtml = @"
+                                    <html>
+                                    <head>
+                                        <meta charset='UTF-8'>
+                                        <title>Logowanie zakończone</title>
+                                        <style>
+                                            body {
+                                                background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+                                                font-family: 'Segoe UI', sans-serif;
+                                                color: #fff;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                height: 100vh;
+                                                margin: 0;
+                                            }
+                                            .container {
+                                                background-color: rgba(255, 255, 255, 0.05);
+                                                padding: 40px;
+                                                border-radius: 12px;
+                                                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+                                                text-align: center;
+                                            }
+                                            h2 {
+                                                margin: 0 0 10px;
+                                                font-size: 24px;
+                                            }
+                                            p {
+                                                font-size: 16px;
+                                                opacity: 0.85;
+                                            }
+                                        </style>
+                                    </head>
+                                    <body>
+                                        <div class='container'>
+                                            <h2>Logowanie zakończone</h2>
+                                            <p>Możesz zamknąć tę stronę i wrócić do aplikacji.</p>
+                                        </div>
+                                    </body>
+                                    </html>";
                 }
                 else
                 {

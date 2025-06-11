@@ -37,7 +37,7 @@
                         Content="Rotacja"
                         x:Name="ShowRotationsButton"
                         Click="ShowRotations_Click"/>
-                <TextBlock FontSize="20" TextAlignment="Center" Foreground="{DynamicResource ForegroundBrush}">
+                <TextBlock FontSize="14" TextAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10" Foreground="{DynamicResource ForegroundBrush}">
                     <Run Text="{DynamicResource GuestUnlockMessage}" />
                     <Hyperlink Click="LoginLink_Click" Background="{DynamicResource ForegroundBrush}">
                         <Run Text="{DynamicResource LoginLink}" />

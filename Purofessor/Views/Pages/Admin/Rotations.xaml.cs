@@ -43,7 +43,7 @@ namespace Purofessor.Views.Pages.Admin
                     {
                         CustomMessageBox.Show(Messages.UpdateRotationError , Messages.Error, MessageBoxButton.OK, MessageBoxImage.Error);
                         
-                        var champ = _champions.FirstOrDefault(c => c.Id == id);
+                        var champ = _champions?.FirstOrDefault(c => c.Id == id);
                         if (champ != null) champ.IsAvailable = !champ.IsAvailable;
                         ChampionListBox.Items.Refresh();
                     }

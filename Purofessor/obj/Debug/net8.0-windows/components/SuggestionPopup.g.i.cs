@@ -68,7 +68,7 @@ namespace Purofessor.components {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Purofessor;V1.0.0.0;component/components/suggestionpopup.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Purofessor;component/components/suggestionpopup.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\components\SuggestionPopup.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
