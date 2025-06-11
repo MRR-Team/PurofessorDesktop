@@ -9,7 +9,6 @@ namespace Purofessor
         public MainWindow()
         {
             InitializeComponent();
-            ToastContainer.Instance = ToastOverlay; // <-- to musi być
             MainFrame.Navigate(new Counterpick());
 
         }

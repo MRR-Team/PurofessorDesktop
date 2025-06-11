@@ -11,8 +11,8 @@ namespace Purofessor.Models
     public class Item
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Role { get; set; }
+        public string? Name { get; set; }
+        public string? Role { get; set; }
         public bool AttackDamage { get; set; }
         public bool MagicDamage { get; set; }
         public bool Shield { get; set; }
@@ -35,7 +35,7 @@ namespace Purofessor.Models
         public bool IsGoodAgainstPoke { get; set; }
         public bool IsGoodAgainstCanOneShot { get; set; }
         public bool IsGoodAgainstLateGame { get; set; }
-        public string Photo { get; set; }
+        public string? Photo { get; set; }
 
     }
 }

@@ -147,6 +147,31 @@ namespace Purofessor.Helpers
                 throw new Exception($"Nie udało się wysłać powiadomienia: {response.StatusCode}\n{error}");
             });
         }
+        public async Task<List<Notification>> GetNotificationsAsync()
+        {
+            return await InternetCheckHelper.ExecuteIfOnlineAsync(async () =>
+            {
+                var response = await _api.Client.GetAsync("notifications");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    using var doc = JsonDocument.Parse(json);
+
+                    var notificationsJson = doc.RootElement.GetProperty("data").GetRawText();
+
+                    var notifications = JsonSerializer.Deserialize<List<Notification>>(notificationsJson, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                    return notifications ?? new List<Notification>();
+                }
+
+                throw new Exception($"Nie udało się pobrać powiadomień: {response.StatusCode}");
+            });
+        }
+
 
     }
 

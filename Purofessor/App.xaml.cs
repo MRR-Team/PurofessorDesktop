@@ -15,7 +15,7 @@ namespace Purofessor
     /// </summary>
     public partial class App : Application
     {
-        public static ApiService ApiService { get; private set; }
+        public static ApiService? ApiService { get; private set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {

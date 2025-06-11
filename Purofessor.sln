@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Purofessor", "Purofessor\Pu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Purofessor.E2E", "Purofessor.E2E\Purofessor.E2E.csproj", "{BF8C0A88-929F-4329-8360-9871BC011486}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Purofessor.UnitTests", "Purofessor.UnitTests\Purofessor.UnitTests.csproj", "{8F80F820-4FD6-4169-A131-FFE8C662ADFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Purofessor.UnitTests", "Purofessor.UnitTests\Purofessor.UnitTests.csproj", "{8F80F820-4FD6-4169-A131-FFE8C662ADFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

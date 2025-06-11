@@ -9,7 +9,7 @@
       <Value Profile="(Default)">DarkTheme.xaml</Value>
     </Setting>
     <Setting Name="ApiBaseUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://collegiumpizzerona.pl/api</Value>
+      <Value Profile="(Default)">https://collegiumpizzerona.pl/api/</Value>
     </Setting>
   </Settings>
 </SettingsFile>

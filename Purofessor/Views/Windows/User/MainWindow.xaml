@@ -19,11 +19,6 @@
         <components:TopPanel HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
 
-        <components:ToastContainer x:Name="ToastOverlay"
-                                   HorizontalAlignment="Right"
-                                   VerticalAlignment="Top"
-                                   Margin="16"
-                                   IsHitTestVisible="False"
-                                   Panel.ZIndex="99" />
+
     </Grid>
 </Window>

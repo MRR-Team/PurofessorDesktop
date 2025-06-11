@@ -60,7 +60,7 @@ namespace Purofessor.Views.Pages.User {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Purofessor;component/views/pages/user/showrotations.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Purofessor;V1.0.0.0;component/views/pages/user/showrotations.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Views\Pages\User\ShowRotations.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

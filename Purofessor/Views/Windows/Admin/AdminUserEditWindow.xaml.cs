@@ -10,9 +10,8 @@ namespace Purofessor.Views.Windows.Admin
     public partial class AdminUserEditWindow : Window
     {
         private readonly ApiService _apiService;
-        private readonly User _user;
-
-        public AdminUserEditWindow(ApiService apiService, User user)
+        private readonly Models.User _user;
+        public AdminUserEditWindow(ApiService apiService, Models.User user)
         {
             InitializeComponent();
             _apiService = apiService;

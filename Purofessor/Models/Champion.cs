@@ -9,11 +9,11 @@ namespace Purofessor.Models
     public class Champion
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Role { get; set; }
+        public string? Name { get; set; }
+        public string? Role { get; set; }
 
         // Właściwości ofensywne/defensywne
-        public bool Attack_Damage { get; set; }
+        public bool? Attack_Damage { get; set; }
         public bool Magic_Damage { get; set; }
         public bool Shield { get; set; }
         public bool Heals { get; set; }
@@ -38,14 +38,14 @@ namespace Purofessor.Models
         public int Is_Good_Against_Can_One_Shot { get; set; }
         public int Is_Good_Against_Late_Game { get; set; }
 
-        public string Photo { get; set; }
+        public string? Photo { get; set; }
         public DateTime Created_At { get; set; }
         public DateTime Updated_At { get; set; }
         public bool IsAvailable { get; set; }
     }
     public class ChampionSearchStats
     {
-        public Champion Champion { get; set; }
+        public Champion? Champion { get; set; }
         public int Total { get; set; }
     }
 }

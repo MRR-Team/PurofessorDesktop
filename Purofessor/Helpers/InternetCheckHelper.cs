@@ -6,7 +6,7 @@ namespace Purofessor.Helpers
 {
     public static class InternetCheckHelper
     {
-        public static event Action InternetUnavailable;
+        public static event Action? InternetUnavailable;
 
         public static async Task<bool> IsInternetAvailableAsync()
         {

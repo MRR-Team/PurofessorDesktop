@@ -23,7 +23,7 @@ namespace Purofessor.UnitTests.Services
                 {
                     Id = 1,
                     Description = "Log entry",
-                    CreatedAt = "2025-06-10T12:00:00Z"
+                    CreatedAt = DateTime.Parse("2025-06-10T12:00:00Z")
                 }
             };
 

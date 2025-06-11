@@ -25,7 +25,7 @@
                 <DataGrid Name="LogsDataGrid"
                           IsReadOnly="True"
                           Grid.Row="1"
-                          AutoGenerateColumns="False"
+                          AutoGenerateColumns="false"
                           ColumnWidth="*"  
                           Background="{DynamicResource BackgroundBrush}"
                           Foreground="{DynamicResource ForegroundBrush}"
@@ -45,12 +45,14 @@
                           Margin="0,0,0,10">
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="{DynamicResource ColumnId}" Binding="{Binding Id}" Width="50" />
-                        <DataGridTextColumn Header="{DynamicResource ColumnDescription}" Binding="{Binding Description}" Width="*" />
-                        <DataGridTextColumn Header="{DynamicResource ColumnSubject}" Binding="{Binding SubjectType}" Width="150" />
-                        <DataGridTextColumn Header="{DynamicResource ColumnUser}" Binding="{Binding CauserId}" Width="100" />
-                        <DataGridTextColumn Header="{DynamicResource ColumnDate}" Binding="{Binding CreatedAt}" Width="200" />
+
+                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="35" />
+                        <DataGridTextColumn Header="Opis" Binding="{Binding Description}" Width="*" />
+                        <DataGridTextColumn Header="Causer ID" Binding="{Binding CauserIdDisplay}" Width="100" />
+                        <DataGridTextColumn Header="Utworzono" Binding="{Binding CreatedAtDisplay}" Width="150" />
+
                     </DataGrid.Columns>
+
                 </DataGrid>
 
             </Grid>

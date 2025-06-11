@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using Purofessor.Helpers;
 using Purofessor.Views.Windows.Guest;
 using Purofessor.Views.Windows.Dialogs;
+using Purofessor.Views.Windows.User;
 
 namespace Purofessor.components
 {
@@ -51,7 +52,11 @@ namespace Purofessor.components
             ActiveButtonHelper.SetActiveTab(null, ref _previousTabButton); // clear highlight
             (Window.GetWindow(this) as MainWindow)?.MainFrame.Navigate(new Profile());
         }
-
+        private void NotificationButton_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new NotificationWindow();
+            window.Show();
+        }
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             SettingsWindow settingsWindow = new SettingsWindow();
