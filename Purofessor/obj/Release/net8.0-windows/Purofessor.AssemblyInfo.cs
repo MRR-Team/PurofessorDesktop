@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Purofessor.E2E")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Purofessor")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6033a0c8b5cc3ae1ebfacf3c550b91438f42da9")]
-[assembly: System.Reflection.AssemblyProductAttribute("Purofessor.E2E")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Purofessor.E2E")]
+[assembly: System.Reflection.AssemblyProductAttribute("Purofessor")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Purofessor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
