@@ -1289,9 +1289,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor.UnitTests\\Purofessor.UnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor.UnitTests\\Purofessor.UnitTests.csproj",
       "projectName": "Purofessor.UnitTests",
-      "projectPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor.UnitTests\\Purofessor.UnitTests.csproj",
+      "projectPath": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor.UnitTests\\Purofessor.UnitTests.csproj",
       "packagesPath": "C:\\Users\\buchc\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
@@ -1315,8 +1315,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj": {
-              "projectPath": "C:\\Users\\buchc\\Source\\Repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj"
+            "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj": {
+              "projectPath": "C:\\Users\\buchc\\source\\repos\\PurofessorDesktop\\Purofessor\\Purofessor.csproj"
             }
           }
         }
@@ -1330,8 +1330,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -1380,7 +1379,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

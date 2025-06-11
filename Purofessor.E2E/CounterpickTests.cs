@@ -57,7 +57,7 @@ namespace Purofessor.E2E
             Assert.NotNull(midRadio);
             Assert.NotNull(generateButton);
 
-            champBox.Enter("Test_champion_04");
+            champBox.Enter("Ashe");
             midRadio.Patterns.SelectionItem.Pattern.Select();
             generateButton.Invoke();
             Thread.Sleep(2000);

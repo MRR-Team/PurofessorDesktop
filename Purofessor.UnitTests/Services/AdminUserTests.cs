@@ -15,10 +15,13 @@ namespace Purofessor.UnitTests.Services
         [Fact]
         public async Task GetUsersAsync_ReturnsList()
         {
-            var json = JsonSerializer.Serialize(new[]
+            var json = JsonSerializer.Serialize(new
             {
+                data = new[]
+                {
             new User { Id = 1, Name = "Admin", Email = "a@a.com" }
-        });
+        }
+            });
 
             var handler = new StubHttpMessageHandler(_ =>
                 new HttpResponseMessage(HttpStatusCode.OK)
@@ -33,6 +36,7 @@ namespace Purofessor.UnitTests.Services
             Assert.Single(users);
             Assert.Equal("Admin", users[0].Name);
         }
+
 
         [Fact]
         public async Task DeleteUserAsync_ValidId_ReturnsTrue()

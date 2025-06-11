@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -8,6 +7,7 @@ using Xunit;
 using Purofessor.Models;
 using Purofessor.Helpers;
 using Purofessor.UnitTests.Helpers;
+using Purofessor.Helpers.Modules.Strategies; // Dodaj to, jeśli jeszcze nie masz
 
 namespace Purofessor.UnitTests.Services
 {
@@ -36,8 +36,9 @@ namespace Purofessor.UnitTests.Services
 
             var api = new ApiService(client);
 
-            // ✅ zmiana wywołania
-            var token = await api.Auth.LoginAsync("teemo@lol.gg", "123");
+            // 🔧 Zamiast api.Auth.LoginAsync(...)
+            var loginStrategy = new EmailPasswordLoginStrategy(api, "teemo@lol.gg", "123");
+            var token = await loginStrategy.LoginAsync();
 
             // assert
             Assert.Equal(expectedToken, token);

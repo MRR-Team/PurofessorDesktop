@@ -1,5 +1,11 @@
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\bin\Debug\net8.0-windows\.msCoverageSourceRootsMapping_Purofessor.UnitTests
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\bin\Debug\net8.0-windows\CoverletSourceRootsMapping_Purofessor.UnitTests
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofessor.UnitTests.csproj.AssemblyReference.cache
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofessor.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofessor.UnitTests.AssemblyInfoInputs.cache
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofessor.UnitTests.AssemblyInfo.cs
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofessor.UnitTests.csproj.CoreCompileInputs.cache
+C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofessor.UnitTests.sourcelink.json
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\bin\Debug\net8.0-windows\testhost.dll
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\bin\Debug\net8.0-windows\xunit.abstractions.dll
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\bin\Debug\net8.0-windows\Purofessor.deps.json
@@ -111,12 +117,6 @@ C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\bin\Debug\net
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\bin\Debug\net8.0-windows\Purofessor.dll
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\bin\Debug\net8.0-windows\Purofessor.pdb
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\bin\Debug\net8.0-windows\Purofessor.dll.config
-C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofessor.UnitTests.csproj.AssemblyReference.cache
-C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofessor.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofessor.UnitTests.AssemblyInfoInputs.cache
-C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofessor.UnitTests.AssemblyInfo.cs
-C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofessor.UnitTests.csproj.CoreCompileInputs.cache
-C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofessor.UnitTests.sourcelink.json
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofess.11302DC8.Up2Date
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\Purofessor.UnitTests.dll
 C:\Users\buchc\source\repos\PurofessorDesktop\Purofessor.UnitTests\obj\Debug\net8.0-windows\refint\Purofessor.UnitTests.dll

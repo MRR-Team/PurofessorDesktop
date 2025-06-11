@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.Json;
 using Purofessor.Helpers;
 using Purofessor.UnitTests.Helpers;
+using Purofessor.Helpers.Modules.Strategies;
 
 namespace Purofessor.UnitTests.Services
 {
@@ -48,8 +49,9 @@ namespace Purofessor.UnitTests.Services
 
             var service = new ApiService(client);
 
-            // ✅ Zmiana tutaj:
-            var token = await service.Auth.LoginAsync("test@example.com", "password");
+            // 🔧 Tworzymy strategię jawnie
+            var strategy = new EmailPasswordLoginStrategy(service, "test@example.com", "password");
+            var token = await strategy.LoginAsync();
 
             // Assert
             Assert.Equal(expectedToken, token);
@@ -88,9 +90,12 @@ namespace Purofessor.UnitTests.Services
 
             var service = new ApiService(client);
 
-            // ✅ Zmiana tutaj:
-            var exception = await Assert.ThrowsAsync<Exception>(() => service.Auth.LoginAsync("wrong@example.com", "badpass"));
+            // 🔧 Tworzymy strategię jawnie
+            var strategy = new EmailPasswordLoginStrategy(service, "wrong@example.com", "badpass");
+
+            var exception = await Assert.ThrowsAsync<Exception>(() => strategy.LoginAsync());
             Assert.Contains(errorMessage, exception.Message);
         }
+
     }
 }

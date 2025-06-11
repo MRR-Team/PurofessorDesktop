@@ -58,18 +58,18 @@ namespace Purofessor.E2E
             Assert.NotNull(myChampTextBox);
             Assert.NotNull(enemyChampTextBox);
 
-            myChampTextBox.Enter("Test_champion_04");
-            enemyChampTextBox.Enter("Test_champion_04");
+            myChampTextBox.Enter("Ashe");
+            enemyChampTextBox.Enter("Ashe");
             // Kliknij przycisk generowania
-            var generateButton = mainWindow.FindFirstDescendant(cf => cf.ByText("Generuj")).AsButton(); // lub według automatyzacji
+            var generateButton = mainWindow.FindFirstDescendant(cf => cf.ByAutomationId("GenerateBuildButton"))?.AsButton();
             Assert.NotNull(generateButton);
             generateButton.Invoke();
-            Thread.Sleep(2000);
+
 
             // Poczekaj na wygenerowanie wyników
             var resultsContainer = Retry.WhileNull(
                 () => mainWindow.FindFirstDescendant(cf => cf.ByAutomationId("BuildResultsItemsControl")),
-                TimeSpan.FromSeconds(10)
+                TimeSpan.FromSeconds(15)
             ).Result;
 
             Assert.NotNull(resultsContainer);
