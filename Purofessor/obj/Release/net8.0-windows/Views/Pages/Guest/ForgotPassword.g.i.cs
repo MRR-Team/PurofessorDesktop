@@ -60,7 +60,7 @@ namespace Purofessor.Views.Pages.Guest {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Purofessor;V1.0.0.0;component/views/pages/guest/forgotpassword.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Purofessor;component/views/pages/guest/forgotpassword.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Views\Pages\Guest\ForgotPassword.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

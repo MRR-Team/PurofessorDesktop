@@ -45,5 +45,6 @@ namespace Purofessor.UnitTests.Services
             Assert.Single(result);
             Assert.Equal("Log entry", result[0].Description);
         }
+
     }
 }

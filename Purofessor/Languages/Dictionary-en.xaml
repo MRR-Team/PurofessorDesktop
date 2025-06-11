@@ -69,11 +69,15 @@
     <System:String x:Key="ThemeLabel">Theme</System:String>
     <System:String x:Key="AdminPanelButton">Admin Panel</System:String>
     <System:String x:Key="ConfirmPasswordLabel">Confirm password</System:String>
-    
-    
-    
-    
-    
+    <System:String x:Key="Created">Created</System:String>
+
+    <System:String x:Key="Content">Content</System:String>
+    <System:String x:Key="Type">type</System:String>
+    <System:String x:Key="Send">Send</System:String>
+
+
+
+
     <System:String x:Key="LogoutFailed">Failed to log out</System:String>
     <System:String x:Key="LoginFailed">Failed to log in. Check cridentials</System:String>
     <System:String x:Key="LoginFailedGoogle">Failed to login using Google.</System:String>

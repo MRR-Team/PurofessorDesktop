@@ -24,7 +24,7 @@ namespace Purofessor.Views.Pages.User
     /// </summary>
     public partial class Profile : Page
     {
-        private readonly ApiService _apiService = App.ApiService;
+        private readonly ApiService? _apiService = App.ApiService;
         public Profile()
         {
             InitializeComponent();
@@ -33,7 +33,6 @@ namespace Purofessor.Views.Pages.User
             if (user != null)
             {
                 UsernameTextBox.Text = user.Name;
-                EmailTextBox.Text = user.Email;
             }
             else
             {
@@ -47,7 +46,6 @@ namespace Purofessor.Views.Pages.User
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             string username = UsernameTextBox.Text;
-            string email = EmailTextBox.Text;
             string password = PasswordBox.Password;
             string confirmPassword = ConfirmPasswordBox.Password;
 
@@ -67,12 +65,11 @@ namespace Purofessor.Views.Pages.User
             }
             try
             {
-                bool success = await _apiService.Users.UpdateUserAsync(user.Id, username, email, password);
+                bool success = await _apiService.Users.UpdateUserAsync(user.Id, username, password);
 
                 if (success)
                 {
                     user.Name = username;
-                    user.Email = email;
                     CustomMessageBox.Show(Messages.DataUpdated, Messages.Success, MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else

@@ -84,7 +84,7 @@ namespace Purofessor.Views.Windows.Dialogs {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Purofessor;V1.0.0.0;component/views/windows/dialogs/custommessagebox.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Purofessor;component/views/windows/dialogs/custommessagebox.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Views\Windows\Dialogs\CustomMessageBox.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

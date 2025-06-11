@@ -104,10 +104,13 @@
     <System:String x:Key="EnterChampionAndPosition">Wpisz nazwę championa i wybierz pozycję.</System:String>
     <System:String x:Key="ChampionNotFound">Nie znaleziono championa </System:String>
     <System:String x:Key="CounterGetError">Błąd pobierania kontry</System:String>
+    <System:String x:Key="Created">Utworzono</System:String>
+    <System:String x:Key="Content">Treść</System:String>
 
     <System:String x:Key="NotificationSent">Powiadomienie zostało wysłane!</System:String>
     <System:String x:Key="NotificationError">Błąd podczas wysyłania powiadomienia.</System:String>
-
+    <System:String x:Key="Type">Typ</System:String>
+    <System:String x:Key="Send">Wyślij</System:String>
 
     <System:String x:Key="Error">Błąd</System:String>
     <System:String x:Key="Warning">Ostrzeżenie</System:String>

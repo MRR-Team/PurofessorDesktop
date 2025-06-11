@@ -36,16 +36,8 @@
                          Foreground="{DynamicResource ForegroundBrush}"
                          VerticalContentAlignment="Center"/>
 
-                <TextBlock Text="{DynamicResource EmailLabel}"
-                           FontWeight="SemiBold"
-                           Foreground="{DynamicResource ForegroundBrush}"/>
 
-                <TextBox x:Name="EmailTextBox"
-                         Margin="0,5,0,15"
-                         Height="30"
-                         Background="{DynamicResource BackgroundBrush}"
-                         Foreground="{DynamicResource ForegroundBrush}"
-                         VerticalContentAlignment="Center"/>
+
 
                 <TextBlock Text="{DynamicResource NewPasswordLabel}"
                            FontWeight="SemiBold"

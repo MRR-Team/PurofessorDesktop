@@ -11,7 +11,7 @@ namespace Purofessor.Views.Pages.User
 {
     public partial class ShowRotations : Page
     {
-        private readonly ApiService _apiService = App.ApiService;
+        private readonly ApiService? _apiService = App.ApiService;
 
         public ShowRotations()
         {

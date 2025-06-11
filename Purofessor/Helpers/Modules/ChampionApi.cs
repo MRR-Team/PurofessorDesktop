@@ -34,7 +34,7 @@ namespace Purofessor.Helpers
 
                     foreach (var champ in champions)
                     {
-                        champ.Name = StringHelper.CapitalizeFirstLetter(champ.Name);
+                        champ.Name = StringHelper.CapitalizeFirstLetter(champ.Name ?? string.Empty);
                     }
 
                     return champions;
@@ -58,7 +58,7 @@ namespace Purofessor.Helpers
                         PropertyNameCaseInsensitive = true
                     }) ?? new List<Champion>();
 
-                    return champions.Select(i => StringHelper.CapitalizeFirstLetter(i.Name)).ToList();
+                    return champions.Select(i => StringHelper.CapitalizeFirstLetter(i.Name ?? string.Empty)).ToList();
                 }
 
                 throw new Exception($"Nie udało się pobrać kontr: {response.StatusCode}");
@@ -79,7 +79,7 @@ namespace Purofessor.Helpers
                         PropertyNameCaseInsensitive = true
                     }) ?? new List<Item>();
 
-                    return items.Select(i => StringHelper.CapitalizeFirstLetter(i.Name)).ToList();
+                    return items.Select(i => StringHelper.CapitalizeFirstLetter(i.Name ?? string.Empty)).ToList();
                 }
 
                 throw new Exception($"Nie udało się pobrać builda: {response.StatusCode}");
@@ -102,7 +102,7 @@ namespace Purofessor.Helpers
 
                     foreach (var champ in champions)
                     {
-                        champ.Name = StringHelper.CapitalizeFirstLetter(champ.Name);
+                        champ.Name = StringHelper.CapitalizeFirstLetter(champ.Name ?? string.Empty);
                     }
 
                     return champions;

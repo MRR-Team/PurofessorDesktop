@@ -32,7 +32,7 @@
                         x:Name="KontraButton"
                         Click="Kontra_Click"/>
                 <Button Style="{DynamicResource TopPanelButtonStyle}"
-                        Content="Generuj przedmioty"
+                        Content="{DynamicResource GenerateBuildButton}"
                         x:Name="BuildMakerButton"
                         Click="BuildMaker_Click"/>
                 <Button Style="{DynamicResource TopPanelButtonStyle}"
@@ -40,7 +40,7 @@
                         x:Name="StatusButton"
                         Click="Status_Click"/>
                 <Button Style="{DynamicResource TopPanelButtonStyle}"
-                        Content="Rotacja"
+                        Content="{DynamicResource RotationButton}"
                         x:Name="ShowRotationsButton"
                         Click="ShowRotations_Click"/>
             </WrapPanel>
